@@ -38,8 +38,6 @@ export async function getUserById(id: number) {
 export async function createUser(
     data: z.infer<typeof createUserDto>
 ) {
-    const passwordHash = await bcrypt.hash(data.password, 10);
-
     const existingUser = await db.select()
         .from(usersTable)
         .where(or(
@@ -50,6 +48,8 @@ export async function createUser(
         .then(users => users[0])
 
     if (existingUser) return null;
+
+    const passwordHash = await bcrypt.hash(data.password, 10);
 
     const insertedUser = await db.insert(usersTable)
         .values({

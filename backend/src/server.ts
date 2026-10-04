@@ -1,11 +1,16 @@
 import Fastify from "fastify";
-import { userRoutes } from "./routes/user";
+import { authRoutes } from "./routes/auth";
+// import { userRoutes } from "./routes/user";
 
 const fastify = Fastify({ logger: true });
 
-fastify.register(userRoutes, {
-  prefix: "/users"
+fastify.register(authRoutes, {
+  prefix: "/auth"
 });
+
+// fastify.register(userRoutes, {
+//   prefix: "/users"
+// });
 
 fastify.listen({
   port: 3000
