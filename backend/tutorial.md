@@ -1,0 +1,1 @@
+Gerar migrations: bunx drizzle-kit push
