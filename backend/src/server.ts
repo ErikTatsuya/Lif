@@ -1,17 +1,24 @@
 import Fastify from "fastify";
+import rateLimit from "@fastify/rate-limit";
+
 import { authRoutes } from "./routes/auth";
-// import { userRoutes } from "./routes/user";
+import { userRoutes } from "./routes/user";
 
-const fastify = Fastify({ logger: true });
+const app = Fastify({ logger: true });
 
-fastify.register(authRoutes, {
+await app.register(rateLimit, {
+  max: 100,
+  timeWindow: "1 minute"
+});
+
+app.register(authRoutes, {
   prefix: "/auth"
 });
 
-// fastify.register(userRoutes, {
-//   prefix: "/users"
-// });
+app.register(userRoutes, {
+  prefix: "/users"
+});
 
-fastify.listen({
+app.listen({
   port: 3000
 });

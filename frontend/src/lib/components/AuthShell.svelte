@@ -1,25 +1,27 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import Brand from '#lib/components/Brand.svelte';
+	import type { Snippet } from 'svelte';
+	import Brand from './Brand.svelte';
+
+	let { title, children }: { title: string; children: Snippet } = $props();
 </script>
 
 <svelte:head>
-	<title>Lif</title>
+	<title>{title} | Lif</title>
 </svelte:head>
 
-<main>
+<main class="auth-page">
 	<header class="topbar">
-		<Brand label="Lif-Labs" />
-
-		<nav aria-label="Navegação principal">
-			<button class="dashboard" type="button" onclick={() => goto('/dashboard')}>Dashboard</button>
-			<button class="login" type="button" onclick={() => goto('/login')}>Login</button>
-			<button class="signup" type="button" onclick={() => goto('/signup')}>Sign up</button>
-		</nav>
+		<Brand />
 	</header>
 
 	<div class="circle circle-glow" aria-hidden="true"></div>
 	<div class="circle circle-outline" aria-hidden="true"></div>
+
+	<section class="auth-card" aria-labelledby="auth-title">
+		<h1 id="auth-title">{title}</h1>
+		{@render children()}
+	</section>
+
 	<svg class="wave" viewBox="0 0 1440 260" preserveAspectRatio="none" aria-hidden="true">
 		<path
 			class="wave-fill"
@@ -49,9 +51,11 @@
 		background: #f8faf6;
 	}
 
-	main {
+	.auth-page {
 		position: relative;
+		display: flex;
 		min-height: 100svh;
+		flex-direction: column;
 		overflow: hidden;
 		isolation: isolate;
 		background:
@@ -65,8 +69,26 @@
 		display: flex;
 		width: 100%;
 		align-items: center;
-		justify-content: space-between;
 		padding: 1.5rem clamp(1.25rem, 6vw, 5.5rem);
+	}
+
+	.auth-card {
+		z-index: 1;
+		width: min(100% - 2.5rem, 27rem);
+		margin: auto;
+		padding: clamp(1.5rem, 5vw, 2.5rem);
+		border: 1px solid rgb(31 92 51 / 9%);
+		border-radius: 1.25rem;
+		background: rgb(255 255 255 / 90%);
+		box-shadow: 0 1.5rem 5rem rgb(35 83 47 / 9%);
+		backdrop-filter: blur(12px);
+	}
+
+	.auth-card h1 {
+		margin: 0 0 1.75rem;
+		font-size: 1.75rem;
+		font-weight: 650;
+		letter-spacing: -0.05em;
 	}
 
 	.circle {
@@ -81,7 +103,12 @@
 		right: 9%;
 		width: clamp(12rem, 30vw, 27rem);
 		aspect-ratio: 1;
-		background: radial-gradient(circle at 35% 35%, rgb(199 232 202 / 60%), rgb(222 240 221 / 16%) 68%, transparent 70%);
+		background: radial-gradient(
+			circle at 35% 35%,
+			rgb(199 232 202 / 60%),
+			rgb(222 240 221 / 16%) 68%,
+			transparent 70%
+		);
 		filter: blur(1px);
 	}
 
@@ -124,84 +151,102 @@
 		stroke-width: 1;
 	}
 
-	nav {
-		display: flex;
-		align-items: center;
-		gap: clamp(1rem, 3vw, 2rem);
+	:global(.auth-form) {
+		display: grid;
+		gap: 1rem;
 	}
 
-	nav button {
-		border: 0;
-		font: inherit;
-		font-size: 0.95rem;
+	:global(.auth-field) {
+		display: grid;
+		gap: 0.45rem;
+		color: #315442;
+		font-size: 0.9rem;
 		font-weight: 600;
-		cursor: pointer;
+	}
+
+	:global(.auth-input) {
+		width: 100%;
+		min-height: 2.9rem;
+		padding: 0.7rem 0.85rem;
+		border: 1px solid #d7e2d8;
+		border-radius: 0.6rem;
+		outline: none;
+		background: #fff;
+		color: #173326;
+		font: inherit;
+		font-size: 1rem;
 		transition:
-			background-color 160ms ease,
-			color 160ms ease,
-			transform 160ms ease;
+			border-color 160ms ease,
+			box-shadow 160ms ease;
 	}
 
-	.login {
-		padding: 0;
-		color: #315442;
-		background: transparent;
+	:global(.auth-input:focus) {
+		border-color: #4b9c61;
+		box-shadow: 0 0 0 3px rgb(75 156 97 / 15%);
 	}
 
-	.dashboard {
-		padding: 0;
-		color: #315442;
-		background: transparent;
-	}
-
-	.dashboard:hover {
-		color: #168345;
-	}
-
-	.login:hover {
-		color: #168345;
-	}
-
-	.signup {
+	:global(.submit-button) {
 		display: inline-flex;
+		min-height: 2.9rem;
 		align-items: center;
 		justify-content: center;
+		margin-top: 0.35rem;
+		padding: 0.7rem 1rem;
+		border: 0;
 		border-radius: 999px;
 		background: #20864c;
 		color: #fff;
-		min-height: 2.75rem;
-		padding: 0 1.35rem;
+		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 650;
+		cursor: pointer;
 		transition:
 			background-color 160ms ease,
 			transform 160ms ease;
 	}
 
-	.signup:hover {
-		transform: translateY(-2px);
+	:global(.submit-button:hover) {
+		transform: translateY(-1px);
 		background: #176e3d;
 	}
 
-	nav button:focus-visible {
+	:global(.submit-button:focus-visible),
+	:global(.auth-link:focus-visible) {
 		outline: 3px solid #78bd8a;
 		outline-offset: 3px;
 	}
 
+	:global(.auth-message) {
+		margin: 0;
+		color: #a52d2d;
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	:global(.auth-message.success) {
+		color: #176e3d;
+	}
+
+	:global(.auth-switch) {
+		margin: 1.25rem 0 0;
+		color: #65776b;
+		font-size: 0.9rem;
+		text-align: center;
+	}
+
+	:global(.auth-link) {
+		color: #20864c;
+		font-weight: 650;
+		text-decoration: none;
+	}
+
+	:global(.auth-link:hover) {
+		text-decoration: underline;
+	}
+
 	@media (max-width: 600px) {
 		.topbar {
-			padding: 1.1rem clamp(1.25rem, 6vw, 5.5rem);
-		}
-
-		nav {
-			gap: 1rem;
-		}
-
-		nav button {
-			font-size: 0.875rem;
-		}
-
-		.signup {
-			min-height: 2.5rem;
-			padding: 0 1rem;
+			padding: 1.1rem 1.25rem;
 		}
 
 		.circle-glow {

@@ -1,8 +1,8 @@
 import type { FastifyInstance } from "fastify";
 import { getUserByIdController, createUserController, getUsersController } from "../controllers/user";
 
-// export async function userRoutes(fastify: FastifyInstance) {
-//     fastify.post("/", createUserController);
-//     fastify.get("/:id", getUserByIdController);
-//     fastify.get("/", getUsersController);
-// }
+export async function userRoutes(app: FastifyInstance) {
+    // app.post("/", createUserController);
+    app.get("/:id", getUserByIdController);
+    app.get("/", getUsersController);
+}
