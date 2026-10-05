@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "target": "ESNext",
+    "lib": ["ES2022"],
+    "target": "ES2022",
 
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
@@ -11,6 +11,7 @@
 
     "strict": true,
     "skipLibCheck": true,
+    "noEmit": false,
 
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,

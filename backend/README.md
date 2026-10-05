@@ -1,15 +1,20 @@
 # lifoxx
 
-To install dependencies:
+Install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
-To run:
+Run in development:
 
 ```bash
-bun run 
+npm run dev
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Build and run in production:
+
+```bash
+npm run build
+npm start
+```

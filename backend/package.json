@@ -1,9 +1,10 @@
 {
   "name": "lifoxx",
   "private": true,
+  "type": "module",
   "devDependencies": {
     "@types/bcrypt": "^6.0.0",
-    "@types/bun": "latest",
+    "@types/node": "^22.0.0",
     "@types/pg": "^8.23.1",
     "drizzle-kit": "^1.0.0-rc.4",
     "tsx": "^4.23.15",

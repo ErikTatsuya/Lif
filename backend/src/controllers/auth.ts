@@ -1,14 +1,14 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 
-import { loginDto } from "../dtos/auth";
-import { createUserDto } from "../dtos/user";
-import { UserResponse } from "../responses/user";
+import { loginDto } from "../dtos/auth.js";
+import { createUserDto } from "../dtos/user.js";
+import { UserResponse } from "../responses/user.js";
 import {
     getAuthenticatedUser,
     login,
     signup,
     tokenLifetimeSeconds
-} from "../services/auth";
+} from "../services/auth.js";
 
 const authCookieName = "auth_token";
 

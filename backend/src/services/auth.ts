@@ -3,12 +3,12 @@ import bcrypt from "bcrypt";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
 
-import { db } from "../db";
-import { usersTable } from "../db/schema";
-import { loginDto } from "../dtos/auth";
-import { createUserDto } from "../dtos/user";
-import { User } from "../models/user";
-import { createUser } from "./user";
+import { db } from "../db/index.js";
+import { usersTable } from "../db/schema.js";
+import { loginDto } from "../dtos/auth.js";
+import { createUserDto } from "../dtos/user.js";
+import { User } from "../models/user.js";
+import { createUser } from "./user.js";
 
 const tokenLifetimeSeconds = 60 * 60 * 24 * 7;
 

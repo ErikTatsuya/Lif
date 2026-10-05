@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createUserDto } from "./user";
+import { createUserDto } from "./user.js";
 
 export const loginDto = z.union([
     z.object({

@@ -5,7 +5,7 @@ import {
     loginController,
     signoutController,
     signupController
-} from "../controllers/auth";
+} from "../controllers/auth.js";
 
 export async function authRoutes(app: FastifyInstance) {
   app.get("/me", getMeController);

@@ -2,10 +2,10 @@ import { z } from "zod";
 import bcrypt from "bcrypt";
 import { eq, or } from "drizzle-orm";
 
-import { db } from "../db";
-import { usersTable } from "../db/schema";
-import { createUserDto } from "../dtos/user";
-import { User } from "../models/user";
+import { db } from "../db/index.js";
+import { usersTable } from "../db/schema.js";
+import { createUserDto } from "../dtos/user.js";
+import { User } from "../models/user.js";
 
 export async function getUsers() {
     const users = await db

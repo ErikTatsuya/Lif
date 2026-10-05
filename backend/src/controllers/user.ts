@@ -1,8 +1,8 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
 
-import { createUserDto } from "../dtos/user";
-import { UserResponse } from "../responses/user";
-import { getUsers, getUserById, createUser } from "../services/user";
+import { createUserDto } from "../dtos/user.js";
+import { UserResponse } from "../responses/user.js";
+import { getUsers, getUserById, createUser } from "../services/user.js";
 
 export async function getUsersController(
     req: FastifyRequest,
