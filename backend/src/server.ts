@@ -6,19 +6,26 @@ import { userRoutes } from "./routes/user";
 
 const app = Fastify({ logger: true });
 
-await app.register(rateLimit, {
-  max: 100,
-  timeWindow: "1 minute"
-});
+const start = async () => {
+  await app.register(rateLimit, {
+    max: 100,
+    timeWindow: "1 minute"
+  });
 
-app.register(authRoutes, {
-  prefix: "/auth"
-});
+  app.register(authRoutes, {
+    prefix: "/auth"
+  });
 
-app.register(userRoutes, {
-  prefix: "/users"
-});
+  app.register(userRoutes, {
+    prefix: "/users"
+  });
 
-app.listen({
-  port: 3000
+  await app.listen({
+    port: 3000
+  });
+};
+
+start().catch((err) => {
+  app.log.error(err);
+  process.exit(1);
 });
