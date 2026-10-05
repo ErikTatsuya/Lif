@@ -6,13 +6,13 @@
     "@types/bun": "latest",
     "@types/pg": "^8.23.1",
     "drizzle-kit": "^1.0.0-rc.4",
-    "tsx": "^4.23.15"
-  },
-  "peerDependencies": {
+    "tsx": "^4.23.15",
     "typescript": "^5"
   },
   "scripts": {
-    "dev": "bun --watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@fastify/rate-limit": "^11.2.0",
