@@ -1,11 +1,26 @@
-import process from 'node:process';
-
 function isRecord(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null;
 }
 
-export function authApiUrl(path: 'login' | 'signup' | 'me') {
-	const baseUrl = (process.env.API_BASE_URL || 'http://localhost:3000').replace(/\/+$/, '');
+let loggedApiBaseUrl: string | undefined;
+
+export function authApiUrl(
+	path: 'login' | 'signup' | 'me',
+	platformEnv?: { API_BASE_URL?: string },
+	hasPlatform = false
+) {
+	const configuredBaseUrl =
+		platformEnv?.API_BASE_URL || (hasPlatform ? '' : 'http://localhost:3000');
+	if (!configuredBaseUrl) {
+		throw new Error('API_BASE_URL não está configurada.');
+	}
+
+	const baseUrl = configuredBaseUrl.replace(/\/+$/, '');
+	if (baseUrl !== loggedApiBaseUrl) {
+		console.log('URL base da API:', baseUrl);
+		loggedApiBaseUrl = baseUrl;
+	}
+
 	return `${baseUrl}/auth/${path}`;
 }
 
@@ -16,7 +31,8 @@ export async function getAuthError(response: Response, fallback: string) {
 
 		if (typeof body.error === 'string') return body.error;
 		if (typeof body.message === 'string') return body.message;
-	} catch {
+	} catch (cause) {
+		console.log('Erro ao ler a resposta de erro da API:', cause);
 		return fallback;
 	}
 

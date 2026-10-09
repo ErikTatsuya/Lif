@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import { enhance } from '$app/forms';
 	import AuthShell from '#lib/components/AuthShell.svelte';
 
 	let { form, data }: PageProps = $props();
@@ -15,7 +16,21 @@
 		<p class="auth-message" role="alert">{data.sessionCheckMessage}</p>
 	{/if}
 
-	<form class="auth-form" method="POST">
+	<form
+		class="auth-form"
+		method="POST"
+		use:enhance={() => {
+			return async ({ result, update }) => {
+				if (result.type === 'failure') {
+					console.log('Erro no login:', result.data?.message);
+				} else if (result.type === 'error') {
+					console.log('Erro inesperado no login:', result.error);
+				}
+
+				await update();
+			};
+		}}
+	>
 		<label class="auth-field">
 			Usuário ou e-mail
 			<input

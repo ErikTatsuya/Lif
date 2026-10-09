@@ -2,16 +2,17 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { authApiUrl, getAuthError } from '../../lib/server/auth';
 
-export const load: PageServerLoad = async ({ cookies, fetch }) => {
+export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
 	const token = cookies.get('auth_token');
 	if (!token) return { isAlreadyLoggedIn: false };
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me'), {
+		response = await fetch(authApiUrl('me', platform?.env, platform !== undefined), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
-	} catch {
+	} catch (cause) {
+		console.log('Erro ao verificar a sessão:', cause);
 		return {
 			isAlreadyLoggedIn: false,
 			sessionCheckMessage: 'Não foi possível verificar sua sessão.'
@@ -24,6 +25,7 @@ export const load: PageServerLoad = async ({ cookies, fetch }) => {
 	}
 
 	if (!response.ok) {
+		console.log('Erro ao verificar a sessão:', response.statusText);
 		return {
 			isAlreadyLoggedIn: false,
 			sessionCheckMessage: 'Não foi possível verificar sua sessão.'
@@ -34,7 +36,7 @@ export const load: PageServerLoad = async ({ cookies, fetch }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, cookies, fetch }) => {
+	default: async ({ request, cookies, fetch, platform }) => {
 		const formData = await request.formData();
 		const identifier = String(formData.get('identifier') ?? '').trim();
 		const password = String(formData.get('password') ?? '');
@@ -49,18 +51,21 @@ export const actions: Actions = {
 
 		let response: Response;
 		try {
-			response = await fetch(authApiUrl('login'), {
+			response = await fetch(authApiUrl('login', platform?.env, platform !== undefined), {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify(credentials)
 			});
-		} catch {
+		} catch (cause) {
+			console.log('Erro ao conectar com a API de login:', cause);
 			return fail(503, { message: 'Não foi possível conectar à API. Tente novamente.' });
 		}
 
 		if (!response.ok) {
+			const message = await getAuthError(response, 'Não foi possível entrar. Tente novamente.');
+			console.log('Erro no login:', message);
 			return fail(response.status, {
-				message: await getAuthError(response, 'Não foi possível entrar. Tente novamente.')
+				message
 			});
 		}
 
@@ -70,6 +75,7 @@ export const actions: Actions = {
 		const token = separatorIndex >= 0 ? authCookie?.slice(separatorIndex + 1) : undefined;
 
 		if (!token) {
+			console.log('Erro no login: a API não retornou um token válido.');
 			return fail(502, { message: 'A API não retornou um token de autenticação válido.' });
 		}
 

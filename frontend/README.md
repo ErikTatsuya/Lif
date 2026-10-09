@@ -43,6 +43,8 @@ npm run dev
 npm run dev -- --open
 ```
 
+The backend URL defaults to `http://localhost:3000` during local development.
+
 ## Building
 
 To create a production version of your app:
@@ -54,3 +56,5 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+For Cloudflare deployments, configure the `API_BASE_URL` Worker variable with the backend's base URL (for example, `https://api.example.com`). The server-side routes read this value from the Cloudflare platform environment at runtime.

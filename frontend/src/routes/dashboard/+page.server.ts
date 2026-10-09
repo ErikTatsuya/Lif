@@ -12,16 +12,17 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null;
 }
 
-export const load: PageServerLoad = async ({ cookies, fetch }) => {
+export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
 	const token = cookies.get('auth_token');
 	if (!token) redirect(303, '/login');
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me'), {
+		response = await fetch(authApiUrl('me', platform?.env, platform !== undefined), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
-	} catch {
+	} catch (cause) {
+		console.log('Erro ao verificar a sessão:', cause);
 		error(503, 'Não foi possível verificar a sessão. Tente novamente.');
 	}
 
@@ -31,17 +32,20 @@ export const load: PageServerLoad = async ({ cookies, fetch }) => {
 	}
 
 	if (response.status === 429) {
+		console.log('Erro ao verificar a sessão:', response.statusText);
 		error(429, 'Muitas verificações de sessão. Tente novamente em instantes.');
 	}
 
 	if (!response.ok) {
+		console.log('Erro ao carregar o perfil:', response.statusText);
 		error(502, 'Não foi possível carregar o perfil.');
 	}
 
 	let body: unknown;
 	try {
 		body = await response.json();
-	} catch {
+	} catch (cause) {
+		console.log('Erro ao ler a resposta da API:', cause);
 		error(502, 'A API retornou uma resposta inválida.');
 	}
 
@@ -52,6 +56,7 @@ export const load: PageServerLoad = async ({ cookies, fetch }) => {
 		typeof body.user.username !== 'string' ||
 		typeof body.user.email !== 'string'
 	) {
+		console.log('Erro: a API retornou dados de perfil inválidos.');
 		error(502, 'A API retornou dados de perfil inválidos.');
 	}
 

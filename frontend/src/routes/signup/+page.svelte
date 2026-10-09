@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import { enhance } from '$app/forms';
 	import AuthShell from '#lib/components/AuthShell.svelte';
 
 	let { form }: PageProps = $props();
@@ -12,7 +13,21 @@
 			<a class="auth-link" href="/login">Ir para login</a>
 		</p>
 	{:else}
-		<form class="auth-form" method="POST">
+		<form
+			class="auth-form"
+			method="POST"
+			use:enhance={() => {
+				return async ({ result, update }) => {
+					if (result.type === 'failure') {
+						console.log('Erro no cadastro:', result.data?.message);
+					} else if (result.type === 'error') {
+						console.log('Erro inesperado no cadastro:', result.error);
+					}
+
+					await update();
+				};
+			}}
+		>
 			<label class="auth-field">
 				Nome
 				<input class="auth-input" name="name" type="text" autocomplete="name" required />
