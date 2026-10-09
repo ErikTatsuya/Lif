@@ -61,11 +61,13 @@ export async function loginController(
         });
     }
 
-    const secureCookie = process.env.NODE_ENV === "production" ? "; Secure" : "";
-    res.header(
-        "Set-Cookie",
-        `${authCookieName}=${authentication.token}; HttpOnly; Path=/; SameSite=Lax; Max-Age=${tokenLifetimeSeconds}${secureCookie}`
-    );
+    res.setCookie(authCookieName, authentication.token, {
+        httpOnly: true,
+        path: "/",
+        sameSite: "lax",
+        maxAge: tokenLifetimeSeconds,
+        secure: process.env.NODE_ENV === "production"
+    });
 
     const userResponse = new UserResponse(
         authentication.user.id,
@@ -82,13 +84,17 @@ export async function signoutController(
     _req: FastifyRequest,
     res: FastifyReply
 ) {
-    const secureCookie = process.env.NODE_ENV === "production" ? "; Secure" : "";
-    res.header(
-        "Set-Cookie",
-        `${authCookieName}=; HttpOnly; Path=/; SameSite=Lax; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT${secureCookie}`
-    );
+    res.clearCookie(authCookieName, {
+        httpOnly: true,
+        path: "/",
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production"
+    });
 
-    return res.send({ message: "Logout realizado com sucesso" });
+    return res.send({
+        message: "Logout realizado com sucesso"
+    });
+
 }
 
 export async function getMeController(
