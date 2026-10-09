@@ -10,5 +10,10 @@
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
-	}
+	},
+  	// ...
+  	"vars": {
+    	"API_BASE_URL": "https://lif-xp64.onrender.com/"
+  	},
+  // ...
 }
