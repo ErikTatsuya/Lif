@@ -1,0 +1,2198 @@
+[
+  {
+    "data": "01-01",
+    "ano": 1801,
+    "titulo": "Descoberta de Ceres",
+    "descricao": "O astrônomo Giuseppe Piazzi descobre Ceres, o primeiro e maior objeto do cinturão de asteroides, hoje classificado como planeta anão."
+  },
+  {
+    "data": "01-02",
+    "ano": 1959,
+    "titulo": "Lançamento da Luna 1",
+    "descricao": "A sonda soviética Luna 1 se torna o primeiro objeto feito pelo homem a escapar da gravidade da Terra."
+  },
+  {
+    "data": "01-03",
+    "ano": 1521,
+    "titulo": "Lutero é excomungado",
+    "descricao": "O papa Leão X excomunga Martinho Lutero, aprofundando a ruptura que levou à Reforma Protestante."
+  },
+  {
+    "data": "01-04",
+    "ano": 1809,
+    "titulo": "Nasce Louis Braille",
+    "descricao": "Nasce o francês que, ainda adolescente, criaria o sistema de leitura e escrita em relevo para pessoas cegas."
+  },
+  {
+    "data": "01-05",
+    "ano": 1933,
+    "titulo": "Início da construção da Golden Gate",
+    "descricao": "Começam as obras da ponte Golden Gate, em São Francisco, que seria por anos a maior ponte pênsil do mundo."
+  },
+  {
+    "data": "01-06",
+    "ano": 1838,
+    "titulo": "Primeira demonstração pública do telégrafo",
+    "descricao": "Samuel Morse e Alfred Vail demonstram o telégrafo elétrico em Nova Jersey, abrindo caminho para a comunicação instantânea."
+  },
+  {
+    "data": "01-07",
+    "ano": 1610,
+    "titulo": "Galileu descobre luas de Júpiter",
+    "descricao": "Galileu Galilei observa três pontos luminosos ao lado de Júpiter, as primeiras luas descobertas fora da Terra, o que desafiava o modelo geocêntrico."
+  },
+  {
+    "data": "01-08",
+    "ano": 1642,
+    "titulo": "Morre Galileu Galilei",
+    "descricao": "O astrônomo e físico italiano morre em prisão domiciliar, depois de ser condenado pela Inquisição por defender o heliocentrismo."
+  },
+  {
+    "data": "01-09",
+    "ano": 2007,
+    "titulo": "Apresentação do iPhone",
+    "descricao": "Steve Jobs apresenta o primeiro iPhone, que redefiniria o mercado de celulares e a forma como usamos a internet."
+  },
+  {
+    "data": "01-10",
+    "ano": 1920,
+    "titulo": "Tratado de Versalhes entra em vigor",
+    "descricao": "O tratado que encerrou formalmente a Primeira Guerra Mundial passa a valer e cria as bases para a Liga das Nações."
+  },
+  {
+    "data": "01-11",
+    "ano": 1922,
+    "titulo": "Primeira aplicação de insulina",
+    "descricao": "Leonard Thompson, de 14 anos, recebe a primeira injeção de insulina em um paciente com diabetes, salvando milhões de vidas desde então."
+  },
+  {
+    "data": "01-12",
+    "ano": 2010,
+    "titulo": "Terremoto no Haiti",
+    "descricao": "Um terremoto de magnitude 7,0 atinge o Haiti e causa uma das maiores tragédias humanitárias do século, mobilizando ajuda internacional."
+  },
+  {
+    "data": "01-13",
+    "ano": 1893,
+    "titulo": "Fundado o Partido Trabalhista Independente",
+    "descricao": "Em Bradford, na Inglaterra, nasce o Independent Labour Party, precursor do Partido Trabalhista britânico."
+  },
+  {
+    "data": "01-14",
+    "ano": 2005,
+    "titulo": "Huygens pousa em Titã",
+    "descricao": "A sonda Huygens desce na superfície de Titã, lua de Saturno, no pouso mais distante da Terra já realizado até então."
+  },
+  {
+    "data": "01-15",
+    "ano": 2001,
+    "titulo": "Wikipédia é lançada",
+    "descricao": "Jimmy Wales e Larry Sanger lançam a Wikipédia, que se tornaria a maior enciclopédia colaborativa da história."
+  },
+  {
+    "data": "01-16",
+    "ano": 1547,
+    "titulo": "Ivan, o Terrível, é coroado czar",
+    "descricao": "Ivan IV é coroado como o primeiro czar da Rússia, adotando o título que simbolizava o poder absoluto do monarca."
+  },
+  {
+    "data": "01-17",
+    "ano": 1991,
+    "titulo": "Começa a Operação Tempestade no Deserto",
+    "descricao": "A coalizão liderada pelos EUA inicia a campanha aérea da Guerra do Golfo, a primeira guerra transmitida ao vivo pela TV."
+  },
+  {
+    "data": "01-18",
+    "ano": 1778,
+    "titulo": "Cook avista o Havaí",
+    "descricao": "O navegador britânico James Cook se torna o primeiro europeu a chegar às ilhas do Havaí, que chamou de ilhas Sandwich."
+  },
+  {
+    "data": "01-19",
+    "ano": 1983,
+    "titulo": "Apple lança o Lisa",
+    "descricao": "A Apple apresenta o Lisa, um dos primeiros computadores pessoais comerciais com interface gráfica e mouse."
+  },
+  {
+    "data": "01-20",
+    "ano": 2009,
+    "titulo": "Posse de Barack Obama",
+    "descricao": "Barack Obama toma posse como o primeiro presidente negro dos Estados Unidos diante de uma multidão de centenas de milhares de pessoas."
+  },
+  {
+    "data": "01-21",
+    "ano": 1793,
+    "titulo": "Execução de Luís XVI",
+    "descricao": "O rei da França é guilhotinado em Paris, marcando um ponto decisivo da Revolução Francesa."
+  },
+  {
+    "data": "01-22",
+    "ano": 1905,
+    "titulo": "Domingo Sangrento na Rússia",
+    "descricao": "Uma marcha pacífica de trabalhadores em São Petersburgo é reprimida a tiros, detonando a Revolução Russa de 1905."
+  },
+  {
+    "data": "01-23",
+    "ano": 1849,
+    "titulo": "Primeira médica dos EUA",
+    "descricao": "Elizabeth Blackwell se forma em Medicina e se torna a primeira mulher a receber o diploma de médica nos Estados Unidos."
+  },
+  {
+    "data": "01-24",
+    "ano": 1848,
+    "titulo": "Ouro em Sutter's Mill",
+    "descricao": "James Marshall encontra ouro na Califórnia, o que desencadeia a Corrida do Ouro e atrai centenas de milhares de pessoas ao oeste americano."
+  },
+  {
+    "data": "01-25",
+    "ano": 1924,
+    "titulo": "Primeiros Jogos Olímpicos de Inverno",
+    "descricao": "Em Chamonix, na França, começam os primeiros Jogos Olímpicos de Inverno, na época chamados de Semana Internacional de Esportes de Inverno."
+  },
+  {
+    "data": "01-26",
+    "ano": 1788,
+    "titulo": "Chegada da Primeira Frota à Austrália",
+    "descricao": "Navios britânicos com condenados e soldados chegam a Sydney Cove, data hoje lembrada como Dia da Austrália."
+  },
+  {
+    "data": "01-27",
+    "ano": 1945,
+    "titulo": "Libertação de Auschwitz",
+    "descricao": "Tropas soviéticas libertam o campo de Auschwitz-Birkenau; a data é hoje o Dia Internacional em Memória das Vítimas do Holocausto."
+  },
+  {
+    "data": "01-28",
+    "ano": 1986,
+    "titulo": "Acidente do ônibus espacial Challenger",
+    "descricao": "O Challenger se desintegra 73 segundos após o lançamento, levando a mudanças profundas na cultura de segurança da NASA."
+  },
+  {
+    "data": "01-29",
+    "ano": 1886,
+    "titulo": "Karl Benz patenteia o automóvel",
+    "descricao": "O alemão Karl Benz registra a patente do Motorwagen, considerado o primeiro automóvel movido a motor de combustão interna."
+  },
+  {
+    "data": "01-30",
+    "ano": 1948,
+    "titulo": "Assassinato de Mahatma Gandhi",
+    "descricao": "O líder da independência indiana é assassinado em Nova Délhi, meses depois do fim do domínio britânico."
+  },
+  {
+    "data": "01-31",
+    "ano": 1961,
+    "titulo": "Ham, o chimpanzé astronauta",
+    "descricao": "O chimpanzé Ham é lançado ao espaço pela NASA em um voo suborbital, provando que seres vivos podiam realizar tarefas em gravidade zero."
+  },
+  {
+    "data": "02-01",
+    "ano": 2003,
+    "titulo": "Desastre do ônibus espacial Columbia",
+    "descricao": "O Columbia se desintegra ao reentrar na atmosfera, e os sete tripulantes morrem; a causa foi um dano na asa durante o lançamento."
+  },
+  {
+    "data": "02-02",
+    "ano": 1943,
+    "titulo": "Fim da Batalha de Stalingrado",
+    "descricao": "As forças alemãs se rendem em Stalingrado, em uma derrota decisiva que virou a maré da Segunda Guerra Mundial na Frente Oriental."
+  },
+  {
+    "data": "02-03",
+    "ano": 1959,
+    "titulo": "O dia em que a música morreu",
+    "descricao": "Buddy Holly, Ritchie Valens e The Big Bopper morrem em um acidente aéreo em Iowa, nos Estados Unidos."
+  },
+  {
+    "data": "02-04",
+    "ano": 2004,
+    "titulo": "Mark Zuckerberg lança o Facebook",
+    "descricao": "Em Harvard, Zuckerberg e colegas lançam o TheFacebook, rede social que passaria de três bilhões de usuários."
+  },
+  {
+    "data": "02-05",
+    "ano": 1971,
+    "titulo": "Apollo 14 pousa na Lua",
+    "descricao": "Alan Shepard e Edgar Mitchell pousam na região de Fra Mauro, na terceira missão tripulada a descer na superfície lunar."
+  },
+  {
+    "data": "02-06",
+    "ano": 1952,
+    "titulo": "Elizabeth II torna-se rainha",
+    "descricao": "Com a morte do pai, Jorge VI, a princesa Elizabeth se torna rainha do Reino Unido, em um reinado que duraria mais de 70 anos."
+  },
+  {
+    "data": "02-07",
+    "ano": 1964,
+    "titulo": "Os Beatles chegam aos EUA",
+    "descricao": "A banda desembarca em Nova York e dá início à chamada Invasão Britânica na música popular americana."
+  },
+  {
+    "data": "02-08",
+    "ano": 1587,
+    "titulo": "Execução de Maria Stuart",
+    "descricao": "A rainha da Escócia é decapitada na Inglaterra, depois de ser acusada de conspirar contra Elizabeth I."
+  },
+  {
+    "data": "02-09",
+    "ano": 1895,
+    "titulo": "Invenção do voleibol",
+    "descricao": "O professor William Morgan, em Massachusetts, cria o jogo que chamou de Mintonette, depois rebatizado de voleibol."
+  },
+  {
+    "data": "02-10",
+    "ano": 1996,
+    "titulo": "Deep Blue vence Kasparov",
+    "descricao": "O computador Deep Blue, da IBM, vence uma partida de xadrez contra o campeão mundial Garry Kasparov, a primeira vez que uma máquina fez isso em ritmo de torneio."
+  },
+  {
+    "data": "02-11",
+    "ano": 1990,
+    "titulo": "Nelson Mandela é libertado",
+    "descricao": "Mandela sai da prisão após 27 anos, o que abre caminho para o fim do apartheid na África do Sul."
+  },
+  {
+    "data": "02-12",
+    "ano": 1809,
+    "titulo": "Nascem Darwin e Lincoln",
+    "descricao": "No mesmo dia, em lados opostos do Atlântico, nascem Charles Darwin, pai da teoria da evolução, e Abraham Lincoln, 16º presidente dos EUA."
+  },
+  {
+    "data": "02-13",
+    "ano": 1633,
+    "titulo": "Galileu chega a Roma para ser julgado",
+    "descricao": "O astrônomo chega a Roma para enfrentar o julgamento da Inquisição por defender que a Terra gira em torno do Sol."
+  },
+  {
+    "data": "02-14",
+    "ano": 1876,
+    "titulo": "Disputa pela patente do telefone",
+    "descricao": "Alexander Graham Bell e Elisha Gray registram pedidos de patente para o telefone no mesmo dia, em uma das maiores disputas da história da tecnologia."
+  },
+  {
+    "data": "02-15",
+    "ano": 1564,
+    "titulo": "Nasce Galileu Galilei",
+    "descricao": "Nasce em Pisa o pai da astronomia observacional moderna, que melhorou o telescópio e apoiou a visão copernicana do universo."
+  },
+  {
+    "data": "02-16",
+    "ano": 1923,
+    "titulo": "Abertura da câmara de Tutancâmon",
+    "descricao": "Howard Carter abre oficialmente a câmara funerária do faraó Tutancâmon, descoberta intacta no Vale dos Reis."
+  },
+  {
+    "data": "02-17",
+    "ano": 1600,
+    "titulo": "Giordano Bruno é queimado",
+    "descricao": "O filósofo e astrônomo italiano é executado em Roma, em parte por defender a ideia de um universo infinito com muitos mundos."
+  },
+  {
+    "data": "02-18",
+    "ano": 1930,
+    "titulo": "Descoberta de Plutão",
+    "descricao": "Clyde Tombaugh identifica Plutão em chapas fotográficas, no Observatório Lowell; o corpo seria rebaixado a planeta anão em 2006."
+  },
+  {
+    "data": "02-19",
+    "ano": 1473,
+    "titulo": "Nasce Nicolau Copérnico",
+    "descricao": "Nasce na Polônia o astrônomo que propôs que a Terra e os planetas giram em torno do Sol."
+  },
+  {
+    "data": "02-20",
+    "ano": 1962,
+    "titulo": "John Glenn orbita a Terra",
+    "descricao": "Glenn se torna o primeiro americano a orbitar a Terra, a bordo da cápsula Friendship 7."
+  },
+  {
+    "data": "02-21",
+    "ano": 1848,
+    "titulo": "Publicação do Manifesto Comunista",
+    "descricao": "Karl Marx e Friedrich Engels publicam o Manifesto do Partido Comunista, texto que influenciaria movimentos políticos ao redor do mundo."
+  },
+  {
+    "data": "02-22",
+    "ano": 1980,
+    "titulo": "O Milagre no Gelo",
+    "descricao": "Nos Jogos de Inverno de Lake Placid, o time amador de hóquei dos EUA vence a poderosa seleção soviética em um dos maiores feitos da história do esporte."
+  },
+  {
+    "data": "02-23",
+    "ano": 1954,
+    "titulo": "Início dos testes da vacina contra a pólio",
+    "descricao": "Crianças de uma escola em Pittsburgh recebem a vacina de Jonas Salk, no começo do maior teste médico já feito até então."
+  },
+  {
+    "data": "02-24",
+    "ano": 1582,
+    "titulo": "Calendário gregoriano",
+    "descricao": "O papa Gregório XIII publica a bula que reforma o calendário juliano, criando o calendário usado até hoje em grande parte do mundo."
+  },
+  {
+    "data": "02-25",
+    "ano": 1986,
+    "titulo": "Revolução do Poder Popular nas Filipinas",
+    "descricao": "Após dias de protestos pacíficos, o ditador Ferdinand Marcos deixa o país e Corazon Aquino assume a presidência."
+  },
+  {
+    "data": "02-26",
+    "ano": 1815,
+    "titulo": "Napoleão foge de Elba",
+    "descricao": "Napoleão Bonaparte escapa da ilha onde estava exilado e volta à França, dando início ao período conhecido como os Cem Dias."
+  },
+  {
+    "data": "02-27",
+    "ano": 1933,
+    "titulo": "Incêndio do Reichstag",
+    "descricao": "O prédio do parlamento alemão é incendiado em Berlim, e o episódio é usado pelos nazistas para restringir direitos e consolidar o poder."
+  },
+  {
+    "data": "02-28",
+    "ano": 1953,
+    "titulo": "Descoberta da estrutura do DNA",
+    "descricao": "Francis Crick e James Watson concluem o modelo de dupla hélice do DNA, com base em dados de Rosalind Franklin e Maurice Wilkins."
+  },
+  {
+    "data": "02-29",
+    "ano": 1504,
+    "titulo": "Colombo e o eclipse lunar",
+    "descricao": "Preso na Jamaica sem suprimentos, Cristóvão Colombo usa seu conhecimento de um eclipse lunar para convencer os indígenas a continuar ajudando sua tripulação."
+  },
+  {
+    "data": "03-01",
+    "ano": 1896,
+    "titulo": "Becquerel descobre a radioatividade",
+    "descricao": "O físico francês Henri Becquerel percebe que sais de urânio emitem radiação sem estímulo externo, abrindo um novo campo da física."
+  },
+  {
+    "data": "03-02",
+    "ano": 1969,
+    "titulo": "Primeiro voo do Concorde",
+    "descricao": "O avião supersônico franco-britânico Concorde faz seu voo inaugural, em Toulouse, na França."
+  },
+  {
+    "data": "03-03",
+    "ano": 1847,
+    "titulo": "Nasce Alexander Graham Bell",
+    "descricao": "Nasce em Edimburgo o inventor associado ao telefone e dedicado, por toda a vida, ao ensino de pessoas surdas."
+  },
+  {
+    "data": "03-04",
+    "ano": 1789,
+    "titulo": "Entra em vigor a Constituição dos EUA",
+    "descricao": "O primeiro Congresso se reúne em Nova York, e a Constituição americana passa a funcionar na prática."
+  },
+  {
+    "data": "03-05",
+    "ano": 1770,
+    "titulo": "Massacre de Boston",
+    "descricao": "Soldados britânicos atiram contra uma multidão em Boston e matam cinco pessoas, aumentando a tensão que levaria à Revolução Americana."
+  },
+  {
+    "data": "03-06",
+    "ano": 1836,
+    "titulo": "Queda do Álamo",
+    "descricao": "Após um cerco de 13 dias, as tropas mexicanas tomam a missão do Álamo, no Texas, e o episódio vira símbolo da luta texana pela independência."
+  },
+  {
+    "data": "03-07",
+    "ano": 1876,
+    "titulo": "Patente do telefone",
+    "descricao": "A patente de Alexander Graham Bell para o telefone é concedida nos Estados Unidos."
+  },
+  {
+    "data": "03-08",
+    "ano": 1917,
+    "titulo": "Início da Revolução de Fevereiro",
+    "descricao": "Protestos em Petrogrado, no Dia Internacional da Mulher, desencadeiam a revolução que derrubaria o czar Nicolau II."
+  },
+  {
+    "data": "03-09",
+    "ano": 1959,
+    "titulo": "Barbie é apresentada ao mundo",
+    "descricao": "A Mattel apresenta a boneca Barbie na Feira Americana de Brinquedos, em Nova York."
+  },
+  {
+    "data": "03-10",
+    "ano": 1876,
+    "titulo": "Primeira ligação telefônica",
+    "descricao": "Bell chama seu assistente na primeira frase transmitida pelo telefone: Sr. Watson, venha cá, quero vê-lo."
+  },
+  {
+    "data": "03-11",
+    "ano": 2011,
+    "titulo": "Terremoto e tsunami no Japão",
+    "descricao": "Um terremoto de magnitude 9,0 e um tsunami devastam o nordeste do Japão e provocam o acidente nuclear de Fukushima."
+  },
+  {
+    "data": "03-12",
+    "ano": 1930,
+    "titulo": "Marcha do Sal",
+    "descricao": "Gandhi começa uma caminhada de quase 400 km até o mar para protestar contra o imposto britânico sobre o sal, um marco da desobediência civil."
+  },
+  {
+    "data": "03-13",
+    "ano": 1781,
+    "titulo": "Descoberta de Urano",
+    "descricao": "William Herschel avista Urano, o primeiro planeta descoberto com telescópio e que ampliou os limites conhecidos do Sistema Solar."
+  },
+  {
+    "data": "03-14",
+    "ano": 1879,
+    "titulo": "Nasce Albert Einstein",
+    "descricao": "Nasce em Ulm, na Alemanha, o físico que formularia a teoria da relatividade."
+  },
+  {
+    "data": "03-15",
+    "ano": -44,
+    "titulo": "Idos de Março",
+    "descricao": "Júlio César é assassinado por senadores romanos no Senado de Roma, em um episódio que acelera o fim da República."
+  },
+  {
+    "data": "03-16",
+    "ano": 1521,
+    "titulo": "Magalhães chega às Filipinas",
+    "descricao": "A expedição de Fernão de Magalhães avista o arquipélago das Filipinas durante a primeira viagem de circum-navegação."
+  },
+  {
+    "data": "03-17",
+    "ano": 1958,
+    "titulo": "Lançamento do Vanguard 1",
+    "descricao": "Os EUA lançam o satélite Vanguard 1, que seria o mais antigo ainda em órbita da Terra."
+  },
+  {
+    "data": "03-18",
+    "ano": 1965,
+    "titulo": "Primeira caminhada espacial",
+    "descricao": "O cosmonauta soviético Alexei Leonov sai da nave Voskhod 2 e flutua no espaço por cerca de 12 minutos."
+  },
+  {
+    "data": "03-19",
+    "ano": 1895,
+    "titulo": "Os irmãos Lumière filmam a saída da fábrica",
+    "descricao": "Auguste e Louis Lumière rodam A Saída dos Operários da Fábrica Lumière, um dos primeiros filmes da história do cinema."
+  },
+  {
+    "data": "03-20",
+    "ano": 1727,
+    "titulo": "Morre Isaac Newton",
+    "descricao": "O físico e matemático inglês, autor da lei da gravitação universal, morre aos 84 anos em Londres."
+  },
+  {
+    "data": "03-21",
+    "ano": 1960,
+    "titulo": "Massacre de Sharpeville",
+    "descricao": "A polícia sul-africana mata dezenas de manifestantes que protestavam contra as leis do apartheid; a data virou o Dia Internacional pela Eliminação da Discriminação Racial."
+  },
+  {
+    "data": "03-22",
+    "ano": 1993,
+    "titulo": "Intel lança o Pentium",
+    "descricao": "A Intel lança o processador Pentium, que se tornaria sinônimo de computador pessoal nos anos 1990."
+  },
+  {
+    "data": "03-23",
+    "ano": 1857,
+    "titulo": "Primeiro elevador de passageiros",
+    "descricao": "Elisha Otis instala o primeiro elevador de passageiros com freio de segurança, em uma loja de Nova York, o que tornou viável a construção de arranha-céus."
+  },
+  {
+    "data": "03-24",
+    "ano": 1882,
+    "titulo": "Koch anuncia a descoberta do bacilo da tuberculose",
+    "descricao": "Robert Koch revela a bactéria causadora da tuberculose; a data é hoje o Dia Mundial de Combate à Tuberculose."
+  },
+  {
+    "data": "03-25",
+    "ano": 1807,
+    "titulo": "Reino Unido abole o tráfico de escravos",
+    "descricao": "O Parlamento britânico aprova a lei que proíbe o comércio de escravos em seu império, embora a escravidão em si só terminaria depois."
+  },
+  {
+    "data": "03-26",
+    "ano": 1953,
+    "titulo": "Salk anuncia a vacina contra a pólio",
+    "descricao": "Jonas Salk comunica pelo rádio que desenvolveu uma vacina eficaz contra a poliomielite."
+  },
+  {
+    "data": "03-27",
+    "ano": 1977,
+    "titulo": "Desastre aéreo de Tenerife",
+    "descricao": "Dois Boeing 747 colidem em uma pista nas Ilhas Canárias, no pior acidente da história da aviação, o que levou a mudanças nos protocolos de comunicação aérea."
+  },
+  {
+    "data": "03-28",
+    "ano": 1979,
+    "titulo": "Acidente em Three Mile Island",
+    "descricao": "Uma falha em um reator nuclear na Pensilvânia causa fusão parcial do núcleo, no pior acidente nuclear da história dos EUA."
+  },
+  {
+    "data": "03-29",
+    "ano": 1974,
+    "titulo": "Descoberta do Exército de Terracota",
+    "descricao": "Camponeses que cavavam um poço na China encontram guerreiros de argila do túmulo do primeiro imperador, Qin Shi Huang."
+  },
+  {
+    "data": "03-30",
+    "ano": 1867,
+    "titulo": "Os EUA compram o Alasca",
+    "descricao": "O Secretário de Estado William Seward assina o tratado de compra do Alasca da Rússia por 7,2 milhões de dólares."
+  },
+  {
+    "data": "03-31",
+    "ano": 1889,
+    "titulo": "Inauguração da Torre Eiffel",
+    "descricao": "Gustave Eiffel sobe ao topo da torre para hastear a bandeira francesa; era, na época, a estrutura mais alta do mundo."
+  },
+  {
+    "data": "04-01",
+    "ano": 1976,
+    "titulo": "Fundação da Apple",
+    "descricao": "Steve Jobs, Steve Wozniak e Ronald Wayne fundam a Apple Computer, na Califórnia."
+  },
+  {
+    "data": "04-02",
+    "ano": 1982,
+    "titulo": "Argentina invade as Ilhas Malvinas",
+    "descricao": "A Argentina desembarca nas Malvinas, dando início à guerra com o Reino Unido que durou cerca de dez semanas."
+  },
+  {
+    "data": "04-03",
+    "ano": 1973,
+    "titulo": "Primeira chamada de celular",
+    "descricao": "Martin Cooper, da Motorola, faz a primeira ligação com um telefone celular portátil, em uma rua de Nova York."
+  },
+  {
+    "data": "04-04",
+    "ano": 1968,
+    "titulo": "Assassinato de Martin Luther King Jr.",
+    "descricao": "O líder dos direitos civis é morto em Memphis, no Tennessee, o que provoca protestos por todo o país."
+  },
+  {
+    "data": "04-05",
+    "ano": 1722,
+    "titulo": "Chegada à Ilha de Páscoa",
+    "descricao": "O navegador holandês Jacob Roggeveen avista a ilha no domingo de Páscoa e a batiza com esse nome."
+  },
+  {
+    "data": "04-06",
+    "ano": 1896,
+    "titulo": "Primeiros Jogos Olímpicos da era moderna",
+    "descricao": "Os Jogos Olímpicos são reeditados em Atenas, quase 1.500 anos depois de serem proibidos na Antiguidade."
+  },
+  {
+    "data": "04-07",
+    "ano": 1948,
+    "titulo": "Criação da Organização Mundial da Saúde",
+    "descricao": "A OMS passa a existir oficialmente, e a data é hoje o Dia Mundial da Saúde."
+  },
+  {
+    "data": "04-08",
+    "ano": 1911,
+    "titulo": "Descoberta da supercondutividade",
+    "descricao": "O físico holandês Heike Kamerlingh Onnes observa que o mercúrio perde toda a resistência elétrica quando resfriado a temperaturas extremas."
+  },
+  {
+    "data": "04-09",
+    "ano": 1865,
+    "titulo": "Rendição de Lee em Appomattox",
+    "descricao": "O general Robert E. Lee se rende a Ulysses Grant, praticamente encerrando a Guerra Civil Americana."
+  },
+  {
+    "data": "04-10",
+    "ano": 1912,
+    "titulo": "O Titanic parte de Southampton",
+    "descricao": "O maior navio de passageiros do mundo inicia sua viagem inaugural rumo a Nova York."
+  },
+  {
+    "data": "04-11",
+    "ano": 1970,
+    "titulo": "Lançamento da Apollo 13",
+    "descricao": "A missão parte rumo à Lua, mas uma explosão a bordo dois dias depois a transformaria em um dos maiores resgates da história espacial."
+  },
+  {
+    "data": "04-12",
+    "ano": 1961,
+    "titulo": "Gagarin no espaço",
+    "descricao": "O soviético Yuri Gagarin se torna o primeiro ser humano a viajar ao espaço, completando uma órbita em torno da Terra."
+  },
+  {
+    "data": "04-13",
+    "ano": 1919,
+    "titulo": "Massacre de Amritsar",
+    "descricao": "Tropas britânicas abrem fogo contra uma multidão desarmada em Jallianwala Bagh, na Índia, fortalecendo o movimento pela independência."
+  },
+  {
+    "data": "04-14",
+    "ano": 1912,
+    "titulo": "O Titanic atinge um iceberg",
+    "descricao": "Pouco antes da meia-noite, o Titanic colide com um iceberg no Atlântico Norte e afunda horas depois."
+  },
+  {
+    "data": "04-15",
+    "ano": 1452,
+    "titulo": "Nasce Leonardo da Vinci",
+    "descricao": "Nasce, em Vinci, na Itália, o artista, inventor e cientista autor da Mona Lisa e de O Último Jantar."
+  },
+  {
+    "data": "04-16",
+    "ano": 1853,
+    "titulo": "Primeira ferrovia de passageiros da Índia",
+    "descricao": "O primeiro trem de passageiros do país percorre cerca de 34 km entre Bombaim e Thane, iniciando a rede ferroviária indiana."
+  },
+  {
+    "data": "04-17",
+    "ano": 1970,
+    "titulo": "Retorno da Apollo 13",
+    "descricao": "A tripulação da Apollo 13 pousa em segurança no Pacífico após a explosão a bordo, em um resgate considerado um sucesso improvisado."
+  },
+  {
+    "data": "04-18",
+    "ano": 1906,
+    "titulo": "Terremoto de São Francisco",
+    "descricao": "Um terremoto seguido de incêndios destrói grande parte de São Francisco, na Califórnia."
+  },
+  {
+    "data": "04-19",
+    "ano": 1775,
+    "titulo": "Batalhas de Lexington e Concord",
+    "descricao": "Os primeiros combates da Guerra de Independência dos EUA acontecem em Massachusetts."
+  },
+  {
+    "data": "04-20",
+    "ano": 1902,
+    "titulo": "Os Curie isolam o rádio",
+    "descricao": "Marie e Pierre Curie conseguem isolar o elemento rádio em laboratório, após anos de trabalho com toneladas de minério."
+  },
+  {
+    "data": "04-21",
+    "ano": 1960,
+    "titulo": "Inauguração de Brasília",
+    "descricao": "Juscelino Kubitschek inaugura a nova capital federal, projetada por Lúcio Costa e Oscar Niemeyer e construída em cerca de quatro anos."
+  },
+  {
+    "data": "04-22",
+    "ano": 1500,
+    "titulo": "Cabral chega ao Brasil",
+    "descricao": "A frota de Pedro Álvares Cabral avista o Monte Pascoal, no litoral da Bahia, na viagem que marca a chegada dos portugueses ao território brasileiro."
+  },
+  {
+    "data": "04-23",
+    "ano": 1616,
+    "titulo": "Morrem Shakespeare e Cervantes",
+    "descricao": "Os dois grandes escritores morrem na mesma data do calendário, mas, na prática, com dez dias de diferença, já que Inglaterra e Espanha usavam calendários distintos."
+  },
+  {
+    "data": "04-24",
+    "ano": 1990,
+    "titulo": "Lançamento do telescópio Hubble",
+    "descricao": "O ônibus espacial Discovery leva ao espaço o telescópio Hubble, que revolucionaria a astronomia com suas imagens."
+  },
+  {
+    "data": "04-25",
+    "ano": 1859,
+    "titulo": "Começa a construção do Canal de Suez",
+    "descricao": "As obras do canal que liga o Mediterrâneo ao Mar Vermelho começam no Egito e vão durar dez anos."
+  },
+  {
+    "data": "04-26",
+    "ano": 1986,
+    "titulo": "Acidente de Chernobyl",
+    "descricao": "Uma explosão no reator 4 da usina de Chernobyl, na Ucrânia, causa o pior acidente nuclear civil da história."
+  },
+  {
+    "data": "04-27",
+    "ano": 1521,
+    "titulo": "Morte de Fernão de Magalhães",
+    "descricao": "O navegador português morre em combate na ilha de Mactan, nas Filipinas, no meio da expedição que completaria a primeira volta ao mundo."
+  },
+  {
+    "data": "04-28",
+    "ano": 1947,
+    "titulo": "Kon-Tiki parte do Peru",
+    "descricao": "Thor Heyerdahl e cinco companheiros saem do Peru numa balsa de madeira para provar que povos pré-colombianos poderiam ter alcançado a Polinésia."
+  },
+  {
+    "data": "04-29",
+    "ano": 1770,
+    "titulo": "Cook chega a Botany Bay",
+    "descricao": "James Cook desembarca na costa leste da Austrália, no local que depois seria associado ao início da colonização britânica."
+  },
+  {
+    "data": "04-30",
+    "ano": 1789,
+    "titulo": "Posse de George Washington",
+    "descricao": "Washington toma posse em Nova York como o primeiro presidente dos Estados Unidos."
+  },
+  {
+    "data": "05-01",
+    "ano": 1886,
+    "titulo": "Greve geral em Chicago",
+    "descricao": "Milhares de trabalhadores iniciam uma greve por jornada de oito horas, movimento que deu origem ao Dia do Trabalhador."
+  },
+  {
+    "data": "05-02",
+    "ano": 1519,
+    "titulo": "Morre Leonardo da Vinci",
+    "descricao": "O gênio renascentista morre na França, aos 67 anos."
+  },
+  {
+    "data": "05-03",
+    "ano": 1791,
+    "titulo": "Constituição polonesa de 1791",
+    "descricao": "A Polônia-Lituânia adota uma das primeiras constituições modernas escritas da Europa."
+  },
+  {
+    "data": "05-04",
+    "ano": 1979,
+    "titulo": "Thatcher assume como primeira-ministra",
+    "descricao": "Margaret Thatcher se torna a primeira mulher a chefiar o governo do Reino Unido."
+  },
+  {
+    "data": "05-05",
+    "ano": 1821,
+    "titulo": "Morre Napoleão Bonaparte",
+    "descricao": "O ex-imperador francês morre em exílio na ilha de Santa Helena, no Atlântico Sul."
+  },
+  {
+    "data": "05-06",
+    "ano": 1937,
+    "titulo": "Desastre do Hindenburg",
+    "descricao": "O dirigível alemão pega fogo ao tentar pousar em Nova Jersey, acabando com a era das viagens comerciais em dirigíveis."
+  },
+  {
+    "data": "05-07",
+    "ano": 1824,
+    "titulo": "Estreia da Nona Sinfonia de Beethoven",
+    "descricao": "A obra estreia em Viena com o compositor já quase totalmente surdo, e traz o famoso coral Ode à Alegria."
+  },
+  {
+    "data": "05-08",
+    "ano": 1945,
+    "titulo": "Dia da Vitória na Europa",
+    "descricao": "A Alemanha nazista se rende aos Aliados, encerrando a Segunda Guerra Mundial no continente europeu."
+  },
+  {
+    "data": "05-09",
+    "ano": 1950,
+    "titulo": "Declaração Schuman",
+    "descricao": "O ministro francês Robert Schuman propõe unir a produção de carvão e aço da Europa, ideia que dá origem à futura União Europeia."
+  },
+  {
+    "data": "05-10",
+    "ano": 1869,
+    "titulo": "Última emenda da Ferrovia Transcontinental",
+    "descricao": "Um pino de ouro é cravado em Utah para marcar a união das duas linhas que ligavam a costa leste à oeste dos EUA por trem."
+  },
+  {
+    "data": "05-11",
+    "ano": 1997,
+    "titulo": "Deep Blue vence Kasparov na revanche",
+    "descricao": "O computador da IBM vence a série de seis partidas contra o campeão mundial de xadrez."
+  },
+  {
+    "data": "05-12",
+    "ano": 1949,
+    "titulo": "Fim do bloqueio de Berlim",
+    "descricao": "A União Soviética suspende o bloqueio terrestre a Berlim Ocidental, enfrentado durante quase um ano com uma ponte aérea aliada."
+  },
+  {
+    "data": "05-13",
+    "ano": 1888,
+    "titulo": "Assinada a Lei Áurea",
+    "descricao": "A princesa Isabel assina a lei que abole a escravidão no Brasil, que foi o último país das Américas a fazê-lo."
+  },
+  {
+    "data": "05-14",
+    "ano": 1948,
+    "titulo": "Declaração de independência de Israel",
+    "descricao": "David Ben-Gurion proclama o Estado de Israel, horas antes do fim do mandato britânico na Palestina."
+  },
+  {
+    "data": "05-15",
+    "ano": 1928,
+    "titulo": "Estreia de Mickey Mouse",
+    "descricao": "Walt Disney e Ub Iwerks exibem, em teste, o desenho Plane Crazy, com a primeira aparição do rato Mickey."
+  },
+  {
+    "data": "05-16",
+    "ano": 1929,
+    "titulo": "Primeira cerimônia do Oscar",
+    "descricao": "Em um jantar no Hotel Roosevelt, em Hollywood, são entregues os primeiros prêmios da Academia."
+  },
+  {
+    "data": "05-17",
+    "ano": 1954,
+    "titulo": "Brown contra o Conselho de Educação",
+    "descricao": "A Suprema Corte dos EUA declara inconstitucional a segregação racial em escolas públicas."
+  },
+  {
+    "data": "05-18",
+    "ano": 1980,
+    "titulo": "Erupção do Monte St. Helens",
+    "descricao": "O vulcão no estado de Washington entra em erupção, na mais letal e economicamente destrutiva erupção da história dos EUA."
+  },
+  {
+    "data": "05-19",
+    "ano": 1536,
+    "titulo": "Execução de Ana Bolena",
+    "descricao": "A segunda esposa de Henrique VIII é decapitada em Londres, acusada de adultério e traição."
+  },
+  {
+    "data": "05-20",
+    "ano": 1927,
+    "titulo": "Lindbergh parte de Nova York",
+    "descricao": "Charles Lindbergh decola a bordo do Spirit of St. Louis, em busca de ser o primeiro a cruzar sozinho o Atlântico sem escalas."
+  },
+  {
+    "data": "05-21",
+    "ano": 1927,
+    "titulo": "Lindbergh chega a Paris",
+    "descricao": "Depois de 33 horas e meia de voo, Lindbergh pousa em Le Bourget e se torna uma celebridade mundial."
+  },
+  {
+    "data": "05-22",
+    "ano": 1859,
+    "titulo": "Nasce Arthur Conan Doyle",
+    "descricao": "Nasce, em Edimburgo, o criador de Sherlock Holmes."
+  },
+  {
+    "data": "05-23",
+    "ano": 1618,
+    "titulo": "Defenestração de Praga",
+    "descricao": "Nobres protestantes jogam dois emissários imperiais pela janela do castelo de Praga, evento que desencadeia a Guerra dos Trinta Anos."
+  },
+  {
+    "data": "05-24",
+    "ano": 1844,
+    "titulo": "Primeira mensagem de longa distância por telégrafo",
+    "descricao": "Samuel Morse envia de Washington para Baltimore a mensagem: What hath God wrought."
+  },
+  {
+    "data": "05-25",
+    "ano": 1977,
+    "titulo": "Estreia de Star Wars",
+    "descricao": "O filme de George Lucas chega aos cinemas americanos e transforma a indústria do cinema e do merchandising."
+  },
+  {
+    "data": "05-26",
+    "ano": 1897,
+    "titulo": "Publicação de Drácula",
+    "descricao": "O romance de Bram Stoker é publicado em Londres e define a imagem moderna do vampiro na cultura popular."
+  },
+  {
+    "data": "05-27",
+    "ano": 1937,
+    "titulo": "Abertura da ponte Golden Gate",
+    "descricao": "A ponte é inaugurada para pedestres em São Francisco, um dia antes de abrir ao tráfego de carros."
+  },
+  {
+    "data": "05-28",
+    "ano": -585,
+    "titulo": "Eclipse de Tales",
+    "descricao": "Segundo uma tradição, um eclipse solar interrompe uma batalha entre lídios e medos, e Tales de Mileto teria previsto o evento."
+  },
+  {
+    "data": "05-29",
+    "ano": 1953,
+    "titulo": "Everest é conquistado",
+    "descricao": "Edmund Hillary e Tenzing Norgay chegam ao topo do Monte Everest, a montanha mais alta do mundo."
+  },
+  {
+    "data": "05-30",
+    "ano": 1431,
+    "titulo": "Joana d'Arc é queimada",
+    "descricao": "A jovem guerreira francesa é executada em Rouen aos 19 anos, depois de um julgamento por heresia; seria canonizada séculos depois."
+  },
+  {
+    "data": "05-31",
+    "ano": 1859,
+    "titulo": "O Big Ben começa a funcionar",
+    "descricao": "O relógio da torre do Palácio de Westminster, em Londres, entra em operação."
+  },
+  {
+    "data": "06-01",
+    "ano": 1980,
+    "titulo": "Estreia da CNN",
+    "descricao": "A CNN começa a transmitir, tornando-se o primeiro canal de notícias 24 horas da TV."
+  },
+  {
+    "data": "06-02",
+    "ano": 1953,
+    "titulo": "Coroação de Elizabeth II",
+    "descricao": "A rainha é coroada na Abadia de Westminster, em uma cerimônia que foi televisionada pela primeira vez."
+  },
+  {
+    "data": "06-03",
+    "ano": 1965,
+    "titulo": "Primeira caminhada espacial americana",
+    "descricao": "Edward White deixa a cápsula Gemini 4 e flutua no espaço por cerca de 20 minutos."
+  },
+  {
+    "data": "06-04",
+    "ano": 1896,
+    "titulo": "Henry Ford testa seu primeiro carro",
+    "descricao": "Henry Ford dirige o Quadriciclo pelas ruas de Detroit, o primeiro veículo que construiu."
+  },
+  {
+    "data": "06-05",
+    "ano": 1977,
+    "titulo": "Lançamento do Apple II",
+    "descricao": "O Apple II chega ao mercado e se torna um dos primeiros computadores pessoais de sucesso comercial em massa."
+  },
+  {
+    "data": "06-06",
+    "ano": 1944,
+    "titulo": "Dia D",
+    "descricao": "Tropas aliadas desembarcam nas praias da Normandia, na França, na maior operação anfíbia da história."
+  },
+  {
+    "data": "06-07",
+    "ano": 1494,
+    "titulo": "Tratado de Tordesilhas",
+    "descricao": "Portugal e Espanha dividem o mundo recém-descoberto por uma linha imaginária, que mais tarde influenciaria as fronteiras do Brasil."
+  },
+  {
+    "data": "06-08",
+    "ano": 1949,
+    "titulo": "Publicação de 1984",
+    "descricao": "O romance distópico de George Orwell chega às livrarias e introduz termos como Grande Irmão e duplipensar."
+  },
+  {
+    "data": "06-09",
+    "ano": 1934,
+    "titulo": "Estreia do Pato Donald",
+    "descricao": "O personagem faz sua primeira aparição no desenho animado The Wise Little Hen, da Disney."
+  },
+  {
+    "data": "06-10",
+    "ano": 1692,
+    "titulo": "Primeira execução nos julgamentos de Salem",
+    "descricao": "Bridget Bishop é enforcada em Massachusetts, nas condenações por bruxaria que marcariam a história colonial americana."
+  },
+  {
+    "data": "06-11",
+    "ano": 1770,
+    "titulo": "O Endeavour encalha na Grande Barreira de Corais",
+    "descricao": "O navio de James Cook bate num recife na costa australiana e consegue ser consertado, em um dos momentos mais perigosos da expedição."
+  },
+  {
+    "data": "06-12",
+    "ano": 1942,
+    "titulo": "Anne Frank ganha seu diário",
+    "descricao": "Anne Frank, no dia em que completa 13 anos, recebe o caderno que se tornaria um dos relatos mais lidos sobre o Holocausto."
+  },
+  {
+    "data": "06-13",
+    "ano": 1983,
+    "titulo": "Pioneer 10 deixa a região dos planetas",
+    "descricao": "A sonda Pioneer 10 cruza a órbita de Netuno e segue para o espaço interestelar, sendo a primeira nave a fazer isso."
+  },
+  {
+    "data": "06-14",
+    "ano": 1951,
+    "titulo": "Entrega do UNIVAC I",
+    "descricao": "O primeiro computador comercial dos EUA é entregue ao Departamento do Censo."
+  },
+  {
+    "data": "06-15",
+    "ano": 1215,
+    "titulo": "Assinatura da Magna Carta",
+    "descricao": "O rei João da Inglaterra sela o documento que limita o poder do monarca e é visto como precursor dos direitos individuais."
+  },
+  {
+    "data": "06-16",
+    "ano": 1963,
+    "titulo": "Valentina Tereshkova no espaço",
+    "descricao": "A cosmonauta soviética se torna a primeira mulher a viajar ao espaço."
+  },
+  {
+    "data": "06-17",
+    "ano": 1885,
+    "titulo": "A Estátua da Liberdade chega a Nova York",
+    "descricao": "O monumento, presente da França, chega desmontado em 214 caixas ao porto de Nova York."
+  },
+  {
+    "data": "06-18",
+    "ano": 1815,
+    "titulo": "Batalha de Waterloo",
+    "descricao": "Napoleão é derrotado na Bélgica por tropas britânicas e prussianas, o que encerra sua carreira militar."
+  },
+  {
+    "data": "06-19",
+    "ano": 1865,
+    "titulo": "Juneteenth",
+    "descricao": "Soldados da União chegam ao Texas e anunciam o fim da escravidão no estado, data hoje celebrada nos EUA."
+  },
+  {
+    "data": "06-20",
+    "ano": 1837,
+    "titulo": "Rainha Vitória sobe ao trono",
+    "descricao": "Aos 18 anos, Vitória se torna rainha do Reino Unido, em um reinado de 63 anos."
+  },
+  {
+    "data": "06-21",
+    "ano": 1948,
+    "titulo": "O primeiro programa em memória eletrônica",
+    "descricao": "O computador Manchester Baby executa o primeiro programa armazenado em memória, marco da computação moderna."
+  },
+  {
+    "data": "06-22",
+    "ano": 1633,
+    "titulo": "Galileu abjura",
+    "descricao": "Diante da Inquisição, Galileu Galilei é obrigado a renegar publicamente a ideia de que a Terra gira em torno do Sol."
+  },
+  {
+    "data": "06-23",
+    "ano": 1912,
+    "titulo": "Nasce Alan Turing",
+    "descricao": "Nasce em Londres o matemático considerado pai da computação teórica e da inteligência artificial."
+  },
+  {
+    "data": "06-24",
+    "ano": 1947,
+    "titulo": "Primeiro avistamento moderno de disco voador",
+    "descricao": "O piloto Kenneth Arnold relata ter visto objetos voando em alta velocidade perto do Monte Rainier, e a imprensa cunha o termo disco voador."
+  },
+  {
+    "data": "06-25",
+    "ano": 1978,
+    "titulo": "Primeira bandeira do arco-íris",
+    "descricao": "A bandeira criada por Gilbert Baker é hasteada pela primeira vez, em uma parada em San Francisco."
+  },
+  {
+    "data": "06-26",
+    "ano": 1974,
+    "titulo": "Primeira leitura de código de barras",
+    "descricao": "Um pacote de chicletes é escaneado em um supermercado de Ohio, a primeira venda registrada com código de barras."
+  },
+  {
+    "data": "06-27",
+    "ano": 1954,
+    "titulo": "Primeira usina nuclear conectada à rede",
+    "descricao": "A usina de Obninsk, na União Soviética, passa a fornecer eletricidade à rede, a primeira do mundo."
+  },
+  {
+    "data": "06-28",
+    "ano": 1914,
+    "titulo": "Assassinato do arquiduque Francisco Ferdinando",
+    "descricao": "O herdeiro do império Austro-Húngaro é morto em Sarajevo, fato que desencadearia a Primeira Guerra Mundial."
+  },
+  {
+    "data": "06-29",
+    "ano": 1613,
+    "titulo": "Incêndio do Globe Theatre",
+    "descricao": "O teatro de Shakespeare, em Londres, pega fogo durante uma apresentação de Henrique VIII, após um canhão de cena atingir o telhado de palha."
+  },
+  {
+    "data": "06-30",
+    "ano": 1908,
+    "titulo": "Evento de Tunguska",
+    "descricao": "Uma explosão no céu da Sibéria derruba cerca de 80 milhões de árvores, provavelmente causada por um asteroide ou cometa."
+  },
+  {
+    "data": "07-01",
+    "ano": 1867,
+    "titulo": "Confederação do Canadá",
+    "descricao": "Quatro províncias se unem e formam o Domínio do Canadá, data celebrada como o Dia do Canadá."
+  },
+  {
+    "data": "07-02",
+    "ano": 1900,
+    "titulo": "Primeiro voo de um Zeppelin",
+    "descricao": "O dirigível LZ 1, do conde Ferdinand von Zeppelin, voa pela primeira vez sobre o Lago de Constança."
+  },
+  {
+    "data": "07-03",
+    "ano": 1608,
+    "titulo": "Fundação de Quebec",
+    "descricao": "O explorador Samuel de Champlain funda a cidade de Quebec, na futura Nova França."
+  },
+  {
+    "data": "07-04",
+    "ano": 1776,
+    "titulo": "Declaração de Independência dos EUA",
+    "descricao": "O Congresso Continental adota a declaração que anuncia a separação das 13 colônias da Grã-Bretanha."
+  },
+  {
+    "data": "07-05",
+    "ano": 1996,
+    "titulo": "Nasce a ovelha Dolly",
+    "descricao": "Na Escócia, nasce Dolly, o primeiro mamífero clonado a partir de uma célula adulta."
+  },
+  {
+    "data": "07-06",
+    "ano": 1885,
+    "titulo": "Primeira vacina antirrábica em humanos",
+    "descricao": "Louis Pasteur aplica a vacina contra a raiva no menino Joseph Meister, que sobrevive."
+  },
+  {
+    "data": "07-07",
+    "ano": 1928,
+    "titulo": "Primeiro pão fatiado",
+    "descricao": "Uma padaria de Missouri, nos EUA, vende o primeiro pão já fatiado por máquina, dando origem à expressão a melhor coisa desde o pão fatiado."
+  },
+  {
+    "data": "07-08",
+    "ano": 1497,
+    "titulo": "Vasco da Gama parte de Lisboa",
+    "descricao": "A frota parte rumo à Índia pelo Cabo da Boa Esperança, abrindo a rota marítima para o Oriente."
+  },
+  {
+    "data": "07-09",
+    "ano": 1932,
+    "titulo": "Revolução Constitucionalista",
+    "descricao": "São Paulo se levanta contra o governo provisório de Getúlio Vargas e exige uma nova Constituição, no maior conflito armado do Brasil no século XX."
+  },
+  {
+    "data": "07-10",
+    "ano": 1856,
+    "titulo": "Nasce Nikola Tesla",
+    "descricao": "Nasce, no atual território da Croácia, o inventor que desenvolveu a corrente alternada e o motor de indução."
+  },
+  {
+    "data": "07-11",
+    "ano": 1960,
+    "titulo": "Publicação de O Sol é para Todos",
+    "descricao": "O romance de Harper Lee, sobre racismo e justiça no Sul dos EUA, é publicado e vence o Pulitzer."
+  },
+  {
+    "data": "07-12",
+    "ano": 1962,
+    "titulo": "Primeiro show dos Rolling Stones",
+    "descricao": "A banda faz sua estreia no Marquee Club, em Londres, com o nome The Rollin' Stones."
+  },
+  {
+    "data": "07-13",
+    "ano": 1985,
+    "titulo": "Live Aid",
+    "descricao": "Shows simultâneos em Londres e na Filadélfia arrecadam fundos para combater a fome na Etiópia e são vistos por cerca de 1,9 bilhão de pessoas."
+  },
+  {
+    "data": "07-14",
+    "ano": 1789,
+    "titulo": "Queda da Bastilha",
+    "descricao": "Revolucionários tomam a prisão da Bastilha, em Paris, símbolo da Revolução Francesa e hoje a data nacional da França."
+  },
+  {
+    "data": "07-15",
+    "ano": 1799,
+    "titulo": "Descoberta da Pedra de Roseta",
+    "descricao": "Soldados franceses encontram, no Egito, a pedra cujas inscrições em três escritas permitiriam decifrar os hieróglifos."
+  },
+  {
+    "data": "07-16",
+    "ano": 1969,
+    "titulo": "Lançamento da Apollo 11",
+    "descricao": "A missão que levaria os primeiros humanos à Lua decola do Centro Espacial Kennedy, na Flórida."
+  },
+  {
+    "data": "07-17",
+    "ano": 1955,
+    "titulo": "Inauguração da Disneyland",
+    "descricao": "O primeiro parque da Disney abre as portas em Anaheim, na Califórnia."
+  },
+  {
+    "data": "07-18",
+    "ano": 64,
+    "titulo": "Grande Incêndio de Roma",
+    "descricao": "Um incêndio devora grande parte da capital do Império Romano, durante o reinado de Nero."
+  },
+  {
+    "data": "07-19",
+    "ano": 1848,
+    "titulo": "Convenção de Seneca Falls",
+    "descricao": "Reunida em Nova York, a convenção lança a Declaração de Sentimentos, documento fundador do movimento sufragista feminino nos EUA."
+  },
+  {
+    "data": "07-20",
+    "ano": 1969,
+    "titulo": "O pouso da Apollo 11 na Lua",
+    "descricao": "O módulo lunar Eagle pousa no Mar da Tranquilidade, com Neil Armstrong e Buzz Aldrin a bordo."
+  },
+  {
+    "data": "07-21",
+    "ano": 1969,
+    "titulo": "Armstrong pisa na Lua",
+    "descricao": "Neil Armstrong se torna o primeiro ser humano a pisar na Lua, com a frase: um pequeno passo para o homem, um salto gigante para a humanidade."
+  },
+  {
+    "data": "07-22",
+    "ano": 1933,
+    "titulo": "Wiley Post completa volta ao mundo sozinho",
+    "descricao": "O piloto americano termina a primeira volta ao mundo em voo solo, em pouco mais de sete dias."
+  },
+  {
+    "data": "07-23",
+    "ano": 1829,
+    "titulo": "Patente da máquina de escrever",
+    "descricao": "William Burt recebe a patente do Typographer, considerado a primeira máquina de escrever."
+  },
+  {
+    "data": "07-24",
+    "ano": 1911,
+    "titulo": "Hiram Bingham chega a Machu Picchu",
+    "descricao": "O explorador americano divulga ao mundo a cidade inca no alto dos Andes, no Peru."
+  },
+  {
+    "data": "07-25",
+    "ano": 1978,
+    "titulo": "Nasce Louise Brown",
+    "descricao": "Nasce na Inglaterra o primeiro bebê concebido por fertilização in vitro."
+  },
+  {
+    "data": "07-26",
+    "ano": 1847,
+    "titulo": "Independência da Libéria",
+    "descricao": "A Libéria declara independência e se torna a república mais antiga da África."
+  },
+  {
+    "data": "07-27",
+    "ano": 1949,
+    "titulo": "Primeiro voo do Comet",
+    "descricao": "O de Havilland Comet, o primeiro jato comercial de passageiros do mundo, faz seu voo inaugural."
+  },
+  {
+    "data": "07-28",
+    "ano": 1914,
+    "titulo": "Começa a Primeira Guerra Mundial",
+    "descricao": "A Áustria-Hungria declara guerra à Sérvia, o que arrasta as grandes potências europeias para o conflito."
+  },
+  {
+    "data": "07-29",
+    "ano": 1958,
+    "titulo": "Criação da NASA",
+    "descricao": "O presidente Eisenhower assina a lei que cria a agência espacial americana, em resposta ao lançamento do Sputnik."
+  },
+  {
+    "data": "07-30",
+    "ano": 1930,
+    "titulo": "Primeira Copa do Mundo",
+    "descricao": "O Uruguai vence a Argentina por 4 a 2, em Montevidéu, e se torna o primeiro campeão mundial de futebol."
+  },
+  {
+    "data": "07-31",
+    "ano": 1790,
+    "titulo": "Primeira patente dos EUA",
+    "descricao": "Samuel Hopkins recebe a primeira patente americana, por um método de produção de potassa."
+  },
+  {
+    "data": "08-01",
+    "ano": 1981,
+    "titulo": "Estreia da MTV",
+    "descricao": "O canal de videoclipes começa a transmitir nos EUA, com Video Killed the Radio Star como primeiro clipe."
+  },
+  {
+    "data": "08-02",
+    "ano": 1922,
+    "titulo": "Morre Alexander Graham Bell",
+    "descricao": "O inventor do telefone morre no Canadá; no dia do funeral, os telefones da América do Norte ficaram em silêncio por um minuto."
+  },
+  {
+    "data": "08-03",
+    "ano": 1492,
+    "titulo": "Colombo parte de Palos",
+    "descricao": "Cristóvão Colombo zarpa da Espanha com três navios, na viagem que o levaria às Américas."
+  },
+  {
+    "data": "08-04",
+    "ano": 1901,
+    "titulo": "Nasce Louis Armstrong",
+    "descricao": "Nasce em Nova Orleans o trompetista que se tornaria um dos nomes mais influentes do jazz."
+  },
+  {
+    "data": "08-05",
+    "ano": 1930,
+    "titulo": "Nasce Neil Armstrong",
+    "descricao": "Nasce em Ohio o astronauta que seria o primeiro homem a pisar na Lua."
+  },
+  {
+    "data": "08-06",
+    "ano": 1991,
+    "titulo": "Primeiro site da web",
+    "descricao": "Tim Berners-Lee publica o primeiro site, abrindo o projeto World Wide Web ao público."
+  },
+  {
+    "data": "08-07",
+    "ano": 1944,
+    "titulo": "Inauguração do Harvard Mark I",
+    "descricao": "Um dos primeiros computadores eletromecânicos de grande porte é apresentado na Universidade Harvard."
+  },
+  {
+    "data": "08-08",
+    "ano": 1908,
+    "titulo": "Wilbur Wright voa na França",
+    "descricao": "Wilbur Wright faz a primeira demonstração pública de voo na Europa e impressiona o público francês."
+  },
+  {
+    "data": "08-09",
+    "ano": 1974,
+    "titulo": "Renúncia de Nixon",
+    "descricao": "Richard Nixon deixa a presidência dos EUA em meio ao escândalo Watergate, o primeiro presidente americano a renunciar."
+  },
+  {
+    "data": "08-10",
+    "ano": 1846,
+    "titulo": "Fundação do Smithsonian",
+    "descricao": "O presidente James Polk assina a lei que cria o Instituto Smithsonian, hoje o maior complexo de museus do mundo."
+  },
+  {
+    "data": "08-11",
+    "ano": 1973,
+    "titulo": "O nascimento do hip hop",
+    "descricao": "Em uma festa no Bronx, em Nova York, o DJ Kool Herc usa dois toca-discos para estender os breaks de funk, e a data é considerada o marco inicial do hip hop."
+  },
+  {
+    "data": "08-12",
+    "ano": 1981,
+    "titulo": "Lançamento do IBM PC",
+    "descricao": "A IBM apresenta o PC, que estabeleceu o padrão dos computadores pessoais por décadas."
+  },
+  {
+    "data": "08-13",
+    "ano": 1961,
+    "titulo": "Início da construção do Muro de Berlim",
+    "descricao": "Berlim Oriental começa a fechar a fronteira com arame farpado, que logo seria substituído por um muro de concreto."
+  },
+  {
+    "data": "08-14",
+    "ano": 1947,
+    "titulo": "Independência do Paquistão",
+    "descricao": "O Paquistão se torna um país independente, dividido da Índia britânica."
+  },
+  {
+    "data": "08-15",
+    "ano": 1914,
+    "titulo": "Abertura do Canal do Panamá",
+    "descricao": "O primeiro navio atravessa o canal, que ligou os oceanos Atlântico e Pacífico e encurtou drasticamente rotas marítimas."
+  },
+  {
+    "data": "08-16",
+    "ano": 1896,
+    "titulo": "Ouro no Klondike",
+    "descricao": "A descoberta de ouro no Yukon, no Canadá, dá origem a uma corrida do ouro que atraiu cem mil pessoas."
+  },
+  {
+    "data": "08-17",
+    "ano": 1877,
+    "titulo": "Descoberta de Fobos",
+    "descricao": "O astrônomo Asaph Hall descobre Fobos, a maior das duas luas de Marte."
+  },
+  {
+    "data": "08-18",
+    "ano": 1587,
+    "titulo": "Nasce Virginia Dare",
+    "descricao": "Nasce a primeira criança de pais ingleses nas Américas, na colônia de Roanoke."
+  },
+  {
+    "data": "08-19",
+    "ano": 1839,
+    "titulo": "Anúncio do daguerreótipo",
+    "descricao": "O governo francês apresenta ao mundo o processo fotográfico de Daguerre, doando-o ao domínio público."
+  },
+  {
+    "data": "08-20",
+    "ano": 1977,
+    "titulo": "Lançamento da Voyager 2",
+    "descricao": "A sonda é lançada e visitaria Júpiter, Saturno, Urano e Netuno, sendo até hoje a única a ter passado pelos dois últimos."
+  },
+  {
+    "data": "08-21",
+    "ano": 1911,
+    "titulo": "Roubo da Mona Lisa",
+    "descricao": "A pintura de Leonardo da Vinci é furtada do Louvre; o roubo a transformou na obra mais famosa do mundo."
+  },
+  {
+    "data": "08-22",
+    "ano": 1851,
+    "titulo": "Primeira America's Cup",
+    "descricao": "O iate America vence uma regata ao redor da Ilha de Wight, em uma competição que daria origem à tradicional America's Cup."
+  },
+  {
+    "data": "08-23",
+    "ano": 1966,
+    "titulo": "Primeira imagem da Terra vista da Lua",
+    "descricao": "A sonda Lunar Orbiter 1 registra a Terra surgindo sobre o horizonte lunar, em uma foto histórica."
+  },
+  {
+    "data": "08-24",
+    "ano": 79,
+    "titulo": "Erupção do Vesúvio",
+    "descricao": "Segundo a tradição, o vulcão enterra Pompeia e Herculano sob cinzas, preservando as cidades por quase 1.700 anos; há debate sobre a data exata."
+  },
+  {
+    "data": "08-25",
+    "ano": 1989,
+    "titulo": "A Voyager 2 passa por Netuno",
+    "descricao": "A sonda faz sua aproximação máxima do planeta, enviando as primeiras imagens detalhadas do sistema de Netuno."
+  },
+  {
+    "data": "08-26",
+    "ano": 1789,
+    "titulo": "Declaração dos Direitos do Homem e do Cidadão",
+    "descricao": "A Assembleia Nacional Constituinte da França aprova o texto que afirma a liberdade e a igualdade de todos perante a lei."
+  },
+  {
+    "data": "08-27",
+    "ano": 1883,
+    "titulo": "Erupção do Krakatoa",
+    "descricao": "O vulcão indonésio explode com um dos sons mais altos já registrados e provoca tsunamis devastadores."
+  },
+  {
+    "data": "08-28",
+    "ano": 1963,
+    "titulo": "Discurso Eu Tenho um Sonho",
+    "descricao": "Martin Luther King Jr. discursa para centenas de milhares de pessoas na Marcha sobre Washington."
+  },
+  {
+    "data": "08-29",
+    "ano": 1831,
+    "titulo": "Faraday descobre a indução eletromagnética",
+    "descricao": "Michael Faraday demonstra que um campo magnético variável gera corrente elétrica, base dos geradores e transformadores."
+  },
+  {
+    "data": "08-30",
+    "ano": 1797,
+    "titulo": "Nasce Mary Shelley",
+    "descricao": "Nasce em Londres a autora de Frankenstein, considerado por muitos o primeiro romance de ficção científica."
+  },
+  {
+    "data": "08-31",
+    "ano": 1897,
+    "titulo": "Edison patenteia o cinetoscópio",
+    "descricao": "Thomas Edison registra a patente do aparelho que exibia filmes curtos para um espectador de cada vez."
+  },
+  {
+    "data": "09-01",
+    "ano": 1939,
+    "titulo": "Invasão da Polônia",
+    "descricao": "A Alemanha invade a Polônia e dá início à Segunda Guerra Mundial na Europa."
+  },
+  {
+    "data": "09-02",
+    "ano": 1666,
+    "titulo": "Grande Incêndio de Londres",
+    "descricao": "O fogo começa em uma padaria e consome a maior parte da cidade medieval em quatro dias."
+  },
+  {
+    "data": "09-03",
+    "ano": 1783,
+    "titulo": "Tratado de Paris",
+    "descricao": "O Reino Unido reconhece a independência dos Estados Unidos, encerrando oficialmente a Guerra de Independência."
+  },
+  {
+    "data": "09-04",
+    "ano": 1998,
+    "titulo": "Google é fundado",
+    "descricao": "Larry Page e Sergey Brin registram a empresa Google, na Califórnia."
+  },
+  {
+    "data": "09-05",
+    "ano": 1977,
+    "titulo": "Lançamento da Voyager 1",
+    "descricao": "A sonda parte da Terra e hoje é o objeto feito pelo homem mais distante do planeta."
+  },
+  {
+    "data": "09-06",
+    "ano": 1522,
+    "titulo": "Fim da primeira volta ao mundo",
+    "descricao": "A nau Victoria, sob comando de Juan Sebastián Elcano, chega à Espanha e conclui a primeira circum-navegação da Terra."
+  },
+  {
+    "data": "09-07",
+    "ano": 1822,
+    "titulo": "Independência do Brasil",
+    "descricao": "Dom Pedro I proclama a independência do Brasil nas margens do rio Ipiranga, em São Paulo."
+  },
+  {
+    "data": "09-08",
+    "ano": 1966,
+    "titulo": "Estreia de Star Trek",
+    "descricao": "A série de Gene Roddenberry vai ao ar pela primeira vez e se torna uma das franquias de ficção científica mais influentes."
+  },
+  {
+    "data": "09-09",
+    "ano": 1947,
+    "titulo": "O primeiro bug de computador",
+    "descricao": "Operadores do Harvard Mark II encontram uma mariposa presa em um relé e a registram no diário como o primeiro bug de verdade, em um episódio associado a Grace Hopper."
+  },
+  {
+    "data": "09-10",
+    "ano": 2008,
+    "titulo": "LHC é ligado",
+    "descricao": "O Grande Colisor de Hádrons do CERN, o maior acelerador de partículas do mundo, faz circular seu primeiro feixe."
+  },
+  {
+    "data": "09-11",
+    "ano": 1941,
+    "titulo": "Início da construção do Pentágono",
+    "descricao": "As obras da sede do Departamento de Defesa dos EUA começam em Arlington, na Virgínia, e levariam 16 meses."
+  },
+  {
+    "data": "09-12",
+    "ano": 1940,
+    "titulo": "Descoberta das cavernas de Lascaux",
+    "descricao": "Quatro adolescentes encontram, na França, as pinturas rupestres de cerca de 17 mil anos."
+  },
+  {
+    "data": "09-13",
+    "ano": 1959,
+    "titulo": "Luna 2 atinge a Lua",
+    "descricao": "A sonda soviética se torna o primeiro objeto feito pelo homem a alcançar a superfície de outro corpo celeste."
+  },
+  {
+    "data": "09-14",
+    "ano": 1752,
+    "titulo": "Reino Unido adota o calendário gregoriano",
+    "descricao": "O país passa a usar o calendário gregoriano, e o dia seguinte ao dia 2 de setembro foi o dia 14."
+  },
+  {
+    "data": "09-15",
+    "ano": 1835,
+    "titulo": "Darwin chega a Galápagos",
+    "descricao": "O HMS Beagle chega às ilhas, onde Charles Darwin observaria espécies que o ajudariam a formular a teoria da evolução."
+  },
+  {
+    "data": "09-16",
+    "ano": 1620,
+    "titulo": "O Mayflower parte da Inglaterra",
+    "descricao": "O navio sai de Plymouth levando cerca de 100 passageiros que fundariam a colônia de Plymouth, na América do Norte."
+  },
+  {
+    "data": "09-17",
+    "ano": 1787,
+    "titulo": "Assinatura da Constituição dos EUA",
+    "descricao": "Delegados reunidos na Filadélfia assinam o texto final da Constituição americana."
+  },
+  {
+    "data": "09-18",
+    "ano": 1851,
+    "titulo": "Primeira edição do New York Times",
+    "descricao": "O jornal é lançado com o nome New-York Daily Times."
+  },
+  {
+    "data": "09-19",
+    "ano": 1893,
+    "titulo": "Mulheres votam na Nova Zelândia",
+    "descricao": "A Nova Zelândia se torna o primeiro país a dar direito de voto às mulheres em eleições nacionais."
+  },
+  {
+    "data": "09-20",
+    "ano": 1519,
+    "titulo": "Magalhães parte de Sanlúcar",
+    "descricao": "A expedição de cinco navios sai da Espanha rumo às Molucas, na viagem que completaria a primeira volta ao mundo."
+  },
+  {
+    "data": "09-21",
+    "ano": 1937,
+    "titulo": "Publicação de O Hobbit",
+    "descricao": "O livro de J.R.R. Tolkien é publicado e abre o caminho para O Senhor dos Anéis."
+  },
+  {
+    "data": "09-22",
+    "ano": 1862,
+    "titulo": "Proclamação de Emancipação preliminar",
+    "descricao": "Abraham Lincoln anuncia que os escravizados nos estados rebeldes seriam livres a partir de 1º de janeiro de 1863."
+  },
+  {
+    "data": "09-23",
+    "ano": 1846,
+    "titulo": "Descoberta de Netuno",
+    "descricao": "Johann Galle observa Netuno em Berlim, no ponto previsto por cálculos matemáticos de Urbain Le Verrier."
+  },
+  {
+    "data": "09-24",
+    "ano": 1852,
+    "titulo": "Primeiro voo de dirigível motorizado",
+    "descricao": "Henri Giffard voa 27 km em um dirigível a vapor, em Paris."
+  },
+  {
+    "data": "09-25",
+    "ano": 1513,
+    "titulo": "Balboa avista o Pacífico",
+    "descricao": "Vasco Núñez de Balboa se torna o primeiro europeu a ver o oceano Pacífico a partir das Américas, segundo a data tradicional."
+  },
+  {
+    "data": "09-26",
+    "ano": 1580,
+    "titulo": "Francis Drake conclui a volta ao mundo",
+    "descricao": "O navegador inglês retorna a Plymouth a bordo do Golden Hind, depois de quase três anos."
+  },
+  {
+    "data": "09-27",
+    "ano": 1822,
+    "titulo": "Champollion decifra os hieróglifos",
+    "descricao": "Jean-François Champollion anuncia em Paris sua decifração da escrita hieroglífica egípcia, com base na Pedra de Roseta."
+  },
+  {
+    "data": "09-28",
+    "ano": 1928,
+    "titulo": "Fleming descobre a penicilina",
+    "descricao": "Alexander Fleming nota que um fungo contaminando uma cultura de bactérias as havia matado, descoberta que deu origem aos antibióticos."
+  },
+  {
+    "data": "09-29",
+    "ano": 1954,
+    "titulo": "Criação oficial do CERN",
+    "descricao": "A Organização Europeia para a Pesquisa Nuclear passa a existir, em Genebra, e viria a ser o berço da web e do bóson de Higgs."
+  },
+  {
+    "data": "09-30",
+    "ano": 1938,
+    "titulo": "Acordo de Munique",
+    "descricao": "Reino Unido, França, Itália e Alemanha assinam o acordo que permitia à Alemanha anexar os Sudetos, na tentativa de evitar a guerra."
+  },
+  {
+    "data": "10-01",
+    "ano": 1908,
+    "titulo": "Lançamento do Ford Modelo T",
+    "descricao": "A Ford apresenta o Modelo T, que popularizaria o automóvel e mudaria a produção industrial."
+  },
+  {
+    "data": "10-02",
+    "ano": 1950,
+    "titulo": "Estreia de Peanuts",
+    "descricao": "A tirinha de Charles Schulz, com Charlie Brown e Snoopy, é publicada pela primeira vez em jornais americanos."
+  },
+  {
+    "data": "10-03",
+    "ano": 1990,
+    "titulo": "Reunificação da Alemanha",
+    "descricao": "Alemanha Oriental e Ocidental se unem em um só país, quase um ano depois da queda do Muro de Berlim."
+  },
+  {
+    "data": "10-04",
+    "ano": 1957,
+    "titulo": "Lançamento do Sputnik 1",
+    "descricao": "A União Soviética coloca em órbita o primeiro satélite artificial, dando início à corrida espacial."
+  },
+  {
+    "data": "10-05",
+    "ano": 1962,
+    "titulo": "Os Beatles e James Bond estreiam",
+    "descricao": "No mesmo dia, o grupo lança seu primeiro single, Love Me Do, e estreia nos cinemas o primeiro filme de James Bond, Dr. No."
+  },
+  {
+    "data": "10-06",
+    "ano": 1889,
+    "titulo": "Abertura do Moulin Rouge",
+    "descricao": "O cabaré parisiense abre as portas em Montmartre e vira símbolo da vida noturna da Belle Époque."
+  },
+  {
+    "data": "10-07",
+    "ano": 1571,
+    "titulo": "Batalha de Lepanto",
+    "descricao": "Uma liga cristã derrota a frota otomana no mar Jônico, em uma das maiores batalhas navais da história."
+  },
+  {
+    "data": "10-08",
+    "ano": 1871,
+    "titulo": "Grande Incêndio de Chicago",
+    "descricao": "O fogo começa e consome grande parte de Chicago em três dias, o que levou à reconstrução da cidade e a novas técnicas de construção."
+  },
+  {
+    "data": "10-09",
+    "ano": 1604,
+    "titulo": "Supernova de Kepler",
+    "descricao": "Astrônomos, entre eles Johannes Kepler, observam uma estrela explodindo na Via Láctea, a última supernova vista a olho nu na galáxia."
+  },
+  {
+    "data": "10-10",
+    "ano": 1911,
+    "titulo": "Levante de Wuchang",
+    "descricao": "Uma revolta militar na China dá início à Revolução Xinhai, que derrubaria a dinastia Qing e encerraria o sistema imperial."
+  },
+  {
+    "data": "10-11",
+    "ano": 1968,
+    "titulo": "Lançamento da Apollo 7",
+    "descricao": "A primeira missão tripulada do programa Apollo passa 11 dias em órbita e faz a primeira transmissão de TV ao vivo dos astronautas."
+  },
+  {
+    "data": "10-12",
+    "ano": 1492,
+    "titulo": "Colombo chega às Américas",
+    "descricao": "Cristóvão Colombo desembarca em uma ilha das Bahamas, na viagem que iniciaria o contato permanente entre Europa e Américas."
+  },
+  {
+    "data": "10-13",
+    "ano": 1307,
+    "titulo": "Prisão dos Templários",
+    "descricao": "O rei Filipe IV da França manda prender os membros da Ordem dos Templários, em uma sexta-feira 13 que alimenta o folclore da data."
+  },
+  {
+    "data": "10-14",
+    "ano": 1947,
+    "titulo": "Chuck Yeager quebra a barreira do som",
+    "descricao": "O piloto americano voa mais rápido que o som pela primeira vez, no avião experimental Bell X-1."
+  },
+  {
+    "data": "10-15",
+    "ano": 1582,
+    "titulo": "O dia que sumiu",
+    "descricao": "Em países que adotaram o calendário gregoriano, o dia seguinte a 4 de outubro foi 15 de outubro, pulando dez dias para corrigir o calendário."
+  },
+  {
+    "data": "10-16",
+    "ano": 1846,
+    "titulo": "Primeira demonstração pública de anestesia com éter",
+    "descricao": "O dentista William Morton aplica éter em um paciente durante uma cirurgia em Boston, mostrando que operações podiam ser feitas sem dor."
+  },
+  {
+    "data": "10-17",
+    "ano": 1931,
+    "titulo": "Al Capone é condenado",
+    "descricao": "O gângster é condenado por sonegação de impostos e sentenciado a 11 anos de prisão."
+  },
+  {
+    "data": "10-18",
+    "ano": 1922,
+    "titulo": "Fundação da BBC",
+    "descricao": "A British Broadcasting Company é fundada no Reino Unido, mais tarde se tornando a emissora pública britânica."
+  },
+  {
+    "data": "10-19",
+    "ano": 1781,
+    "titulo": "Rendição de Cornwallis em Yorktown",
+    "descricao": "O general britânico se rende às forças americanas e francesas, o que praticamente encerra a Guerra de Independência dos EUA."
+  },
+  {
+    "data": "10-20",
+    "ano": 1973,
+    "titulo": "Inauguração da Ópera de Sydney",
+    "descricao": "A rainha Elizabeth II inaugura o edifício que se tornaria símbolo da Austrália, 14 anos depois do início das obras."
+  },
+  {
+    "data": "10-21",
+    "ano": 1805,
+    "titulo": "Batalha de Trafalgar",
+    "descricao": "A frota britânica do almirante Nelson derrota as forças francesas e espanholas, garantindo o domínio naval do Reino Unido."
+  },
+  {
+    "data": "10-22",
+    "ano": 1938,
+    "titulo": "Primeira fotocópia",
+    "descricao": "Chester Carlson produz a primeira cópia xerográfica, a escrita 10-22-38 Astoria, abrindo caminho para as copiadoras."
+  },
+  {
+    "data": "10-23",
+    "ano": 1906,
+    "titulo": "Santos Dumont voa com o 14-bis",
+    "descricao": "O brasileiro Alberto Santos Dumont faz a primeira demonstração pública de voo de um avião a motor, em Paris."
+  },
+  {
+    "data": "10-24",
+    "ano": 1945,
+    "titulo": "A ONU passa a existir",
+    "descricao": "A Carta das Nações Unidas entra em vigor, e a data é celebrada como o Dia das Nações Unidas."
+  },
+  {
+    "data": "10-25",
+    "ano": 1415,
+    "titulo": "Batalha de Azincourt",
+    "descricao": "O exército inglês de Henrique V vence um exército francês bem maior na Guerra dos Cem Anos."
+  },
+  {
+    "data": "10-26",
+    "ano": 1881,
+    "titulo": "Tiroteio no O.K. Corral",
+    "descricao": "Em Tombstone, no Arizona, acontece o duelo entre os irmãos Earp e o grupo dos Cowboys, o mais famoso do Velho Oeste."
+  },
+  {
+    "data": "10-27",
+    "ano": 1904,
+    "titulo": "Inauguração do metrô de Nova York",
+    "descricao": "O primeiro trecho do metrô da cidade abre ao público e logo recebe milhares de passageiros."
+  },
+  {
+    "data": "10-28",
+    "ano": 1886,
+    "titulo": "Inauguração da Estátua da Liberdade",
+    "descricao": "O presidente Grover Cleveland inaugura o monumento no porto de Nova York."
+  },
+  {
+    "data": "10-29",
+    "ano": 1969,
+    "titulo": "Primeira mensagem na ARPANET",
+    "descricao": "Pesquisadores enviam a primeira mensagem entre computadores da rede que viria a ser a internet; a palavra era login, mas o sistema caiu após as duas primeiras letras."
+  },
+  {
+    "data": "10-30",
+    "ano": 1938,
+    "titulo": "A Guerra dos Mundos no rádio",
+    "descricao": "A adaptação radiofônica de Orson Welles, em formato de noticiário, faz parte dos ouvintes acreditar que uma invasão alienígena era real."
+  },
+  {
+    "data": "10-31",
+    "ano": 1517,
+    "titulo": "As 95 teses de Lutero",
+    "descricao": "Martinho Lutero divulga seus questionamentos às práticas da Igreja, marco do início da Reforma Protestante."
+  },
+  {
+    "data": "11-01",
+    "ano": 1512,
+    "titulo": "Teto da Capela Sistina é revelado",
+    "descricao": "Os afrescos de Michelangelo são abertos ao público no Vaticano, após quatro anos de trabalho."
+  },
+  {
+    "data": "11-02",
+    "ano": 1936,
+    "titulo": "Primeira transmissão regular de TV",
+    "descricao": "A BBC começa o primeiro serviço regular de televisão de alta definição do mundo, em Londres."
+  },
+  {
+    "data": "11-03",
+    "ano": 1957,
+    "titulo": "A cadela Laika vai ao espaço",
+    "descricao": "A União Soviética lança o Sputnik 2 com Laika, o primeiro animal a orbitar a Terra."
+  },
+  {
+    "data": "11-04",
+    "ano": 1922,
+    "titulo": "Descoberta da tumba de Tutancâmon",
+    "descricao": "A equipe de Howard Carter encontra o primeiro degrau que levava ao túmulo do faraó, no Vale dos Reis."
+  },
+  {
+    "data": "11-05",
+    "ano": 1605,
+    "titulo": "Conspiração da Pólvora",
+    "descricao": "O plano para explodir o Parlamento inglês é frustrado, e a data passa a ser lembrada na Inglaterra com fogueiras e fogos de artifício."
+  },
+  {
+    "data": "11-06",
+    "ano": 1869,
+    "titulo": "Primeiro jogo de futebol universitário",
+    "descricao": "As universidades de Rutgers e Princeton se enfrentam em New Jersey, no que é considerado o primeiro jogo de futebol americano universitário."
+  },
+  {
+    "data": "11-07",
+    "ano": 1867,
+    "titulo": "Nasce Marie Curie",
+    "descricao": "Nasce em Varsóvia a cientista que ganharia dois prêmios Nobel, de Física e de Química."
+  },
+  {
+    "data": "11-08",
+    "ano": 1895,
+    "titulo": "Röntgen descobre os raios X",
+    "descricao": "Wilhelm Röntgen percebe uma radiação desconhecida que atravessa objetos e a chama de raios X."
+  },
+  {
+    "data": "11-09",
+    "ano": 1989,
+    "titulo": "Queda do Muro de Berlim",
+    "descricao": "As fronteiras entre Berlim Oriental e Ocidental são abertas, e milhares de pessoas atravessam e derrubam partes do muro."
+  },
+  {
+    "data": "11-10",
+    "ano": 1871,
+    "titulo": "Dr. Livingstone, suponho?",
+    "descricao": "O jornalista Henry Morton Stanley encontra o missionário David Livingstone na África e o cumprimenta com a famosa frase."
+  },
+  {
+    "data": "11-11",
+    "ano": 1918,
+    "titulo": "Armistício da Primeira Guerra Mundial",
+    "descricao": "A Alemanha assina o armistício com os Aliados, que encerra os combates da guerra."
+  },
+  {
+    "data": "11-12",
+    "ano": 1980,
+    "titulo": "A Voyager 1 passa por Saturno",
+    "descricao": "A sonda faz a aproximação máxima de Saturno e revela detalhes dos anéis e da atmosfera de Titã."
+  },
+  {
+    "data": "11-13",
+    "ano": 1850,
+    "titulo": "Nasce Robert Louis Stevenson",
+    "descricao": "Nasce em Edimburgo o escritor de A Ilha do Tesouro e O Médico e o Monstro."
+  },
+  {
+    "data": "11-14",
+    "ano": 1971,
+    "titulo": "Mariner 9 entra em órbita de Marte",
+    "descricao": "A sonda se torna a primeira a orbitar outro planeta e mapeia quase toda a superfície de Marte."
+  },
+  {
+    "data": "11-15",
+    "ano": 1889,
+    "titulo": "Proclamação da República do Brasil",
+    "descricao": "O marechal Deodoro da Fonseca lidera o golpe que derruba a monarquia e proclama a República."
+  },
+  {
+    "data": "11-16",
+    "ano": 1532,
+    "titulo": "Pizarro captura Atahualpa",
+    "descricao": "O conquistador espanhol Francisco Pizarro captura o imperador inca em Cajamarca, no Peru."
+  },
+  {
+    "data": "11-17",
+    "ano": 1869,
+    "titulo": "Inauguração do Canal de Suez",
+    "descricao": "O canal é aberto à navegação em uma festa no Egito e reduz drasticamente o trajeto marítimo entre Europa e Ásia."
+  },
+  {
+    "data": "11-18",
+    "ano": 1883,
+    "titulo": "Criação dos fusos horários nos EUA",
+    "descricao": "As ferrovias americanas adotam horários padronizados por região, o que levou à criação dos fusos horários."
+  },
+  {
+    "data": "11-19",
+    "ano": 1863,
+    "titulo": "Discurso de Gettysburg",
+    "descricao": "Abraham Lincoln profere em poucos minutos um dos discursos mais famosos da história, durante a dedicação de um cemitério militar."
+  },
+  {
+    "data": "11-20",
+    "ano": 1985,
+    "titulo": "Lançamento do Windows 1.0",
+    "descricao": "A Microsoft lança a primeira versão do Windows, uma interface gráfica para o MS-DOS."
+  },
+  {
+    "data": "11-21",
+    "ano": 1783,
+    "titulo": "Primeiro voo humano em balão",
+    "descricao": "Pilâtre de Rozier e o marquês d'Arlandes voam em um balão de ar quente sobre Paris."
+  },
+  {
+    "data": "11-22",
+    "ano": 1995,
+    "titulo": "Estreia de Toy Story",
+    "descricao": "O filme da Pixar chega aos cinemas e se torna o primeiro longa-metragem totalmente animado por computador."
+  },
+  {
+    "data": "11-23",
+    "ano": 1889,
+    "titulo": "Primeira jukebox",
+    "descricao": "O primeiro aparelho do tipo, que tocava música ao inserir uma moeda, é instalado em um bar em São Francisco."
+  },
+  {
+    "data": "11-24",
+    "ano": 1859,
+    "titulo": "Publicação de A Origem das Espécies",
+    "descricao": "Charles Darwin lança o livro em que apresenta a teoria da evolução por seleção natural."
+  },
+  {
+    "data": "11-25",
+    "ano": 1952,
+    "titulo": "Estreia de A Ratoeira",
+    "descricao": "A peça de Agatha Christie estreia em Londres e se tornaria a mais longa em cartaz ininterrupto da história."
+  },
+  {
+    "data": "11-26",
+    "ano": 1922,
+    "titulo": "Howard Carter vê a tumba pela primeira vez",
+    "descricao": "Ao espiar pela abertura da câmara de Tutancâmon, Carter descreve ver coisas maravilhosas."
+  },
+  {
+    "data": "11-27",
+    "ano": 1895,
+    "titulo": "Alfred Nobel assina seu testamento",
+    "descricao": "O inventor da dinamite deixa sua fortuna para criar os prêmios que levariam seu nome."
+  },
+  {
+    "data": "11-28",
+    "ano": 1520,
+    "titulo": "Magalhães entra no Pacífico",
+    "descricao": "A frota de Magalhães sai do estreito que hoje leva seu nome e chega ao oceano que ele chamou de Pacífico por seu aspecto calmo."
+  },
+  {
+    "data": "11-29",
+    "ano": 1972,
+    "titulo": "Lançamento do Pong",
+    "descricao": "A Atari lança o jogo Pong, que ajudou a impulsionar a indústria de videogames."
+  },
+  {
+    "data": "11-30",
+    "ano": 1872,
+    "titulo": "Primeira partida internacional de futebol",
+    "descricao": "Escócia e Inglaterra empatam por 0 a 0 em Glasgow, no primeiro jogo oficial entre seleções."
+  },
+  {
+    "data": "12-01",
+    "ano": 1913,
+    "titulo": "Linha de montagem móvel da Ford",
+    "descricao": "A Ford inicia a produção em linha de montagem móvel, reduzindo o tempo de fabricação do Modelo T de mais de 12 horas para cerca de 90 minutos."
+  },
+  {
+    "data": "12-02",
+    "ano": 1942,
+    "titulo": "Primeira reação nuclear em cadeia controlada",
+    "descricao": "Enrico Fermi e sua equipe operam o reator Chicago Pile-1, sob uma quadra de esportes da Universidade de Chicago."
+  },
+  {
+    "data": "12-03",
+    "ano": 1967,
+    "titulo": "Primeiro transplante de coração em humano",
+    "descricao": "O cirurgião Christiaan Barnard realiza o procedimento na Cidade do Cabo, na África do Sul."
+  },
+  {
+    "data": "12-04",
+    "ano": 1998,
+    "titulo": "Primeiro módulo da ISS é conectado",
+    "descricao": "A tripulação do ônibus espacial Endeavour une o módulo americano Unity ao russo Zarya, iniciando a montagem da Estação Espacial Internacional."
+  },
+  {
+    "data": "12-05",
+    "ano": 1901,
+    "titulo": "Nasce Walt Disney",
+    "descricao": "Nasce em Chicago o criador de Mickey Mouse e fundador do estúdio Disney."
+  },
+  {
+    "data": "12-06",
+    "ano": 1877,
+    "titulo": "Edison grava a primeira voz",
+    "descricao": "Thomas Edison anuncia ter gravado e reproduzido a canção infantil Mary Had a Little Lamb no fonógrafo."
+  },
+  {
+    "data": "12-07",
+    "ano": 1972,
+    "titulo": "A foto Blue Marble",
+    "descricao": "Astronautas da Apollo 17 registram a Terra inteira iluminada, em uma das imagens mais reproduzidas da história."
+  },
+  {
+    "data": "12-08",
+    "ano": 1987,
+    "titulo": "Tratado INF",
+    "descricao": "Reagan e Gorbachev assinam em Washington um acordo para eliminar uma classe inteira de mísseis nucleares de alcance intermediário."
+  },
+  {
+    "data": "12-09",
+    "ano": 1968,
+    "titulo": "A Mãe de Todas as Demonstrações",
+    "descricao": "Douglas Engelbart apresenta ao vivo o mouse, janelas, hipertexto e videoconferência em uma conferência em São Francisco."
+  },
+  {
+    "data": "12-10",
+    "ano": 1901,
+    "titulo": "Primeiros prêmios Nobel",
+    "descricao": "Os primeiros Prêmios Nobel são entregues em Estocolmo, no aniversário de cinco anos da morte de Alfred Nobel."
+  },
+  {
+    "data": "12-11",
+    "ano": 1946,
+    "titulo": "Criação do UNICEF",
+    "descricao": "A ONU cria o Fundo Internacional de Emergência das Nações Unidas para a Infância, que nasceu para ajudar crianças do pós-guerra."
+  },
+  {
+    "data": "12-12",
+    "ano": 1901,
+    "titulo": "Primeiro sinal de rádio transatlântico",
+    "descricao": "Guglielmo Marconi recebe, na Terra Nova, o sinal de rádio enviado da Inglaterra, uma comunicação sem fio de cerca de 3.500 km."
+  },
+  {
+    "data": "12-13",
+    "ano": 1577,
+    "titulo": "Francis Drake parte de Plymouth",
+    "descricao": "O navegador inglês inicia a expedição que o levaria a dar a volta ao mundo."
+  },
+  {
+    "data": "12-14",
+    "ano": 1911,
+    "titulo": "Amundsen chega ao Polo Sul",
+    "descricao": "O norueguês Roald Amundsen e sua equipe se tornam as primeiras pessoas a alcançar o Polo Sul geográfico."
+  },
+  {
+    "data": "12-15",
+    "ano": 1791,
+    "titulo": "Ratificação da Declaração de Direitos dos EUA",
+    "descricao": "As dez primeiras emendas da Constituição americana entram em vigor."
+  },
+  {
+    "data": "12-16",
+    "ano": 1773,
+    "titulo": "Festa do Chá de Boston",
+    "descricao": "Colonos americanos jogam caixas de chá britânico no porto de Boston para protestar contra os impostos."
+  },
+  {
+    "data": "12-17",
+    "ano": 1903,
+    "titulo": "Primeiro voo dos irmãos Wright",
+    "descricao": "Orville e Wilbur Wright fazem o primeiro voo controlado de um avião motorizado, em Kitty Hawk, na Carolina do Norte."
+  },
+  {
+    "data": "12-18",
+    "ano": 1892,
+    "titulo": "Estreia de O Quebra-Nozes",
+    "descricao": "O balé de Tchaikovsky estreia em São Petersburgo e se tornaria uma tradição do Natal."
+  },
+  {
+    "data": "12-19",
+    "ano": 1972,
+    "titulo": "Fim das missões Apollo à Lua",
+    "descricao": "A Apollo 17 retorna à Terra; até hoje, foi a última vez que seres humanos estiveram na Lua."
+  },
+  {
+    "data": "12-20",
+    "ano": 1951,
+    "titulo": "Primeira eletricidade gerada por energia nuclear",
+    "descricao": "O reator experimental EBR-I, em Idaho, acende quatro lâmpadas com energia nuclear."
+  },
+  {
+    "data": "12-21",
+    "ano": 1913,
+    "titulo": "Primeiras palavras cruzadas",
+    "descricao": "O jornalista Arthur Wynne publica no jornal New York World o primeiro jogo de palavras cruzadas."
+  },
+  {
+    "data": "12-22",
+    "ano": 1938,
+    "titulo": "Redescoberta do celacanto",
+    "descricao": "Uma pescadora na África do Sul encontra um celacanto, peixe que se acreditava extinto há 66 milhões de anos."
+  },
+  {
+    "data": "12-23",
+    "ano": 1947,
+    "titulo": "Invenção do transistor",
+    "descricao": "Pesquisadores da Bell Labs demonstram o transistor, base de toda a eletrônica moderna."
+  },
+  {
+    "data": "12-24",
+    "ano": 1968,
+    "titulo": "Nascer da Terra",
+    "descricao": "Os astronautas da Apollo 8 fotografam a Terra surgindo sobre o horizonte da Lua, em uma imagem que marcaria o movimento ambientalista."
+  },
+  {
+    "data": "12-25",
+    "ano": 800,
+    "titulo": "Carlos Magno é coroado imperador",
+    "descricao": "O papa Leão III coroa Carlos Magno em Roma, reativando o título de imperador no Ocidente."
+  },
+  {
+    "data": "12-26",
+    "ano": 1898,
+    "titulo": "Os Curie anunciam o rádio",
+    "descricao": "Marie e Pierre Curie, com Gustave Bémont, comunicam à Academia de Ciências francesa a descoberta do elemento rádio."
+  },
+  {
+    "data": "12-27",
+    "ano": 1831,
+    "titulo": "O Beagle parte com Darwin",
+    "descricao": "O navio HMS Beagle zarpa da Inglaterra para uma viagem de cinco anos que inspiraria a teoria da evolução."
+  },
+  {
+    "data": "12-28",
+    "ano": 1895,
+    "titulo": "Primeira sessão pública de cinema",
+    "descricao": "Os irmãos Lumière exibem filmes em Paris para um público pagante, no que é considerado o nascimento do cinema."
+  },
+  {
+    "data": "12-29",
+    "ano": 1959,
+    "titulo": "Há muito espaço lá embaixo",
+    "descricao": "O físico Richard Feynman faz a palestra que antecipou a nanotecnologia, sugerindo manipular átomos individuais."
+  },
+  {
+    "data": "12-30",
+    "ano": 1924,
+    "titulo": "Hubble mostra que existem outras galáxias",
+    "descricao": "Edwin Hubble comunica que Andrômeda fica fora da Via Láctea, ampliando a noção da escala do universo."
+  },
+  {
+    "data": "12-31",
+    "ano": 1879,
+    "titulo": "Edison exibe a lâmpada elétrica",
+    "descricao": "Thomas Edison faz a primeira demonstração pública de iluminação elétrica em Menlo Park, em Nova Jersey."
+  }
+]

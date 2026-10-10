@@ -1,1 +1,1 @@
-Gerar migrations: bunx drizzle-kit push
+Gerar migrations: npx drizzle-kit push
