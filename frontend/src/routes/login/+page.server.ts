@@ -8,7 +8,7 @@ export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me', platform?.env, platform !== undefined), {
+		response = await fetch(authApiUrl('me', platform?.env), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
 	} catch (cause) {
@@ -51,7 +51,7 @@ export const actions: Actions = {
 
 		let response: Response;
 		try {
-			response = await fetch(authApiUrl('login', platform?.env, platform !== undefined), {
+			response = await fetch(authApiUrl('login', platform?.env), {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify(credentials)

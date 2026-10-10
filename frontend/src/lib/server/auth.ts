@@ -6,16 +6,9 @@ let loggedApiBaseUrl: string | undefined;
 
 export function authApiUrl(
 	path: 'login' | 'signup' | 'me',
-	platformEnv?: { API_BASE_URL?: string },
-	hasPlatform = false
+	platformEnv?: { API_BASE_URL?: string }
 ) {
-	const configuredBaseUrl =
-		platformEnv?.API_BASE_URL || (hasPlatform ? '' : 'http://localhost:3000');
-	if (!configuredBaseUrl) {
-		throw new Error('API_BASE_URL não está configurada.');
-	}
-
-	const baseUrl = configuredBaseUrl.replace(/\/+$/, '');
+	const baseUrl = (platformEnv?.API_BASE_URL || 'https://lif-xp64.onrender.com').replace(/\/+$/, '');
 	if (baseUrl !== loggedApiBaseUrl) {
 		console.log('URL base da API:', baseUrl);
 		loggedApiBaseUrl = baseUrl;

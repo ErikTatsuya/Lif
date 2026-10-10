@@ -43,7 +43,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-The backend URL defaults to `http://localhost:3000` during local development.
+The backend URL defaults to `https://lif-xp64.onrender.com`. Set `API_BASE_URL` in the Cloudflare Worker environment to override it.
 
 ## Building
 
@@ -57,4 +57,4 @@ You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
-For Cloudflare deployments, configure the `API_BASE_URL` Worker variable with the backend's base URL (for example, `https://api.example.com`). The server-side routes read this value from the Cloudflare platform environment at runtime.
+For Cloudflare deployments, the server-side routes read the optional `API_BASE_URL` variable from the platform environment at runtime.

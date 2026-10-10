@@ -16,7 +16,7 @@ export const actions: Actions = {
 
 		let response: Response;
 		try {
-			response = await fetch(authApiUrl('signup', platform?.env, platform !== undefined), {
+			response = await fetch(authApiUrl('signup', platform?.env), {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify({ username, name, email, password })

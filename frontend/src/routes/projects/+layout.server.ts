@@ -8,7 +8,7 @@ export const load: LayoutServerLoad = async ({ cookies, fetch, platform }) => {
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me', platform?.env, platform !== undefined), {
+		response = await fetch(authApiUrl('me', platform?.env), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
 	} catch (cause) {
