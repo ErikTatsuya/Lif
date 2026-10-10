@@ -62,8 +62,8 @@ export const actions: Actions = {
 		}
 
 		if (!response.ok) {
-			const message = await getAuthError(response, 'Não foi possível entrar. Tente novamente.');
 			const responseBody = await response.clone().text();
+			const message = await getAuthError(response, 'Não foi possível entrar. Tente novamente.');
 			console.log('Erro no login:', message);
 			return fail(response.status, {
 				message,
