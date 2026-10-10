@@ -23,7 +23,10 @@
 			return async ({ result, update }) => {
 				if (result.type === 'failure') {
 					console.log('Erro no login:', result.data?.message);
-					console.log('Resposta recebida da API:', result.data?.apiResponse);
+					console.log(
+						'Resposta recebida da API:',
+						JSON.stringify(result.data?.apiResponse, null, 2)
+					);
 				} else if (result.type === 'error') {
 					console.log('Erro inesperado no login:', result.error);
 				}
