@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import type { PageProps } from './$types';
 	import Brand from '#lib/components/Brand.svelte';
+
+	let { data }: PageProps = $props();
+
+	const today = new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long' }).format(new Date());
 </script>
 
 <svelte:head>
@@ -9,7 +14,7 @@
 
 <main>
 	<header class="topbar">
-		<Brand label="Lif-Labs" />
+		<Brand label="Lif" />
 
 		<nav aria-label="Navegação principal">
 			<button class="dashboard" type="button" onclick={() => goto('/dashboard')}>Dashboard</button>
@@ -17,6 +22,22 @@
 			<button class="signup" type="button" onclick={() => goto('/signup')}>Sign up</button>
 		</nav>
 	</header>
+
+	<section class="daily-event" aria-labelledby="daily-event-title">
+		<p class="eyebrow">Lif · Dado diário</p>
+		<h1 id="daily-event-title">Aconteceu neste dia</h1>
+		<p class="date">{today}</p>
+
+		{#if data.dailyEvent}
+			<article class="event-card">
+				<p class="event-year">{data.dailyEvent.year}</p>
+				<h2>{data.dailyEvent.title}</h2>
+				<p class="event-description">{data.dailyEvent.description}</p>
+			</article>
+		{:else}
+			<p class="event-message" role="status">{data.dailyEventMessage}</p>
+		{/if}
+	</section>
 
 	<div class="circle circle-glow" aria-hidden="true"></div>
 	<div class="circle circle-outline" aria-hidden="true"></div>
@@ -67,6 +88,76 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 1.5rem clamp(1.25rem, 6vw, 5.5rem);
+	}
+
+	.daily-event {
+		position: relative;
+		z-index: 1;
+		width: min(100% - 2.5rem, 46rem);
+		margin: clamp(2rem, 8vh, 5rem) auto 12rem;
+		text-align: center;
+	}
+
+	.eyebrow {
+		margin: 0 0 0.65rem;
+		color: #20864c;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.daily-event h1 {
+		margin: 0;
+		color: #173326;
+		font-size: clamp(2rem, 6vw, 3.5rem);
+		letter-spacing: -0.045em;
+	}
+
+	.date {
+		margin: 0.75rem 0 2rem;
+		color: #52705d;
+		font-size: 1.1rem;
+		text-transform: capitalize;
+	}
+
+	.event-card {
+		padding: clamp(1.5rem, 5vw, 2.5rem);
+		border: 1px solid rgb(56 137 79 / 14%);
+		border-radius: 1.5rem;
+		background: rgb(255 255 255 / 78%);
+		box-shadow: 0 1.5rem 4rem rgb(38 82 49 / 9%);
+		text-align: left;
+		backdrop-filter: blur(12px);
+	}
+
+	.event-year {
+		margin: 0 0 0.6rem;
+		color: #20864c;
+		font-size: 0.9rem;
+		font-weight: 700;
+	}
+
+	.event-card h2 {
+		margin: 0;
+		color: #173326;
+		font-size: clamp(1.35rem, 4vw, 2rem);
+		letter-spacing: -0.025em;
+	}
+
+	.event-description,
+	.event-message {
+		color: #52705d;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.event-description {
+		margin: 1rem 0 0;
+	}
+
+	.event-message {
+		margin: 0 auto;
 	}
 
 	.circle {

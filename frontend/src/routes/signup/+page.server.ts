@@ -3,7 +3,7 @@ import type { Actions } from './$types';
 import { authApiUrl, getAuthError } from '../../lib/server/auth';
 
 export const actions: Actions = {
-	default: async ({ request, fetch, platform }) => {
+	default: async ({ request, fetch }) => {
 		const formData = await request.formData();
 		const username = String(formData.get('username') ?? '').trim();
 		const name = String(formData.get('name') ?? '').trim();
@@ -16,7 +16,7 @@ export const actions: Actions = {
 
 		let response: Response;
 		try {
-			response = await fetch(authApiUrl('signup', platform?.env), {
+			response = await fetch(authApiUrl('signup'), {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify({ username, name, email, password })

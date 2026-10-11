@@ -7,7 +7,7 @@
 
 <div class="projects-shell">
 	<aside class="sidebar">
-		<Brand label="Lif-Labs" variant="sidebar" />
+		<Brand label="Lif" variant="sidebar" />
 		<nav aria-label="Navegação principal">
 			<a href="/dashboard">
 				<svg viewBox="0 0 24 24" aria-hidden="true">

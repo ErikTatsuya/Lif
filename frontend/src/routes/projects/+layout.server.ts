@@ -2,13 +2,13 @@ import { error, redirect } from '@sveltejs/kit';
 import type { LayoutServerLoad } from './$types';
 import { authApiUrl } from '../../lib/server/auth';
 
-export const load: LayoutServerLoad = async ({ cookies, fetch, platform }) => {
+export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
 	const token = cookies.get('auth_token');
 	if (!token) redirect(303, '/login');
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me', platform?.env), {
+		response = await fetch(authApiUrl('me'), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
 	} catch (cause) {

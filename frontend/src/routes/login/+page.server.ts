@@ -2,13 +2,13 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { authApiUrl, getAuthError } from '../../lib/server/auth';
 
-export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
+export const load: PageServerLoad = async ({ cookies, fetch }) => {
 	const token = cookies.get('auth_token');
 	if (!token) return { isAlreadyLoggedIn: false };
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me', platform?.env), {
+		response = await fetch(authApiUrl('me'), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
 	} catch (cause) {
@@ -36,7 +36,7 @@ export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
 };
 
 export const actions: Actions = {
-	default: async ({ request, cookies, fetch, platform }) => {
+	default: async ({ request, cookies, fetch }) => {
 		const formData = await request.formData();
 		const identifier = String(formData.get('identifier') ?? '').trim();
 		const password = String(formData.get('password') ?? '');
@@ -51,7 +51,7 @@ export const actions: Actions = {
 
 		let response: Response;
 		try {
-			response = await fetch(authApiUrl('login', platform?.env), {
+			response = await fetch(authApiUrl('login'), {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				body: JSON.stringify(credentials)

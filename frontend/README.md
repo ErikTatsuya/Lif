@@ -43,7 +43,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-The backend URL defaults to `https://lif-xp64.onrender.com`. Set `API_BASE_URL` in the Cloudflare Worker environment to override it.
+The backend URL defaults to `https://lif-xp64.onrender.com`. For local development, set `API_BASE_URL` in `frontend/.env` and restart the Vite dev server. In production, the Cloudflare Worker `API_BASE_URL` takes precedence.
 
 ## Building
 

@@ -30,7 +30,7 @@
 
 <div class="dashboard-layout">
 	<aside class="sidebar">
-		<Brand label="Lif-Labs" variant="sidebar" />
+		<Brand label="Lif" variant="sidebar" />
 		<nav aria-label="Navegação principal">
 			<a class:active={!showingProjects} href="/dashboard" aria-current={!showingProjects ? 'page' : undefined}>
 				<svg viewBox="0 0 24 24" aria-hidden="true">

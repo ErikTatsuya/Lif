@@ -14,4 +14,9 @@ declare global {
 	}
 }
 
+interface ImportMetaEnv {
+	readonly DEV: boolean;
+	readonly API_BASE_URL: string;
+}
+
 export {};

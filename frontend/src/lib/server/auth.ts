@@ -1,20 +1,11 @@
+import { API_BASE_URL } from './api';
+
 function isRecord(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null;
 }
 
-let loggedApiBaseUrl: string | undefined;
-
-export function authApiUrl(
-	path: 'login' | 'signup' | 'me',
-	platformEnv?: { API_BASE_URL?: string }
-) {
-	const baseUrl = (platformEnv?.API_BASE_URL || 'https://lif-xp64.onrender.com').replace(/\/+$/, '');
-	if (baseUrl !== loggedApiBaseUrl) {
-		console.log('URL base da API:', baseUrl);
-		loggedApiBaseUrl = baseUrl;
-	}
-
-	return `${baseUrl}/auth/${path}`;
+export function authApiUrl(path: 'login' | 'signup' | 'me') {
+	return `${API_BASE_URL}/auth/${path}`;
 }
 
 export async function getAuthError(response: Response, fallback: string) {

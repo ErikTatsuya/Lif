@@ -12,13 +12,13 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 	return typeof value === 'object' && value !== null;
 }
 
-export const load: PageServerLoad = async ({ cookies, fetch, platform }) => {
+export const load: PageServerLoad = async ({ cookies, fetch }) => {
 	const token = cookies.get('auth_token');
 	if (!token) redirect(303, '/login');
 
 	let response: Response;
 	try {
-		response = await fetch(authApiUrl('me', platform?.env), {
+		response = await fetch(authApiUrl('me'), {
 			headers: { cookie: `auth_token=${encodeURIComponent(token)}` }
 		});
 	} catch (cause) {
