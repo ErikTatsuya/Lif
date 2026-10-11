@@ -1,4 +1,4 @@
-# lifoxx
+# lif
 
 Install dependencies:
 
