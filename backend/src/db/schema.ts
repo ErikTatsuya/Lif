@@ -1,4 +1,4 @@
-import { integer, pgTable, varchar, text, timestamp, serial, unique } from "drizzle-orm/pg-core";
+import { integer, pgTable, varchar, text, timestamp, serial, unique, date } from "drizzle-orm/pg-core";
 
 export const usersTable = pgTable("users", {
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -9,18 +9,14 @@ export const usersTable = pgTable("users", {
   createdAt: timestamp().notNull().defaultNow(),
 });
 
-export const curiosidades = pgTable(
-  "curiosidades",
-  {
-    id: serial("id").primaryKey(),
-    mes: integer("mes").notNull(), // 1-12
-    dia: integer("dia").notNull(), // 1-31
-    titulo: text("titulo").notNull(),
-    resumo: text("resumo").notNull(),
-    criadoEm: timestamp("criado_em").defaultNow().notNull(),
-  },
-  (t) => [unique("curiosidades_mes_dia_unique").on(t.mes, t.dia)],
-);
+export const events = pgTable("events", {
+  id: serial("id").primaryKey(),
+  day: integer("day").notNull(),
+  month: integer("month").notNull(),
+  year: integer("year").notNull(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+})
 
 export const quizzesTable = pgTable("quizzes", {
 })
