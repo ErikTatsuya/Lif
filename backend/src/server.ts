@@ -5,6 +5,7 @@ import cookies from "@fastify/cookie"
 
 import { authRoutes } from "./routes/auth.js";
 import { userRoutes } from "./routes/user.js";
+import { daytronRoutes } from "./routes/daytron.js";
 
 const app = Fastify({ logger: true });
 
@@ -25,9 +26,9 @@ app.register(authRoutes, {
   prefix: "/auth"
 });
 
-// app.register(userRoutes, {
-//   prefix: "/users"
-// });
+app.register(daytronRoutes, {
+  prefix: "/daytron"
+});
 
 app.get("/", async () => {
   return {
