@@ -1,60 +1,37 @@
-# sv
+# Lif frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Aplicação web do Lif feita com React, TypeScript, Vite, React Router e Tailwind CSS v4.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## Desenvolvimento
 
 ```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@1.1.0 create --template minimal --types ts --add tailwindcss="plugins:none" --install bun frontend
-```
-
-## Adding features
-
-Add features to your project with `sv add`:
-
-```sh
-npx sv add
-```
-
-For example, to add Tailwind CSS:
-
-```sh
-npx sv add tailwindcss
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-The backend URL defaults to `https://lif-xp64.onrender.com`. For local development, set `API_BASE_URL` in `frontend/.env` and restart the Vite dev server. In production, the Cloudflare Worker `API_BASE_URL` takes precedence.
+Copie `frontend/.env.example` para `frontend/.env` e configure a URL do backend:
 
-## Building
+```env
+VITE_API_BASE_URL=http://127.0.0.1:3000
+```
 
-To create a production version of your app:
+O cliente também aceita `API_BASE_URL` para compatibilidade, mas `VITE_API_BASE_URL` é a opção recomendada pelo Vite. A URL pode terminar ou não com `/`.
+
+## Build e preview
 
 ```sh
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+O build de produção é gerado em `dist/`.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Deploy na Vercel
 
-For Cloudflare deployments, the server-side routes read the optional `API_BASE_URL` variable from the platform environment at runtime.
+- Root Directory: `frontend`
+- Framework Preset: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Configure `VITE_API_BASE_URL` nas variáveis de ambiente da Vercel e faça novo deploy.
+
+As chamadas de autenticação incluem credenciais do navegador. Configure no backend `FRONTEND_ORIGIN` com a origem exata da aplicação publicada e habilite cookies/credenciais nesse domínio. Se frontend e API estiverem em sites diferentes, a política `SameSite` do cookie também precisa permitir esse fluxo; o frontend não altera nem pode sobrescrever essa política do backend.
