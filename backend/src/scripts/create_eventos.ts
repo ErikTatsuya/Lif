@@ -14,7 +14,7 @@ const eventosFile = await fs.readFile("src/scripts/eventos.json", "utf-8")
 const data: EventJson[] = JSON.parse(eventosFile)
 
 const eventos = data.map((eventJson: EventJson) => {
-    const [dia, mes] = eventJson.data.split("-").map(Number)
+    const [mes, dia] = eventJson.data.split("-").map(Number)
 
     return {
         day: dia ?? 0,
@@ -25,6 +25,7 @@ const eventos = data.map((eventJson: EventJson) => {
     }
 })
 
+await db.delete(events)
 await db.insert(events).values(eventos)
 
 console.log("Eventos inseridos com sucesso!")

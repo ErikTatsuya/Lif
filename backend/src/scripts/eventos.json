@@ -662,8 +662,8 @@
   {
     "data": "04-20",
     "ano": 1902,
-    "title": "Os Curie isolam o rádio",
-    "descricao": "Marie e Pierre Curie conseguem isolar o elemento rádio em laboratório, após anos de trabalho com toneladas de minério."
+    "title": "Marie Curie obtém rádio purificado",
+    "descricao": "Marie Curie obtém rádio na forma de cloreto de rádio purificado. O rádio metálico seria isolado em 1910 por Marie Curie e André-Louis Debierne."
   },
   {
     "data": "04-21",
@@ -680,8 +680,8 @@
   {
     "data": "04-23",
     "ano": 1616,
-    "title": "Morrem Shakespeare e Cervantes",
-    "descricao": "Os dois grandes escritores morrem na mesma data do calendário, mas, na prática, com dez dias de diferença, já que Inglaterra e Espanha usavam calendários distintos."
+    "title": "As mortes de Shakespeare e Cervantes",
+    "descricao": "Miguel de Cervantes morreu em 22 de abril de 1616 pelo calendário gregoriano. William Shakespeare morreu em 23 de abril de 1616 pelo calendário juliano, equivalente a 3 de maio no gregoriano. As datas frequentemente aparecem associadas ao mesmo dia por causa da diferença entre os calendários."
   },
   {
     "data": "04-24",
@@ -986,8 +986,8 @@
   {
     "data": "06-13",
     "ano": 1983,
-    "title": "Pioneer 10 deixa a região dos planetas",
-    "descricao": "A sonda Pioneer 10 cruza a órbita de Netuno e segue para o espaço interestelar, sendo a primeira nave a fazer isso."
+    "title": "Pioneer 10 cruza a órbita de Netuno",
+    "descricao": "A sonda Pioneer 10 cruza a órbita de Netuno, tornando-se o primeiro objeto feito pelo ser humano a ultrapassar a órbita desse planeta."
   },
   {
     "data": "06-14",
@@ -1514,8 +1514,8 @@
   {
     "data": "09-09",
     "ano": 1947,
-    "title": "O primeiro bug de computador",
-    "descricao": "Operadores do Harvard Mark II encontram uma mariposa presa em um relé e a registram no diário como o primeiro bug de verdade, em um episódio associado a Grace Hopper."
+    "title": "A famosa mariposa do Harvard Mark II",
+    "descricao": "Operadores do computador Harvard Mark II encontram uma mariposa presa em um relé e registram o inseto no diário de operação. O episódio ficou famoso na história da computação, mas a palavra bug já era usada para descrever falhas técnicas."
   },
   {
     "data": "09-10",
@@ -2184,10 +2184,10 @@
     "descricao": "O físico Richard Feynman faz a palestra que antecipou a nanotecnologia, sugerindo manipular átomos individuais."
   },
   {
-    "data": "12-30",
-    "ano": 1924,
-    "title": "Hubble mostra que existem outras galáxias",
-    "descricao": "Edwin Hubble comunica que Andrômeda fica fora da Via Láctea, ampliando a noção da escala do universo."
+    "data": "01-01",
+    "ano": 1925,
+    "title": "Hubble apresenta evidências de outras galáxias",
+    "descricao": "Em 1º de janeiro de 1925, Edwin Hubble apresenta à Sociedade Astronômica Americana evidências de que Andrômeda está fora da Via Láctea, ampliando a compreensão da escala do universo."
   },
   {
     "data": "12-31",

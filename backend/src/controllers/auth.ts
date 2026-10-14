@@ -11,6 +11,7 @@ import {
 } from "../services/auth.js";
 
 const authCookieName = "auth_token";
+const isProduction = process.env.NODE_ENV === "production";
 
 export async function signupController(
     req: FastifyRequest,
@@ -64,9 +65,9 @@ export async function loginController(
     res.setCookie(authCookieName, authentication.token, {
         httpOnly: true,
         path: "/",
-        sameSite: "lax",
+        sameSite: isProduction ? "none" : "lax",
         maxAge: tokenLifetimeSeconds,
-        secure: process.env.NODE_ENV === "production"
+        secure: isProduction
     });
 
     const userResponse = new UserResponse(
@@ -87,8 +88,8 @@ export async function signoutController(
     res.clearCookie(authCookieName, {
         httpOnly: true,
         path: "/",
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production"
+        sameSite: isProduction ? "none" : "lax",
+        secure: isProduction
     });
 
     return res.send({
