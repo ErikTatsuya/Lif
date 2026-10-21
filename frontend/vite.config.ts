@@ -5,13 +5,12 @@ import { resolveEnvironmentConfig } from './environment.ts';
 
 export default defineConfig(({ mode }) => {
   const variables = loadEnv(mode, '.', '');
-  const config = resolveEnvironmentConfig(variables, mode);
+  const config = resolveEnvironmentConfig({ ...variables, NODE_ENV: mode }, mode);
   const frontendUrl = new URL(config.frontendUrl);
-  const apiBaseUrl = config.environment === 'production' ? '/api' : config.backendUrl;
 
   return {
     define: {
-      'import.meta.env.VITE_API_BASE_URL': JSON.stringify(apiBaseUrl)
+      'import.meta.env.VITE_BACKEND_URL': JSON.stringify(config.backendUrl)
     },
     plugins: [react(), tailwindcss()],
     server: config.environment === 'development'

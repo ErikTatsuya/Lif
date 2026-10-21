@@ -24,8 +24,8 @@ export class ApiError extends Error {
   }
 }
 
-function apiBaseUrl(): string {
-  return import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '');
+function backendBaseUrl(): string {
+  return import.meta.env.VITE_BACKEND_URL.replace(/\/+$/, '');
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -68,7 +68,7 @@ async function readError(response: Response, fallback: string): Promise<string> 
 async function request(path: string, init: RequestInit = {}): Promise<Response> {
   let url: string;
   try {
-    url = `${apiBaseUrl()}${path}`;
+    url = `${backendBaseUrl()}${path}`;
   } catch (cause) {
     if (cause instanceof ApiError) throw cause;
     throw new ApiError('Não foi possível configurar a conexão com a API.');
