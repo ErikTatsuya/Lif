@@ -5,6 +5,15 @@ import { DecorativeBackground } from '../components/DecorativeBackground';
 import { Sidebar } from '../components/Sidebar';
 import { ApiError, authApi, type Profile } from '../lib/api';
 
+const projects = [
+  {
+    id: 'qlete',
+    name: 'Qlete',
+    status: 'Em desenvolvimento',
+    description: 'Projeto Qlete integrado ao Lif.',
+  },
+];
+
 export function DashboardPage() {
   const profile = useOutletContext<Profile>();
   const [searchParams] = useSearchParams();
@@ -16,6 +25,16 @@ export function DashboardPage() {
   const profileMenu = useRef<HTMLDivElement>(null);
   const showingProjects = searchParams.get('view') === 'projects';
 
+  function resetLogout() {
+    setLogoutConfirmation(false);
+    setLogoutMessage('');
+  }
+
+  function closeProfile() {
+    setProfileOpen(false);
+    resetLogout();
+  }
+
   useEffect(() => {
     document.title = 'Dashboard | Lif';
     function handleOutsideClick(event: PointerEvent) {
@@ -26,6 +45,7 @@ export function DashboardPage() {
       ) {
         setProfileOpen(false);
         setLogoutConfirmation(false);
+        setLogoutMessage('');
       }
     }
 
@@ -63,7 +83,7 @@ export function DashboardPage() {
               aria-controls="profile-panel"
               onClick={() => {
                 setProfileOpen((isOpen) => !isOpen);
-                setLogoutConfirmation(false);
+                resetLogout();
               }}
             >
               <img src={person} alt="" />
@@ -77,10 +97,7 @@ export function DashboardPage() {
                     className="close-button"
                     type="button"
                     aria-label="Fechar perfil"
-                    onClick={() => {
-                      setProfileOpen(false);
-                      setLogoutConfirmation(false);
-                    }}
+                    onClick={closeProfile}
                   >
                     <span aria-hidden="true">×</span>
                   </button>
@@ -115,7 +132,7 @@ export function DashboardPage() {
                     <button
                       className="cancel-logout-button"
                       type="button"
-                      onClick={() => setLogoutConfirmation(false)}
+                      onClick={resetLogout}
                     >
                       Cancelar
                     </button>
@@ -142,22 +159,28 @@ export function DashboardPage() {
             <>
               <h1>Projetos</h1>
               <div className="project-grid">
-                <Link className="project-card" to="/projects/qlete">
-                  <span className="project-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                      <rect x="4" y="4" width="16" height="16" rx="3" />
-                      <path d="M8 9h8M8 13h5" />
+                {projects.map((project) => (
+                  <Link
+                    key={project.id}
+                    className="project-card"
+                    to={`/projects/${project.id}`}
+                  >
+                    <span className="project-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24">
+                        <rect x="4" y="4" width="16" height="16" rx="3" />
+                        <path d="M8 9h8M8 13h5" />
+                      </svg>
+                    </span>
+                    <span className="project-details">
+                      <strong>{project.name}</strong>
+                      <span>{project.status}</span>
+                      <span>{project.description}</span>
+                    </span>
+                    <svg className="open-project" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14m-6-6 6 6-6 6" />
                     </svg>
-                  </span>
-                  <span className="project-details">
-                    <strong>Qlete</strong>
-                    <span>Em desenvolvimento</span>
-                    <span>Projeto Qlete integrado ao Lif.</span>
-                  </span>
-                  <svg className="open-project" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 12h14m-6-6 6 6-6 6" />
-                  </svg>
-                </Link>
+                  </Link>
+                ))}
               </div>
             </>
           ) : (

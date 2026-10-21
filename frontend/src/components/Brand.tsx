@@ -14,7 +14,7 @@ export function Brand({
   variant = 'default'
 }: BrandProps) {
   return (
-    <a className={`brand${variant === 'sidebar' ? ' sidebar' : ''}`} href={href} aria-label={ariaLabel}>
+    <a className={`brand${variant === 'sidebar' ? ' brand--sidebar' : ''}`} href={href} aria-label={ariaLabel}>
       <img src={logo} alt="" />
       <span>{label}</span>
     </a>
