@@ -1,8 +1,9 @@
 import Fastify from "fastify";
 import rateLimit from "@fastify/rate-limit";
-import cors from "@fastify/cors"
-import cookies from "@fastify/cookie"
+import cors from "@fastify/cors";
+import cookies from "@fastify/cookie";
 
+import { appConfig } from "./config/environment.js";
 import { authRoutes } from "./routes/auth.js";
 import { userRoutes } from "./routes/user.js";
 import { daytronRoutes } from "./routes/daytron.js";
@@ -10,12 +11,12 @@ import { daytronRoutes } from "./routes/daytron.js";
 const app = Fastify({ logger: true });
 
 await app.register(cors, {
-  origin: process.env.FRONTEND_ORIGIN,
+  origin: appConfig.frontendUrl,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   credentials: true
-})
+});
 
-await app.register(cookies)
+await app.register(cookies);
 
 await app.register(rateLimit, {
   max: 100,

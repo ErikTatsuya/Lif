@@ -9,13 +9,15 @@ npm install
 npm run dev
 ```
 
-Copie `frontend/.env.example` para `frontend/.env` e configure a URL do backend:
+Copie `frontend/.env.example` para `frontend/.env`. O Vite usa a porta `5173` e o host `127.0.0.1`; as URLs de desenvolvimento precisam manter esse host para que CORS e cookies funcionem:
 
 ```env
-VITE_API_BASE_URL=http://127.0.0.1:3000
+NODE_ENV=development
+BACKEND_DEVELOPMENT_URL=http://127.0.0.1:3000
+FRONTEND_DEVELOPMENT_URL=http://127.0.0.1:5173
 ```
 
-O cliente também aceita `API_BASE_URL` para compatibilidade, mas `VITE_API_BASE_URL` é a opção recomendada pelo Vite. A URL pode terminar ou não com `/`.
+As URLs efetivas `BACKEND_URL` e `FRONTEND_URL` são selecionadas a partir de `NODE_ENV`. Valores diferentes de `development` e `production` são rejeitados. O Vite injeta no cliente somente o destino de API necessário: em desenvolvimento ele aponta para o backend configurado e em produção aponta para `/api`.
 
 ## Build e preview
 
@@ -32,6 +34,6 @@ O build de produção é gerado em `dist/`.
 - Framework Preset: `Vite`
 - Build Command: `npm run build`
 - Output Directory: `dist`
-- Configure `VITE_API_BASE_URL` nas variáveis de ambiente da Vercel e faça novo deploy.
+- Configure na Vercel `NODE_ENV=production`, `BACKEND_PRODUCTION_URL` com a URL HTTPS do backend e `FRONTEND_PRODUCTION_URL` com a origem HTTPS real do frontend publicado. Faça novo deploy após alterar as variáveis.
 
-As chamadas de autenticação incluem credenciais do navegador. Configure no backend `FRONTEND_ORIGIN` com a origem exata da aplicação publicada e habilite cookies/credenciais nesse domínio. Se frontend e API estiverem em sites diferentes, a política `SameSite` do cookie também precisa permitir esse fluxo; o frontend não altera nem pode sobrescrever essa política do backend.
+Em produção o navegador chama o proxy same-origin `/api`, que encaminha as rotas de autenticação e eventos para `BACKEND_PRODUCTION_URL` sem incluir a URL do backend no bundle do frontend. No Render, configure `NODE_ENV=production`, `BACKEND_PRODUCTION_URL` e `FRONTEND_PRODUCTION_URL` com as URLs reais. O backend usa a origem do frontend para CORS e envia o cookie HttpOnly com `SameSite=None; Secure` em produção.

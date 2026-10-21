@@ -1,5 +1,6 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 
+import { isProduction } from "../config/environment.js";
 import { loginDto } from "../dtos/auth.js";
 import { createUserDto } from "../dtos/user.js";
 import { UserResponse } from "../responses/user.js";
@@ -11,7 +12,6 @@ import {
 } from "../services/auth.js";
 
 const authCookieName = "auth_token";
-const isProduction = process.env.NODE_ENV === "production";
 
 export async function signupController(
     req: FastifyRequest,

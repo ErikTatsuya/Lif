@@ -12,6 +12,8 @@ export type DailyEvent = {
   description: string;
 };
 
+let currentUserRequest: Promise<Profile | null> | null = null;
+
 export class ApiError extends Error {
   constructor(
     message: string,
@@ -23,16 +25,7 @@ export class ApiError extends Error {
 }
 
 function apiBaseUrl(): string {
-  const configuredUrl = import.meta.env.VITE_API_BASE_URL || import.meta.env.API_BASE_URL;
-  const normalizedUrl = configuredUrl?.trim().replace(/\/+$/, '');
-
-  if (!normalizedUrl) {
-    throw new ApiError(
-      'A variável VITE_API_BASE_URL (ou API_BASE_URL) não foi definida.'
-    );
-  }
-
-  return normalizedUrl;
+  return import.meta.env.VITE_API_BASE_URL.replace(/\/+$/, '');
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -106,15 +99,24 @@ async function parseProfileResponse(response: Response): Promise<Profile> {
 }
 
 export const authApi = {
-  async getCurrentUser(): Promise<Profile | null> {
-    const response = await request('/auth/me');
-    if (response.status === 401) return null;
-    if (!response.ok) {
-      const message = await readError(response, 'Não foi possível verificar sua sessão.');
-      throw new ApiError(message, response.status);
-    }
+  getCurrentUser(): Promise<Profile | null> {
+    if (currentUserRequest) return currentUserRequest;
 
-    return parseProfileResponse(response);
+    const requestPromise = (async () => {
+      const response = await request('/auth/me');
+      if (response.status === 401) return null;
+      if (!response.ok) {
+        const message = await readError(response, 'Não foi possível verificar sua sessão.');
+        throw new ApiError(message, response.status);
+      }
+
+      return parseProfileResponse(response);
+    })().finally(() => {
+      if (currentUserRequest === requestPromise) currentUserRequest = null;
+    });
+
+    currentUserRequest = requestPromise;
+    return requestPromise;
   },
 
   async login(identifier: string, password: string): Promise<void> {
@@ -132,6 +134,7 @@ export const authApi = {
       throw new ApiError(message, response.status);
     }
 
+    currentUserRequest = null;
     await parseProfileResponse(response);
   },
 

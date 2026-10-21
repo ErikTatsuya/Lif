@@ -36,7 +36,7 @@ export function ProtectedRoute() {
     return () => {
       active = false;
     };
-  }, [location.pathname, retryCount]);
+  }, [retryCount]);
 
   if (session.status === 'loading') {
     return (
