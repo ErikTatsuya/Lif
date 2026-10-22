@@ -3,6 +3,7 @@ export type AppEnvironment = 'development' | 'production';
 export type EnvironmentConfig = {
   environment: AppEnvironment;
   backendUrl: string;
+  apiUrl: string;
   frontendUrl: string;
 };
 
@@ -47,7 +48,15 @@ export function resolveEnvironmentConfig(
   const backendVariable = `BACKEND_${suffix}_URL`;
   const frontendVariable = `FRONTEND_${suffix}_URL`;
 
-  const backendUrl = normalizeUrl(variables[backendVariable], backendVariable);
+  const configuredApiUrl = variables.VITE_API_URL?.trim();
+  const configuredBackendUrl = variables[backendVariable]?.trim();
+  const apiUrl = normalizeUrl(
+    configuredApiUrl || configuredBackendUrl,
+    configuredApiUrl ? 'VITE_API_URL' : backendVariable
+  );
+  const backendUrl = configuredBackendUrl
+    ? normalizeUrl(configuredBackendUrl, backendVariable)
+    : apiUrl;
   const frontendUrl = normalizeUrl(variables[frontendVariable], frontendVariable);
   const parsedFrontendUrl = new URL(frontendUrl);
 
@@ -58,6 +67,7 @@ export function resolveEnvironmentConfig(
   return {
     environment,
     backendUrl,
+    apiUrl,
     frontendUrl: parsedFrontendUrl.origin
   };
 }

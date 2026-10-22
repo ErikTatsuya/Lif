@@ -44,7 +44,9 @@ function resolveEnvironmentConfig(
 
     const suffix = environment === "development" ? "DEVELOPMENT" : "PRODUCTION";
     const backendVariable = `BACKEND_${suffix}_URL`;
-    const frontendVariable = `FRONTEND_${suffix}_URL`;
+    const frontendVariable = variables.FRONTEND_ORIGIN?.trim()
+        ? "FRONTEND_ORIGIN"
+        : `FRONTEND_${suffix}_URL`;
 
     const backendUrl = normalizeUrl(variables[backendVariable], backendVariable);
     const frontendUrl = normalizeUrl(variables[frontendVariable], frontendVariable);

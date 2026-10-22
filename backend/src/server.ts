@@ -7,6 +7,7 @@ import { appConfig } from "./config/environment.js";
 import { authRoutes } from "./routes/auth.js";
 import { userRoutes } from "./routes/user.js";
 import { daytronRoutes } from "./routes/daytron.js";
+import { qleteRoutes } from "./routes/qlete.js";
 
 const app = Fastify({ logger: true });
 
@@ -29,6 +30,10 @@ app.register(authRoutes, {
 
 app.register(daytronRoutes, {
   prefix: "/daytron"
+});
+
+app.register(qleteRoutes, {
+  prefix: "/qlete"
 });
 
 app.get("/", async () => {

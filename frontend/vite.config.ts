@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     define: {
-      'import.meta.env.VITE_BACKEND_URL': JSON.stringify(config.backendUrl)
+      'import.meta.env.VITE_API_URL': JSON.stringify(config.apiUrl)
     },
     plugins: [react(), tailwindcss()],
     server: config.environment === 'development'

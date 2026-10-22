@@ -1,10 +1,17 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { AuthShell } from '../components/AuthShell';
+import { useAuth } from '../contexts/AuthContext';
 import { ApiError, authApi } from '../lib/api';
 
 export function LoginPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const { refresh } = useAuth();
+  const candidateNext = searchParams.get('next');
+  const next = candidateNext?.startsWith('/') && !candidateNext.startsWith('//')
+    ? candidateNext
+    : '/dashboard';
   const [isAlreadyLoggedIn, setIsAlreadyLoggedIn] = useState(false);
   const [sessionCheckMessage, setSessionCheckMessage] = useState('');
   const [message, setMessage] = useState('');
@@ -49,7 +56,8 @@ export function LoginPage() {
 
     try {
       await authApi.login(identifier, password);
-      navigate('/dashboard', { replace: true });
+      await refresh();
+      navigate(next, { replace: true });
     } catch (cause) {
       console.error('Erro no login:', cause);
       setMessage(
@@ -66,7 +74,7 @@ export function LoginPage() {
     <AuthShell title="Login">
       {isAlreadyLoggedIn && (
         <p className="auth-message success" role="status">
-          Você já está logado. <Link className="auth-link" to="/dashboard">Ir para o dashboard</Link>
+          Você já está logado. <Link className="auth-link" to={next}>Continuar</Link>
         </p>
       )}
       {sessionCheckMessage && (

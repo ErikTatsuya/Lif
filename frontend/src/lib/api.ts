@@ -1,4 +1,5 @@
 export type Profile = {
+  id: number;
   name: string;
   username: string;
   email: string;
@@ -10,6 +11,57 @@ export type DailyEvent = {
   year: number;
   title: string;
   description: string;
+};
+
+export type QuizSummary = {
+  id: string;
+  title: string;
+  description: string;
+  questionCount: number;
+  createdAt: string;
+};
+
+export type Quiz = {
+  id: string;
+  isOwner: boolean;
+  title: string;
+  description: string;
+  questions: Array<{
+    id: number;
+    position: number;
+    prompt: string;
+    options: Array<{ id: number; position: number; text: string }>;
+  }>;
+};
+
+export type EditableQuiz = {
+  id: string;
+  title: string;
+  description: string;
+  questions: Array<{
+    id: number;
+    position: number;
+    prompt: string;
+    explanation: string | null;
+    options: Array<{ id: number; position: number; text: string; isCorrect: boolean }>;
+  }>;
+};
+
+export type QuizResult = {
+  score: number;
+  total: number;
+  questions: Array<{
+    questionId: number;
+    prompt: string;
+    selectedOptionId: number | null;
+    explanation: string | null;
+    options: Array<{ id: number; text: string; isCorrect: boolean }>;
+  }>;
+};
+
+export type QuizAnswerCheck = {
+  isCorrect: boolean;
+  correctOptionId: number;
 };
 
 let currentUserRequest: Promise<Profile | null> | null = null;
@@ -25,7 +77,7 @@ export class ApiError extends Error {
 }
 
 function backendBaseUrl(): string {
-  return import.meta.env.VITE_BACKEND_URL.replace(/\/+$/, '');
+  return import.meta.env.VITE_API_URL.replace(/\/+$/, '');
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -35,6 +87,7 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 function isProfile(value: unknown): value is Profile {
   return (
     isRecord(value) &&
+    typeof value.id === 'number' &&
     typeof value.name === 'string' &&
     typeof value.username === 'string' &&
     typeof value.email === 'string'
@@ -165,6 +218,7 @@ export const authApi = {
       const message = await readError(response, 'Não foi possível sair da conta.');
       throw new ApiError(message, response.status);
     }
+    currentUserRequest = null;
   }
 };
 
@@ -190,5 +244,97 @@ export const eventApi = {
     }
 
     return body.event.find(isDailyEvent) ?? null;
+  }
+};
+
+async function parseJsonResponse<T>(response: Response): Promise<T> {
+  try {
+    return (await response.json()) as T;
+  } catch (cause) {
+    console.error('Resposta inválida ao carregar dados do Qlete:', cause);
+    throw new ApiError('A API retornou uma resposta inválida.', response.status);
+  }
+}
+
+async function qleteRequest<T>(path: string, init?: RequestInit): Promise<T> {
+  const response = await request(`/qlete${path}`, init);
+  if (!response.ok) {
+    const message = await readError(response, 'Não foi possível carregar os quizzes.');
+    throw new ApiError(message, response.status);
+  }
+  return parseJsonResponse<T>(response);
+}
+
+export const qleteApi = {
+  async list(search = '', page = 1) {
+    const params = new URLSearchParams({ page: String(page) });
+    if (search) params.set('q', search);
+    return qleteRequest<{ quizzes: QuizSummary[]; page: number; pageSize: number; hasMore: boolean }>(
+      `/quizzes?${params.toString()}`
+    );
+  },
+
+  async get(id: string) {
+    return qleteRequest<Quiz>(`/quizzes/${encodeURIComponent(id)}`);
+  },
+
+  async getForEdit(id: string) {
+    return qleteRequest<EditableQuiz>(`/quizzes/${encodeURIComponent(id)}/edit`);
+  },
+
+  async submit(id: string, answers: Record<string, string>) {
+    return qleteRequest<QuizResult>(`/quizzes/${encodeURIComponent(id)}/submit`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(answers)
+    });
+  },
+
+  async checkAnswer(id: string, questionId: number, optionId: number | null) {
+    return qleteRequest<QuizAnswerCheck>(`/quizzes/${encodeURIComponent(id)}/check`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ questionId, optionId })
+    });
+  },
+
+  async getMine(page = 1) {
+    return qleteRequest<{ quizzes: QuizSummary[]; page: number; pageSize: number; hasMore: boolean }>(
+      `/me/quizzes?page=${page}`
+    );
+  },
+
+  async importQuiz(quiz: unknown) {
+    return qleteRequest<{ id: string }>('/quizzes/import', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(quiz)
+    });
+  },
+
+  async create(quiz: unknown) {
+    return qleteRequest<{ id: string }>('/quizzes', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(quiz)
+    });
+  },
+
+  async update(id: string, quiz: unknown) {
+    return qleteRequest<{ message: string }>(`/quizzes/${encodeURIComponent(id)}`, {
+      method: 'PUT',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(quiz)
+    });
+  },
+
+  async delete(id: string) {
+    const response = await request(`/qlete/quizzes/${encodeURIComponent(id)}`, {
+      method: 'DELETE'
+    });
+    if (!response.ok) {
+      const message = await readError(response, 'Não foi possível excluir o quiz.');
+      throw new ApiError(message, response.status);
+    }
   }
 };

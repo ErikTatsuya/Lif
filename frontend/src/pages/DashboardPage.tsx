@@ -4,6 +4,7 @@ import person from '../assets/person.svg';
 import { DecorativeBackground } from '../components/DecorativeBackground';
 import { Sidebar } from '../components/Sidebar';
 import { ApiError, authApi, type Profile } from '../lib/api';
+import { useAuth } from '../contexts/AuthContext';
 
 const projects = [
   {
@@ -16,6 +17,7 @@ const projects = [
 
 export function DashboardPage() {
   const profile = useOutletContext<Profile>();
+  const { refresh } = useAuth();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [profileOpen, setProfileOpen] = useState(false);
@@ -58,6 +60,7 @@ export function DashboardPage() {
     setLogoutMessage('');
     try {
       await authApi.logout();
+      await refresh();
       navigate('/', { replace: true });
     } catch (cause) {
       console.error('Erro ao sair da conta:', cause);
@@ -163,7 +166,7 @@ export function DashboardPage() {
                   <Link
                     key={project.id}
                     className="project-card"
-                    to={`/projects/${project.id}`}
+                    to={project.id === 'qlete' ? '/qlete' : `/projects/${project.id}`}
                   >
                     <span className="project-icon" aria-hidden="true">
                       <svg viewBox="0 0 24 24">

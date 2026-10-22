@@ -12,6 +12,9 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "test": "node --import tsx --test src/routes/qlete.test.ts",
     "start": "node dist/server.js"
   },
   "dependencies": {
