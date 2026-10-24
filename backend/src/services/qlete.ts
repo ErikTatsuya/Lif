@@ -3,16 +3,7 @@ import { and, desc, eq, exists, ilike, inArray, or } from "drizzle-orm";
 
 import { db } from "../db/index.js";
 import { optionsTable, questionsTable, quizzesTable } from "../db/schema.js";
-
-export type QuizPayload = {
-  title: string;
-  description?: string;
-  questions: Array<{
-    prompt: string;
-    explanation?: string;
-    options: Array<{ text: string; isCorrect: boolean }>;
-  }>;
-};
+import type { QuizInputDto } from "../dtos/qlete.js";
 
 export class QuizAnswerError extends Error {}
 
@@ -23,7 +14,7 @@ function createQuizId(): string {
 async function insertQuestions(
   transaction: Parameters<Parameters<typeof db.transaction>[0]>[0],
   quizId: string,
-  questions: QuizPayload["questions"]
+  questions: QuizInputDto["questions"]
 ) {
   for (const [questionIndex, question] of questions.entries()) {
     const insertedQuestion = await transaction
@@ -52,7 +43,7 @@ async function insertQuestions(
   }
 }
 
-export async function createQuiz(ownerId: number, payload: QuizPayload) {
+export async function createQuiz(ownerId: number, payload: QuizInputDto) {
   const id = createQuizId();
   await db.transaction(async transaction => {
     await transaction.insert(quizzesTable).values({
@@ -179,9 +170,10 @@ export async function getQuiz(id: string) {
   };
 }
 
-export async function getQuizForEdit(id: string) {
+export async function getQuizForEdit(id: string, ownerId: number) {
   const quiz = await getQuiz(id);
-  if (!quiz) return null;
+  if (!quiz) return { status: "not-found" as const };
+  if (quiz.ownerId !== ownerId) return { status: "forbidden" as const };
 
   const questionIds = quiz.questions.map(question => question.id);
   const [options, explanations] = await Promise.all([
@@ -200,16 +192,20 @@ export async function getQuizForEdit(id: string) {
     explanations.map(question => [question.id, question.explanation])
   );
 
+  const { ownerId: _ownerId, ...editableQuiz } = quiz;
   return {
-    ...quiz,
-    questions: quiz.questions.map(question => ({
-      ...question,
-      explanation: explanationsByQuestion.get(question.id) ?? null,
-      options: question.options.map(option => ({
-        ...option,
-        isCorrect: correctOptions.get(option.id) ?? false,
+    status: "ok" as const,
+    quiz: {
+      ...editableQuiz,
+      questions: quiz.questions.map(question => ({
+        ...question,
+        explanation: explanationsByQuestion.get(question.id) ?? null,
+        options: question.options.map(option => ({
+          ...option,
+          isCorrect: correctOptions.get(option.id) ?? false,
+        })),
       })),
-    })),
+    },
   };
 }
 
@@ -317,7 +313,7 @@ export async function checkQuizAnswer(id: string, questionId: number, optionId: 
   };
 }
 
-export async function replaceQuiz(id: string, ownerId: number, payload: QuizPayload) {
+export async function replaceQuiz(id: string, ownerId: number, payload: QuizInputDto) {
   const existing = await db.select({ ownerId: quizzesTable.ownerId })
     .from(quizzesTable)
     .where(eq(quizzesTable.id, id))

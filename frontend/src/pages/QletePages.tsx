@@ -1,15 +1,19 @@
 import {
   useEffect,
   useReducer,
+  useRef,
   useState,
   type ChangeEvent,
   type FormEvent,
   type ReactNode
 } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Brand } from '../components/Brand';
 import { DecorativeBackground } from '../components/DecorativeBackground';
 import { useAuth } from '../contexts/AuthContext';
+import copyIcon from '../assets/copy.svg';
+import shareIcon from '../assets/share.svg';
 import {
   ApiError,
   qleteApi,
@@ -274,11 +278,116 @@ function QuizCards({
             {quiz.description && <p>{quiz.description}</p>}
             <span className="qlete-card-link">Abrir quiz <span aria-hidden="true">→</span></span>
           </Link>
+          <QuizShareAction quizId={quiz.id} title={quiz.title} />
           {ownerActions && onDeleted && (
             <QuizOwnerActions quizId={quiz.id} onDeleted={() => onDeleted(quiz.id)} />
           )}
         </article>
       ))}
+    </div>
+  );
+}
+
+function QuizShareAction({ quizId, title }: { quizId: string; title: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const shareUrl = `${window.location.origin}/qlete/q/${encodeURIComponent(quizId)}`;
+  const panelId = `qlete-share-${quizId}`;
+
+  useEffect(() => {
+    if (!isOpen) return;
+    closeRef.current?.focus();
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') setIsOpen(false);
+    }
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('keydown', closeOnEscape);
+      triggerRef.current?.focus();
+    };
+  }, [isOpen]);
+
+  async function copyLink(destination: string) {
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error('A área de transferência não está disponível.');
+      }
+      await navigator.clipboard.writeText(shareUrl);
+      setMessage(destination
+        ? `Link copiado! Agora é só colar no ${destination}.`
+        : 'Link copiado para compartilhar.');
+    } catch (cause) {
+      console.error('Erro ao copiar o link do quiz:', cause);
+      setMessage('Não foi possível copiar automaticamente. Selecione o link acima para copiá-lo.');
+    }
+  }
+
+  return (
+    <div className="qlete-share">
+      <button
+        ref={triggerRef}
+        className="qlete-share-trigger"
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        onClick={() => {
+          setIsOpen(true);
+          setMessage('');
+        }}
+      >
+        <img src={shareIcon} alt="" />
+        Compartilhar
+      </button>
+      {isOpen && createPortal(
+        <div
+          className="qlete-share-backdrop"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setIsOpen(false);
+          }}
+        >
+          <section
+            className="qlete-share-modal"
+            id={panelId}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`${panelId}-title`}
+          >
+            <div className="qlete-share-modal-heading">
+              <div className="qlete-share-modal-icon"><img src={shareIcon} alt="" /></div>
+              <button
+                ref={closeRef}
+                className="qlete-share-close"
+                type="button"
+                aria-label="Fechar compartilhamento"
+                onClick={() => setIsOpen(false)}
+              >
+                ×
+              </button>
+            </div>
+            <h2 id={`${panelId}-title`}>Compartilhe este quiz</h2>
+            <p className="qlete-share-description">{title}</p>
+            <label className="qlete-share-label" htmlFor={`${panelId}-url`}>Link do quiz</label>
+            <div className="qlete-share-link-row">
+              <input
+                className="qlete-share-url"
+                id={`${panelId}-url`}
+                type="url"
+                readOnly
+                value={shareUrl}
+                onFocus={(event) => event.currentTarget.select()}
+              />
+              <button className="qlete-share-copy" type="button" onClick={() => void copyLink('')}>
+                <img src={copyIcon} alt="" />
+                Copiar
+              </button>
+            </div>
+            {message && <p className="qlete-share-status" role="status">{message}</p>}
+          </section>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }

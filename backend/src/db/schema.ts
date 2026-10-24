@@ -19,7 +19,7 @@ export const events = pgTable("events", {
 })
 
 export const quizzesTable = pgTable("quizzes", {
-  id: varchar({ length: 8 }).primaryKey(),
+  id: varchar({ length: 21 }).primaryKey(),
   ownerId: integer("owner_id").notNull().references(() => usersTable.id, { onDelete: "cascade" }),
   title: varchar({ length: 160 }).notNull(),
   description: varchar({ length: 2000 }).notNull().default(""),
@@ -29,7 +29,7 @@ export const quizzesTable = pgTable("quizzes", {
 
 export const questionsTable = pgTable("questions", {
   id: serial().primaryKey(),
-  quizId: varchar("quiz_id", { length: 8 }).notNull().references(() => quizzesTable.id, { onDelete: "cascade" }),
+  quizId: varchar("quiz_id", { length: 21 }).notNull().references(() => quizzesTable.id, { onDelete: "cascade" }),
   position: integer().notNull(),
   prompt: varchar({ length: 1000 }).notNull(),
   explanation: varchar({ length: 2000 }),
