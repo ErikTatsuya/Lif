@@ -61,8 +61,9 @@ export type QuizResult = {
 
 export type QuizLeaderboardEntry = {
   position: number;
-  username: string;
-  name: string;
+  username: string | null;
+  name: string | null;
+  temporaryName: string | null;
   score: number;
   total: number;
   completedAt: string;
@@ -287,9 +288,9 @@ export const qleteApi = {
     return qleteRequest<Quiz>(`/quizzes/${encodeURIComponent(id)}`);
   },
 
-  async getLeaderboard(id: string) {
+  async getLeaderboard(id: string, filter: 'all' | 'authenticated' | 'temporary' = 'all') {
     return qleteRequest<QuizLeaderboardEntry[]>(
-      `/quizzes/${encodeURIComponent(id)}/leaderboard`
+      `/quizzes/${encodeURIComponent(id)}/leaderboard?filter=${filter}`
     );
   },
 
@@ -297,11 +298,11 @@ export const qleteApi = {
     return qleteRequest<EditableQuiz>(`/quizzes/${encodeURIComponent(id)}/edit`);
   },
 
-  async submit(id: string, answers: Record<string, string>) {
+  async submit(id: string, answers: Record<string, string>, temporaryName?: string) {
     return qleteRequest<QuizResult>(`/quizzes/${encodeURIComponent(id)}/submit`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(answers)
+      body: JSON.stringify({ answers, ...(temporaryName ? { temporaryName } : {}) })
     });
   },
 

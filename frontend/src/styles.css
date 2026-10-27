@@ -1021,6 +1021,49 @@ button:disabled {
   letter-spacing: -0.03em;
 }
 
+.qlete-leaderboard-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.qlete-leaderboard-filters button {
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #cfe5cf;
+  border-radius: 999px;
+  background: #fff;
+  color: #315f26;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+.qlete-leaderboard-filters button:hover,
+.qlete-leaderboard-filters button.is-active {
+  background: #e3f4dc;
+  border-color: #9acb87;
+  font-weight: 700;
+}
+
+.qlete-temporary-name {
+  display: grid;
+  gap: 0.35rem;
+  margin: 1rem 0;
+  color: #52675a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.qlete-temporary-name input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #cfe5cf;
+  border-radius: 0.6rem;
+  font: inherit;
+}
+
 .qlete-leaderboard > p:not(.eyebrow) {
   margin: 0;
 }
@@ -1095,6 +1138,16 @@ button:disabled {
   margin: 0.75rem 0 1.25rem;
   color: #52675a;
   text-align: center;
+}
+
+.qlete-signup-prompt {
+  margin: 0.75rem 0 1.25rem;
+  color: #52675a;
+  text-align: center;
+}
+
+.qlete-signup-prompt .auth-link {
+  font-weight: 700;
 }
 
 .qlete-ranking-status.is-error {

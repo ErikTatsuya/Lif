@@ -9,6 +9,7 @@ import {
   getQuizForEdit,
   getQuizLeaderboard,
   getQuizList,
+  type LeaderboardFilter,
   QuizAnswerError,
   replaceQuiz,
   submitQuiz,
@@ -17,7 +18,11 @@ import {
 
 type QuizParams = { id: string };
 type QuizListQuery = { q?: string; page?: string };
-type SubmitBody = Record<string, string>;
+type SubmitBody = {
+  answers: Record<string, string>;
+  temporaryName?: string;
+};
+type LeaderboardQuery = { filter?: LeaderboardFilter };
 type CheckAnswerBody = { questionId: number; optionId: number | null };
 
 declare module "fastify" {
@@ -71,9 +76,17 @@ const quizPayloadSchema = {
 
 const submitBodySchema = {
   type: "object",
-  maxProperties: 100,
-  propertyNames: { pattern: "^[1-9][0-9]*$" },
-  additionalProperties: { type: "string", minLength: 1, maxLength: 12 },
+  additionalProperties: false,
+  required: ["answers"],
+  properties: {
+    answers: {
+      type: "object",
+      maxProperties: 100,
+      propertyNames: { pattern: "^[1-9][0-9]*$" },
+      additionalProperties: { type: "string", minLength: 1, maxLength: 12 },
+    },
+    temporaryName: { type: "string", minLength: 1, maxLength: 40, pattern: "\\S" },
+  },
 } as const;
 
 const checkAnswerBodySchema = {
@@ -152,10 +165,17 @@ export async function qleteRoutes(app: FastifyInstance) {
     }
   });
 
-  app.get<{ Params: QuizParams }>("/quizzes/:id/leaderboard", {
-    schema: { params: quizIdSchema() },
+  app.get<{ Params: QuizParams; Querystring: LeaderboardQuery }>("/quizzes/:id/leaderboard", {
+    schema: {
+      params: quizIdSchema(),
+      querystring: {
+        type: "object",
+        additionalProperties: false,
+        properties: { filter: { enum: ["all", "authenticated", "temporary"] } },
+      },
+    },
   }, async (request, reply) => {
-    const leaderboard = await getQuizLeaderboard(request.params.id);
+    const leaderboard = await getQuizLeaderboard(request.params.id, request.query.filter ?? "all");
     if (!leaderboard) return reply.code(404).send({ error: "Quiz não encontrado." });
     return reply.send(leaderboard);
   });

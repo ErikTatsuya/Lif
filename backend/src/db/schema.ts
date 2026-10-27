@@ -51,14 +51,16 @@ export const quizCompletionsTable = pgTable(
   "quiz_completions",
   {
     id: serial().primaryKey(),
-    userId: integer("user_id").notNull().references(() => usersTable.id, { onDelete: "cascade" }),
+    userId: integer("user_id").references(() => usersTable.id, { onDelete: "cascade" }),
     quizId: varchar("quiz_id", { length: 8 }).notNull().references(() => quizzesTable.id, { onDelete: "cascade" }),
+    temporaryName: varchar("temporary_name", { length: 40 }),
     score: integer().notNull(),
     total: integer().notNull(),
     completedAt: timestamp("completed_at").notNull().defaultNow(),
   },
   table => [
     unique("quiz_completions_user_quiz_unique").on(table.userId, table.quizId),
+    unique("quiz_completions_temporary_name_unique").on(table.quizId, table.temporaryName),
   ],
 );
 

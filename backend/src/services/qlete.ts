@@ -1,5 +1,5 @@
 import { randomBytes } from "node:crypto";
-import { and, asc, desc, eq, exists, ilike, inArray, or } from "drizzle-orm";
+import { and, asc, desc, eq, exists, ilike, inArray, isNotNull, or } from "drizzle-orm";
 
 import { db } from "../db/index.js";
 import {
@@ -19,6 +19,13 @@ export type QuizPayload = {
     options: Array<{ text: string; isCorrect: boolean }>;
   }>;
 };
+
+export type QuizSubmitBody = {
+  answers: Record<string, string>;
+  temporaryName?: string;
+};
+
+export type LeaderboardFilter = "all" | "authenticated" | "temporary";
 
 export class QuizAnswerError extends Error {}
 
@@ -221,9 +228,10 @@ export async function getQuizForEdit(id: string) {
 
 export async function submitQuiz(
   id: string,
-  answers: Record<string, string>,
+  body: QuizSubmitBody,
   userId?: number,
 ) {
+  const answers = body.answers;
   const quiz = await getQuiz(id);
   if (!quiz) return null;
 
@@ -300,12 +308,14 @@ export async function submitQuiz(
     questions: results,
   };
 
-  if (userId !== undefined) {
+  const temporaryName = body.temporaryName?.trim();
+  if (userId !== undefined || temporaryName) {
     await db
       .insert(quizCompletionsTable)
       .values({
-        userId,
+        userId: userId ?? null,
         quizId: id,
+        temporaryName: userId === undefined ? temporaryName : null,
         score: result.score,
         total: result.total,
       })
@@ -317,7 +327,7 @@ export async function submitQuiz(
   return result;
 }
 
-export async function getQuizLeaderboard(id: string) {
+export async function getQuizLeaderboard(id: string, filter: LeaderboardFilter = "all") {
   const quiz = await db
     .select({ id: quizzesTable.id })
     .from(quizzesTable)
@@ -330,13 +340,21 @@ export async function getQuizLeaderboard(id: string) {
     .select({
       username: usersTable.username,
       name: usersTable.name,
+      temporaryName: quizCompletionsTable.temporaryName,
       score: quizCompletionsTable.score,
       total: quizCompletionsTable.total,
       completedAt: quizCompletionsTable.completedAt,
     })
     .from(quizCompletionsTable)
-    .innerJoin(usersTable, eq(usersTable.id, quizCompletionsTable.userId))
-    .where(eq(quizCompletionsTable.quizId, id))
+    .leftJoin(usersTable, eq(usersTable.id, quizCompletionsTable.userId))
+    .where(and(
+      eq(quizCompletionsTable.quizId, id),
+      filter === "authenticated"
+        ? isNotNull(quizCompletionsTable.userId)
+        : filter === "temporary"
+          ? isNotNull(quizCompletionsTable.temporaryName)
+          : undefined,
+    ))
     .orderBy(desc(quizCompletionsTable.score), asc(quizCompletionsTable.completedAt));
 
   return rows.map((row, index) => ({

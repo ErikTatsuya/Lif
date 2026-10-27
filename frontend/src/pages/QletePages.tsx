@@ -32,6 +32,18 @@ type QuizProgress = {
   storageError: string | null;
 };
 
+function temporaryNameKey(quizId: string) {
+  return `qlete:temporary-name:${quizId}`;
+}
+
+function readTemporaryName(quizId: string) {
+  return localStorage.getItem(temporaryNameKey(quizId))?.trim() ?? '';
+}
+
+function saveTemporaryName(quizId: string, name: string) {
+  localStorage.setItem(temporaryNameKey(quizId), name.trim());
+}
+
 type EditorOption = { key: string; text: string; isCorrect: boolean };
 type EditorQuestion = {
   key: string;
@@ -445,12 +457,19 @@ export function QleteHomePage() {
 
 export function QleteIntroPage() {
   const { quizId = '' } = useParams();
+  const { profile, loading: authLoading } = useAuth();
   const [state, setState] = useState<PageState<Quiz>>({ status: 'loading' });
+  const [temporaryName, setTemporaryName] = useState('');
   const [leaderboard, setLeaderboard] = useState<PageState<QuizLeaderboardEntry[]>>({
     status: 'loading'
   });
+  const [leaderboardFilter, setLeaderboardFilter] = useState<'all' | 'authenticated' | 'temporary'>('all');
   const navigate = useNavigate();
   usePageTitle('Quiz');
+
+  useEffect(() => {
+    setTemporaryName(readTemporaryName(quizId));
+  }, [quizId]);
 
   useEffect(() => {
     let active = true;
@@ -463,7 +482,7 @@ export function QleteIntroPage() {
         setState({ status: 'error', message: errorMessage(cause, 'Não foi possível carregar este quiz.') });
       });
     setLeaderboard({ status: 'loading' });
-    void qleteApi.getLeaderboard(quizId)
+    void qleteApi.getLeaderboard(quizId, leaderboardFilter)
       .then((entries) => { if (active) setLeaderboard({ status: 'ready', value: entries }); })
       .catch((cause: unknown) => {
         if (!active) return;
@@ -474,7 +493,7 @@ export function QleteIntroPage() {
         });
       });
     return () => { active = false; };
-  }, [quizId]);
+  }, [leaderboardFilter, quizId]);
 
   return (
     <QleteLayout title="Quiz">
@@ -487,6 +506,18 @@ export function QleteIntroPage() {
             <p className="eyebrow">{state.value.questions.length} perguntas</p>
             <h1>{state.value.title}</h1>
             {state.value.description && <p>{state.value.description}</p>}
+            {!authLoading && !profile && (
+              <label className="qlete-temporary-name">
+                Nome no placar (opcional)
+                <input
+                  value={temporaryName}
+                  maxLength={40}
+                  onChange={(event) => setTemporaryName(event.target.value)}
+                  onBlur={() => saveTemporaryName(quizId, temporaryName)}
+                  placeholder="Ex.: Jogador 1"
+                />
+              </label>
+            )}
             {state.value.isOwner && (
               <QuizOwnerActions
                 quizId={quizId}
@@ -500,6 +531,22 @@ export function QleteIntroPage() {
           <aside className="qlete-panel qlete-leaderboard" aria-labelledby="leaderboard-title">
             <p className="eyebrow">Placar</p>
             <h2 id="leaderboard-title">Melhores pontuações</h2>
+            <div className="qlete-leaderboard-filters" aria-label="Filtrar placar">
+              {([
+                ['all', 'Todos'],
+                ['authenticated', 'Cadastrados'],
+                ['temporary', 'Temporários']
+              ] as const).map(([filter, label]) => (
+                <button
+                  className={leaderboardFilter === filter ? 'is-active' : ''}
+                  type="button"
+                  key={filter}
+                  onClick={() => setLeaderboardFilter(filter)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
             {leaderboard.status === 'loading' && <LoadingMessage />}
             {leaderboard.status === 'error' && <ErrorMessage message={leaderboard.message} />}
             {leaderboard.status === 'ready' && leaderboard.value.length === 0 && (
@@ -508,11 +555,11 @@ export function QleteIntroPage() {
             {leaderboard.status === 'ready' && leaderboard.value.length > 0 && (
               <ol className="qlete-leaderboard-list">
                 {leaderboard.value.map((entry) => (
-                  <li key={`${entry.username}-${entry.position}`}>
+                  <li key={`${entry.username ?? entry.temporaryName}-${entry.position}`}>
                     <span className="qlete-leaderboard-position">#{entry.position}</span>
                     <span className="qlete-leaderboard-user">
-                      <strong>{entry.name}</strong>
-                      <small>@{entry.username}</small>
+                      <strong>{entry.name ?? entry.temporaryName}</strong>
+                      <small>{entry.username ? `@${entry.username}` : 'Usuário temporário'}</small>
                     </span>
                     <strong>{entry.score}/{entry.total}</strong>
                   </li>
@@ -528,6 +575,7 @@ export function QleteIntroPage() {
 
 export function QleteQuestionPage() {
   const { quizId = '', step } = useParams();
+  const { profile } = useAuth();
   const navigate = useNavigate();
   const [state, setState] = useState<PageState<Quiz>>({ status: 'loading' });
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -538,8 +586,13 @@ export function QleteQuestionPage() {
   const [feedbackShown, setFeedbackShown] = useState(false);
   const [answerCheck, setAnswerCheck] = useState<QuizAnswerCheck | null>(null);
   const [isCheckingAnswer, setIsCheckingAnswer] = useState(false);
+  const [temporaryName, setTemporaryName] = useState('');
   const stepNumber = step && /^[1-9]\d*$/.test(step) ? Number(step) : 0;
   usePageTitle('Pergunta');
+
+  useEffect(() => {
+    setTemporaryName(readTemporaryName(quizId));
+  }, [quizId]);
 
   useEffect(() => {
     setFeedbackShown(false);
@@ -603,7 +656,15 @@ export function QleteQuestionPage() {
     setSubmitError('');
     setIsSubmitting(true);
     try {
-      const submittedResult = await qleteApi.submit(quizId, answers);
+      let name = temporaryName;
+      if (!profile && !name) {
+        name = window.prompt('Digite um nome para aparecer no placar (opcional):')?.trim() ?? '';
+        if (name) {
+          saveTemporaryName(quizId, name);
+          setTemporaryName(name);
+        }
+      }
+      const submittedResult = await qleteApi.submit(quizId, answers, profile ? undefined : name || undefined);
       setResult(submittedResult);
       try {
         writeProgress(quizId, answers, submittedResult);
@@ -743,6 +804,7 @@ export function QleteResultPage() {
   const { quizId = '' } = useParams();
   const { profile, loading: authLoading } = useAuth();
   const [progress, setProgress] = useState<QuizProgress | null>(null);
+  const [temporaryName, setTemporaryName] = useState('');
   const [leaderboard, setLeaderboard] = useState<PageState<QuizLeaderboardEntry[]>>({
     status: 'loading'
   });
@@ -750,18 +812,19 @@ export function QleteResultPage() {
 
   useEffect(() => {
     setProgress(readProgress(quizId));
+    setTemporaryName(readTemporaryName(quizId));
   }, [quizId]);
 
   useEffect(() => {
     if (authLoading) return;
-    if (!profile) {
+    if (!profile && !temporaryName) {
       setLeaderboard({ status: 'ready', value: [] });
       return;
     }
 
     let active = true;
     setLeaderboard({ status: 'loading' });
-    void qleteApi.getLeaderboard(quizId)
+    void qleteApi.getLeaderboard(quizId, 'all')
       .then((entries) => {
         if (active) setLeaderboard({ status: 'ready', value: entries });
       })
@@ -775,7 +838,7 @@ export function QleteResultPage() {
       });
 
     return () => { active = false; };
-  }, [authLoading, profile, quizId]);
+  }, [authLoading, profile, quizId, temporaryName]);
 
   if (!progress) {
     return <QleteLayout title="Resultado"><LoadingMessage /></QleteLayout>;
@@ -833,14 +896,22 @@ export function QleteResultPage() {
           </div>
           <p className="qlete-score-message">{scoreMessage}</p>
         </div>
-        {profile && leaderboard.status === 'loading' && (
+        {!authLoading && !profile && (
+        <p className="qlete-signup-prompt">
+          <span>Crie uma conta para colocar sua pontuação no placar.</span>{' '}
+          <Link className="auth-link" to="/signup">Criar uma conta</Link>
+        </p>
+        )}
+        {(profile || temporaryName) && leaderboard.status === 'loading' && (
           <p className="qlete-ranking-status">Consultando sua posição no placar...</p>
         )}
-        {profile && leaderboard.status === 'error' && (
+        {(profile || temporaryName) && leaderboard.status === 'error' && (
           <p className="qlete-ranking-status is-error">{leaderboard.message}</p>
         )}
-        {profile && leaderboard.status === 'ready' && (() => {
-          const entry = leaderboard.value.find(item => item.username === profile.username);
+        {(profile || temporaryName) && leaderboard.status === 'ready' && (() => {
+          const entry = leaderboard.value.find(item =>
+            profile ? item.username === profile.username : item.temporaryName === temporaryName
+          );
           return entry ? (
             <p className="qlete-ranking-position">
               Sua posição no placar: <strong>#{entry.position}</strong>
