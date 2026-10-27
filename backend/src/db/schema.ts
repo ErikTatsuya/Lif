@@ -46,3 +46,16 @@ export const optionsTable = pgTable("options", {
 }, table => [
   unique("options_question_position_unique").on(table.questionId, table.position),
 ]);
+
+export const quizScoresTable = pgTable("quiz_scores", {
+  id: serial().primaryKey(),
+  quizId: varchar("quiz_id", { length: 8 })
+    .notNull()
+    .references(() => quizzesTable.id, { onDelete: "cascade" }),
+  userId: integer("user_id")
+    .notNull()
+    .references(() => usersTable.id, { onDelete: "cascade" }),
+  score: integer().notNull(),
+  total: integer().notNull(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
