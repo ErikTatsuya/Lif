@@ -6,10 +6,12 @@ import {
   type FormEvent,
   type ReactNode
 } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, Navigate, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { Brand } from '../components/Brand';
 import { DecorativeBackground } from '../components/DecorativeBackground';
 import { useAuth } from '../contexts/AuthContext';
+import shareIcon from '../assets/share.svg';
 import {
   ApiError,
   qleteApi,
@@ -301,11 +303,66 @@ function QuizCards({
             {quiz.description && <p>{quiz.description}</p>}
             <span className="qlete-card-link">Abrir quiz <span aria-hidden="true">→</span></span>
           </Link>
+          <ShareQuizButton quizId={quiz.id} />
           {ownerActions && onDeleted && (
             <QuizOwnerActions quizId={quiz.id} onDeleted={() => onDeleted(quiz.id)} />
           )}
         </article>
       ))}
+    </div>
+  );
+}
+
+function ShareQuizButton({ quizId }: { quizId: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const url = `${window.location.origin}/qlete/q/${encodeURIComponent(quizId)}`;
+
+  async function copyQuizLink() {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+    } catch (cause) {
+      console.error('Erro ao copiar o link do quiz:', cause);
+    }
+  }
+
+  return (
+    <div className="qlete-share-action">
+      <button className="qlete-share-button" type="button" onClick={() => {
+        setCopied(false);
+        setIsOpen(true);
+      }}>
+        <img src={shareIcon} alt="" aria-hidden="true" />
+        Compartilhar
+      </button>
+      {isOpen && createPortal(
+        <div className="qlete-share-backdrop" role="presentation" onClick={() => setIsOpen(false)}>
+          <section
+            className="qlete-share-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={`share-title-${quizId}`}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              className="qlete-share-close"
+              type="button"
+              aria-label="Fechar compartilhamento"
+              onClick={() => setIsOpen(false)}
+            >
+              ×
+            </button>
+            <h2 id={`share-title-${quizId}`}>Compartilhar quiz</h2>
+            <p>Copie este link para compartilhar o quiz:</p>
+            <input className="qlete-share-url" value={url} readOnly aria-label="Link do quiz" />
+            <button className="submit-button" type="button" onClick={() => void copyQuizLink()}>
+              {copied ? 'Link copiado' : 'Copiar link'}
+            </button>
+          </section>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
