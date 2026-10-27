@@ -1004,6 +1004,77 @@ button:disabled {
   max-width: 54rem;
 }
 
+.qlete-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
+  gap: 1rem;
+  align-items: start;
+}
+
+.qlete-intro-layout .qlete-panel {
+  max-width: none;
+}
+
+.qlete-leaderboard h2 {
+  margin: 0.5rem 0 1rem;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+}
+
+.qlete-leaderboard > p:not(.eyebrow) {
+  margin: 0;
+}
+
+.qlete-leaderboard-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qlete-leaderboard-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #e8eee8;
+}
+
+.qlete-leaderboard-list li:last-child {
+  border-bottom: 0;
+}
+
+.qlete-leaderboard-position {
+  min-width: 2rem;
+  color: #20864c;
+  font-weight: 700;
+}
+
+.qlete-leaderboard-user {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 0.15rem;
+}
+
+.qlete-leaderboard-user strong,
+.qlete-leaderboard-user small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.qlete-leaderboard-user small {
+  color: #65776b;
+}
+
+@media (max-width: 760px) {
+  .qlete-intro-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .qlete-panel > .eyebrow {
   margin-top: 0;
 }
@@ -1017,6 +1088,25 @@ button:disabled {
   border: 1px solid;
   border-radius: 1rem;
   text-align: center;
+}
+
+.qlete-ranking-status,
+.qlete-ranking-position {
+  margin: 0.75rem 0 1.25rem;
+  color: #52675a;
+  text-align: center;
+}
+
+.qlete-ranking-status.is-error {
+  color: #a52d2d;
+}
+
+.qlete-ranking-position {
+  padding: 0.75rem 1rem;
+  border: 1px solid #cfe5cf;
+  border-radius: 0.75rem;
+  background: #f0f8ef;
+  color: #315f26;
 }
 
 .qlete-score.is-score-low {

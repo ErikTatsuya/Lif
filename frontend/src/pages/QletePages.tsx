@@ -15,6 +15,7 @@ import {
   qleteApi,
   type EditableQuiz,
   type QuizAnswerCheck,
+  type QuizLeaderboardEntry,
   type Quiz,
   type QuizResult,
   type QuizSummary
@@ -70,6 +71,20 @@ function newEditorQuestion(): EditorQuestion {
 
 function newEditorState(): EditorState {
   return { title: '', description: '', questions: [newEditorQuestion()] };
+}
+
+function shuffleOptions(quiz: Quiz): Quiz {
+  return {
+    ...quiz,
+    questions: quiz.questions.map((question) => {
+      const options = [...question.options];
+      for (let index = options.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [options[index], options[randomIndex]] = [options[randomIndex], options[index]];
+      }
+      return { ...question, options };
+    })
+  };
 }
 
 function editorReducer(state: EditorState, action: EditorAction): EditorState {
@@ -431,6 +446,9 @@ export function QleteHomePage() {
 export function QleteIntroPage() {
   const { quizId = '' } = useParams();
   const [state, setState] = useState<PageState<Quiz>>({ status: 'loading' });
+  const [leaderboard, setLeaderboard] = useState<PageState<QuizLeaderboardEntry[]>>({
+    status: 'loading'
+  });
   const navigate = useNavigate();
   usePageTitle('Quiz');
 
@@ -444,6 +462,17 @@ export function QleteIntroPage() {
         console.error('Erro ao carregar o quiz:', cause);
         setState({ status: 'error', message: errorMessage(cause, 'Não foi possível carregar este quiz.') });
       });
+    setLeaderboard({ status: 'loading' });
+    void qleteApi.getLeaderboard(quizId)
+      .then((entries) => { if (active) setLeaderboard({ status: 'ready', value: entries }); })
+      .catch((cause: unknown) => {
+        if (!active) return;
+        console.error('Erro ao carregar o placar:', cause);
+        setLeaderboard({
+          status: 'error',
+          message: errorMessage(cause, 'Não foi possível carregar o placar.')
+        });
+      });
     return () => { active = false; };
   }, [quizId]);
 
@@ -453,20 +482,45 @@ export function QleteIntroPage() {
       {state.status === 'loading' ? <LoadingMessage /> : null}
       {state.status === 'error' ? <ErrorMessage message={state.message} /> : null}
       {state.status === 'ready' && (
-        <article className="qlete-panel">
-          <p className="eyebrow">{state.value.questions.length} perguntas</p>
-          <h1>{state.value.title}</h1>
-          {state.value.description && <p>{state.value.description}</p>}
-          {state.value.isOwner && (
-            <QuizOwnerActions
-              quizId={quizId}
-              onDeleted={() => navigate('/qlete', { replace: true })}
-            />
-          )}
-          <Link className="submit-button qlete-start-button" to={`/qlete/q/${quizId}/1`}>
-            Começar
-          </Link>
-        </article>
+        <div className="qlete-intro-layout">
+          <article className="qlete-panel">
+            <p className="eyebrow">{state.value.questions.length} perguntas</p>
+            <h1>{state.value.title}</h1>
+            {state.value.description && <p>{state.value.description}</p>}
+            {state.value.isOwner && (
+              <QuizOwnerActions
+                quizId={quizId}
+                onDeleted={() => navigate('/qlete', { replace: true })}
+              />
+            )}
+            <Link className="submit-button qlete-start-button" to={`/qlete/q/${quizId}/1`}>
+              Começar
+            </Link>
+          </article>
+          <aside className="qlete-panel qlete-leaderboard" aria-labelledby="leaderboard-title">
+            <p className="eyebrow">Placar</p>
+            <h2 id="leaderboard-title">Melhores pontuações</h2>
+            {leaderboard.status === 'loading' && <LoadingMessage />}
+            {leaderboard.status === 'error' && <ErrorMessage message={leaderboard.message} />}
+            {leaderboard.status === 'ready' && leaderboard.value.length === 0 && (
+              <p>Ainda não há pontuações registradas.</p>
+            )}
+            {leaderboard.status === 'ready' && leaderboard.value.length > 0 && (
+              <ol className="qlete-leaderboard-list">
+                {leaderboard.value.map((entry) => (
+                  <li key={`${entry.username}-${entry.position}`}>
+                    <span className="qlete-leaderboard-position">#{entry.position}</span>
+                    <span className="qlete-leaderboard-user">
+                      <strong>{entry.name}</strong>
+                      <small>@{entry.username}</small>
+                    </span>
+                    <strong>{entry.score}/{entry.total}</strong>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </aside>
+        </div>
       )}
     </QleteLayout>
   );
@@ -504,7 +558,9 @@ export function QleteQuestionPage() {
     let active = true;
     setState({ status: 'loading' });
     void qleteApi.get(quizId)
-      .then((quiz) => { if (active) setState({ status: 'ready', value: quiz }); })
+      .then((quiz) => {
+        if (active) setState({ status: 'ready', value: shuffleOptions(quiz) });
+      })
       .catch((cause: unknown) => {
         if (!active) return;
         console.error('Erro ao carregar a pergunta:', cause);
@@ -685,12 +741,41 @@ export function QleteQuestionPage() {
 
 export function QleteResultPage() {
   const { quizId = '' } = useParams();
+  const { profile, loading: authLoading } = useAuth();
   const [progress, setProgress] = useState<QuizProgress | null>(null);
+  const [leaderboard, setLeaderboard] = useState<PageState<QuizLeaderboardEntry[]>>({
+    status: 'loading'
+  });
   usePageTitle('Resultado');
 
   useEffect(() => {
     setProgress(readProgress(quizId));
   }, [quizId]);
+
+  useEffect(() => {
+    if (authLoading) return;
+    if (!profile) {
+      setLeaderboard({ status: 'ready', value: [] });
+      return;
+    }
+
+    let active = true;
+    setLeaderboard({ status: 'loading' });
+    void qleteApi.getLeaderboard(quizId)
+      .then((entries) => {
+        if (active) setLeaderboard({ status: 'ready', value: entries });
+      })
+      .catch((cause: unknown) => {
+        if (!active) return;
+        console.error('Erro ao carregar a posição no placar:', cause);
+        setLeaderboard({
+          status: 'error',
+          message: errorMessage(cause, 'Não foi possível carregar sua posição no placar.')
+        });
+      });
+
+    return () => { active = false; };
+  }, [authLoading, profile, quizId]);
 
   if (!progress) {
     return <QleteLayout title="Resultado"><LoadingMessage /></QleteLayout>;
@@ -748,6 +833,20 @@ export function QleteResultPage() {
           </div>
           <p className="qlete-score-message">{scoreMessage}</p>
         </div>
+        {profile && leaderboard.status === 'loading' && (
+          <p className="qlete-ranking-status">Consultando sua posição no placar...</p>
+        )}
+        {profile && leaderboard.status === 'error' && (
+          <p className="qlete-ranking-status is-error">{leaderboard.message}</p>
+        )}
+        {profile && leaderboard.status === 'ready' && (() => {
+          const entry = leaderboard.value.find(item => item.username === profile.username);
+          return entry ? (
+            <p className="qlete-ranking-position">
+              Sua posição no placar: <strong>#{entry.position}</strong>
+            </p>
+          ) : null;
+        })()}
         <h1>Confira suas respostas</h1>
         <div className="qlete-review">
           {progress.result.questions.map((question, index) => (

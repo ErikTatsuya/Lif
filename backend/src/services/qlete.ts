@@ -1,8 +1,14 @@
 import { randomBytes } from "node:crypto";
-import { and, desc, eq, exists, ilike, inArray, or } from "drizzle-orm";
+import { and, asc, desc, eq, exists, ilike, inArray, or } from "drizzle-orm";
 
 import { db } from "../db/index.js";
-import { optionsTable, questionsTable, quizzesTable } from "../db/schema.js";
+import {
+  optionsTable,
+  questionsTable,
+  quizCompletionsTable,
+  quizzesTable,
+  usersTable,
+} from "../db/schema.js";
 
 export type QuizPayload = {
   title: string;
@@ -213,7 +219,11 @@ export async function getQuizForEdit(id: string) {
   };
 }
 
-export async function submitQuiz(id: string, answers: Record<string, string>) {
+export async function submitQuiz(
+  id: string,
+  answers: Record<string, string>,
+  userId?: number,
+) {
   const quiz = await getQuiz(id);
   if (!quiz) return null;
 
@@ -284,11 +294,55 @@ export async function submitQuiz(id: string, answers: Record<string, string>) {
     };
   });
 
-  return {
+  const result = {
     score,
     total: quiz.questions.length,
     questions: results,
   };
+
+  if (userId !== undefined) {
+    await db
+      .insert(quizCompletionsTable)
+      .values({
+        userId,
+        quizId: id,
+        score: result.score,
+        total: result.total,
+      })
+      .onConflictDoNothing({
+        target: [quizCompletionsTable.userId, quizCompletionsTable.quizId],
+      });
+  }
+
+  return result;
+}
+
+export async function getQuizLeaderboard(id: string) {
+  const quiz = await db
+    .select({ id: quizzesTable.id })
+    .from(quizzesTable)
+    .where(eq(quizzesTable.id, id))
+    .limit(1)
+    .then(rows => rows[0]);
+  if (!quiz) return null;
+
+  const rows = await db
+    .select({
+      username: usersTable.username,
+      name: usersTable.name,
+      score: quizCompletionsTable.score,
+      total: quizCompletionsTable.total,
+      completedAt: quizCompletionsTable.completedAt,
+    })
+    .from(quizCompletionsTable)
+    .innerJoin(usersTable, eq(usersTable.id, quizCompletionsTable.userId))
+    .where(eq(quizCompletionsTable.quizId, id))
+    .orderBy(desc(quizCompletionsTable.score), asc(quizCompletionsTable.completedAt));
+
+  return rows.map((row, index) => ({
+    position: index + 1,
+    ...row,
+  }));
 }
 
 export async function checkQuizAnswer(id: string, questionId: number, optionId: number | null) {

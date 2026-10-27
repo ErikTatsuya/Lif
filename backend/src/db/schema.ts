@@ -47,6 +47,21 @@ export const optionsTable = pgTable("options", {
   unique("options_question_position_unique").on(table.questionId, table.position),
 ]);
 
+export const quizCompletionsTable = pgTable(
+  "quiz_completions",
+  {
+    id: serial().primaryKey(),
+    userId: integer("user_id").notNull().references(() => usersTable.id, { onDelete: "cascade" }),
+    quizId: varchar("quiz_id", { length: 8 }).notNull().references(() => quizzesTable.id, { onDelete: "cascade" }),
+    score: integer().notNull(),
+    total: integer().notNull(),
+    completedAt: timestamp("completed_at").notNull().defaultNow(),
+  },
+  table => [
+    unique("quiz_completions_user_quiz_unique").on(table.userId, table.quizId),
+  ],
+);
+
 export const quizScoresTable = pgTable("quiz_scores", {
   id: serial().primaryKey(),
   quizId: varchar("quiz_id", { length: 8 })

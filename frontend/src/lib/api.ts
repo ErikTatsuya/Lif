@@ -59,6 +59,15 @@ export type QuizResult = {
   }>;
 };
 
+export type QuizLeaderboardEntry = {
+  position: number;
+  username: string;
+  name: string;
+  score: number;
+  total: number;
+  completedAt: string;
+};
+
 export type QuizAnswerCheck = {
   isCorrect: boolean;
   correctOptionId: number;
@@ -276,6 +285,12 @@ export const qleteApi = {
 
   async get(id: string) {
     return qleteRequest<Quiz>(`/quizzes/${encodeURIComponent(id)}`);
+  },
+
+  async getLeaderboard(id: string) {
+    return qleteRequest<QuizLeaderboardEntry[]>(
+      `/quizzes/${encodeURIComponent(id)}/leaderboard`
+    );
   },
 
   async getForEdit(id: string) {

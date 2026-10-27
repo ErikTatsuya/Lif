@@ -7,6 +7,7 @@ import {
   deleteQuiz,
   getQuiz,
   getQuizForEdit,
+  getQuizLeaderboard,
   getQuizList,
   QuizAnswerError,
   replaceQuiz,
@@ -139,7 +140,8 @@ export async function qleteRoutes(app: FastifyInstance) {
     },
   }, async (request, reply) => {
     try {
-      const result = await submitQuiz(request.params.id, request.body);
+      const user = await getAuthenticatedUser(request.cookies.auth_token);
+      const result = await submitQuiz(request.params.id, request.body, user?.id);
       if (!result) return reply.code(404).send({ error: "Quiz não encontrado." });
       return reply.send(result);
     } catch (cause) {
@@ -148,6 +150,14 @@ export async function qleteRoutes(app: FastifyInstance) {
       }
       throw cause;
     }
+  });
+
+  app.get<{ Params: QuizParams }>("/quizzes/:id/leaderboard", {
+    schema: { params: quizIdSchema() },
+  }, async (request, reply) => {
+    const leaderboard = await getQuizLeaderboard(request.params.id);
+    if (!leaderboard) return reply.code(404).send({ error: "Quiz não encontrado." });
+    return reply.send(leaderboard);
   });
 
   app.post<{ Params: QuizParams; Body: CheckAnswerBody }>("/quizzes/:id/check", {
